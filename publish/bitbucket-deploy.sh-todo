@@ -1,0 +1,111 @@
+# current release of the project
+RELEASE=00.01.005
+
+# name of the project
+PROJECTNAME=setuplib
+
+# name of the package
+PACKAGENAME=setuplib
+
+
+. ./setenv-acue3.sh
+. ./setenv.sh
+workon 3.8.0
+
+
+
+
+# 0. start polipo http/https
+
+# 1. set proxy
+export http_proxy=localhost:8125
+export https_proxy=localhost:8125
+
+# 2. start ssh-agent and load key
+#    see vault:
+#       /media/realcrypt1/repos/sourceforge.net/ssh-keys
+#
+#----------------------------------------------------
+. ~acue/bin/ssh-agent-manage.sh -A github
+. ~acue/bin/ssh-agent-manage.sh -S github
+#. ssh-agent-manage.sh -a sf
+SSH_ADDONS_DIRS=/mnt1/crypt/repos/github.com/ssh-keys/ssh-key-20180611/ . ~acue/bin/ssh-agent-manage.sh -a 0
+# . ssh-agent-manage.sh -s 0:sf
+. ~acue/bin/ssh-agent-manage.sh -s 0
+. ~acue/bin/ssh-agent-manage.sh -p
+
+#
+# 3. setup iptables: ssh
+#
+# set: 01.10.012-min-ssh
+#
+# as root
+#
+if A == B; do
+# 	REL=01.10.012-min-ssh;WLANIF=wlp3s0 /local/home1/data/acue/rd/p-own_lap001/firewall-linux-laptop-bash/src/firewall-linux-laptop-bash/rt/firewall/PMs/lap001/${REL}/src/bash/ch.bern.wedorooms.lap001.sh
+	iptables -v -I INPUT 1  -m state --state ESTABLISHED,RELATED -j ACCEPT -i wlp3s0
+	iptables -v -I OUTPUT 1  -p tcp --dport 22  -o wlp3s0 -j ACCEPT
+done
+
+#
+#---------------------------------------------------------------------------------------------------------
+#
+
+#
+# simplest here is to clone the new repo
+#
+git clone https://github.com/ArnoCan/setuplib.git
+#
+# Than cp the contents into the local repo
+# and pull / push  - first s.t. does not acceppt pull before push
+#
+git pull --rebase
+git push origin master
+
+
+
+# build docs
+python setup.py build_docx --doctemplate=rtd --clean-all
+# python setup.py build_docx --doctemplate=rtd_apiref --apiref
+# python setup.py install_docx --clean
+
+
+##############################################################################################3
+##############################################################################################
+
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git remote add origin git@github.com:ArnoCan/setuplib.git
+# git push -u origin master
+
+# git status
+# git commit -m update-${RELEASE}
+
+
+# 5. code repositories
+
+# Initial only:
+#   git config user.name "Arno-Can Uestuensoez"
+#   git config user.email "acue_sf1@users.sourceforge.net"
+##   git remote add origin ssh://acue_sf1@git.code.sf.net/p/${PROJECTNAME}/code
+##   git remote add origin ssh://acue_sf1@git.code.sf.net/p/${PROJECTNAME}/${PROJECTNAME}
+
+#   git config branch.master.remote origin
+#   git config branch.master.merge refs/heads/master
+#
+# First push could take several minutes!
+#
+# git pull --rebase  # not first time
+# git push origin master
+
+#################################################3
+# # current release of the project
+# RELEASE=00.01.032
+# REL=0.1.32
+
+# # name of the project
+# PROJECTNAME=pyplatformids
+
+# # name of the package
+# PACKAGENAME=platformids
