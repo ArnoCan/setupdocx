@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Configuration Templates &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.1.1.1. agogo" href="sphinx/agogo/index.html" />
+    <link rel="prev" title="4. Command Line Interface" href="../setuplib_cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Configuration Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">5.1. Sphinx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#standard-themes">5.1.1. Standard Themes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/agogo/index.html">5.1.1.1. agogo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/bizstyle/index.html">5.1.1.2. bizstyle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/default/index.html">5.1.1.3. default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/nature/index.html">5.1.1.4. nature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/pydoc2/index.html">5.1.1.5. default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/pydoc3/index.html">5.1.1.6. default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/sphinxdoc/index.html">5.1.1.7. sphinxdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/traditional/index.html">5.1.1.8. traditional</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#special-themes">5.1.2. Special Themes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/alabaster/index.html">5.1.2.1. Alabaster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/sphinx_bootstrap_theme/index.html">5.1.2.2. Boostrap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/guzzle_sphinx_theme/index.html">5.1.2.3. Guzzle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-themes">5.1.3. Custom Themes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/extended_default/index.html">5.1.3.1. extended_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/html/index.html">5.1.3.2. html</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/sphinx_rtd_theme_single/index.html">5.1.3.3. singlehtml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/pdf/index.html">5.1.3.4. pdf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/epub/index.html">5.1.3.5. epub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/man/index.html">5.1.3.6. man</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#public-document-server">5.1.4. Public Document Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/sphinx_rtd_theme/index.html">5.1.4.1. ReadTheDocs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sphinx/sphinx_github_theme/index.html">5.1.4.2. GithubPages</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#apidoc">5.1.5. ApiDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#epydoc">5.2. Epydoc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="epydoc/epydoc_standalone/index.html">5.2.1. Epydoc Standalone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epydoc/epydoc_sphinx_iframe/index.html">5.2.2. Epydoc Embedded in IFrame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="epydoc/epydoc_sphinx_template/index.html">5.2.3. Attached by Sphinx Template</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mkdocs">5.3. Mkdocs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mkdocs/mkdocs_rtd_theme/index.html">5.3.1. Read The Docs - mkdocs_rtd_theme</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#list-available-templates">5.4. List Available Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>5. Configuration Templates</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/configurations/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-templates">
+<span id="configurationtemplates"></span><h1>5. Configuration Templates<a class="headerlink" href="#configuration-templates" title="Permalink to this headline">¶</a></h1>
+<style>
+  html, body{
+     height: 100%;
+  }
+  .document{
+     height: 100%;
+  }
+
+</style><div class="section" id="sphinx">
+<h2>5.1. Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 34%" />
+<col style="width: 31%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/alabaster.png"><img alt="Alabaster" src="../_images/alabaster.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/bootstrap_menu.png"><img alt="Boostrap" src="../_images/bootstrap_menu.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/underconstruction.png"><img alt="GithubPages" src="../_images/underconstruction.png" style="width: 64px; height: 64px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/alabaster/index.html#config-template-sphinx-alabaster"><span class="std std-ref">Alabaster</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_bootstrap_theme/index.html#config-template-sphinx-bootstrap"><span class="std std-ref">Boostrap</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_github_theme/index.html#config-template-sphinx-github"><span class="std std-ref">github</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/guzzle.png"><img alt="Guzzle" src="../_images/guzzle.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/sphinx_rtd_theme.png"><img alt="ReadTheDocs" src="../_images/sphinx_rtd_theme.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/guzzle_sphinx_theme/index.html#config-template-sphinx-guzzle"><span class="std std-ref">Guzzle</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_rtd_theme/index.html#config-template-sphinx-rtd"><span class="std std-ref">ReadTheDocs</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/sphinx_rtd_theme.png"><img alt="ReadTheDocs" src="../_images/sphinx_rtd_theme.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/sphinx_rtd_theme/index.html#config-template-sphinx-rtd"><span class="std std-ref">ReadTheDocs</span></a></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><blockquote>
+<div></div>
+</div>
+</div></div></blockquote>
+<p><strong>Custom Themes</strong></p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab">
+<div class="centertab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 27%" />
+<col style="width: 35%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/underconstruction.png"><img alt="extended_default" src="../_images/underconstruction.png" style="width: 64px; height: 64px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/html.png"><img alt="html" src="../_images/html.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/rtd_singlehtml.png"><img alt="singlehtml" src="../_images/rtd_singlehtml.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/pydoc3/index.html#config-template-sphinx-default3"><span class="std std-ref">Extended Default</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/html/index.html#config-template-sphinx-html"><span class="std std-ref">html</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_rtd_theme_single/index.html#config-template-sphinx-singlehtml"><span class="std std-ref">singlehtml</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/pdf.png"><img alt="pdf" src="../_images/pdf.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/epub.png"><img alt="epub" src="../_images/epub.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/man.png"><img alt="man" src="../_images/man.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/pdf/index.html#config-template-sphinx-pdf"><span class="std std-ref">pdf</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/epub/index.html#config-template-sphinx-epub"><span class="std std-ref">epub</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/man/index.html#config-template-sphinx-man"><span class="std std-ref">man</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></blockquote>
+</div></blockquote>
+<div class="section" id="standard-themes">
+<h3>5.1.1. Standard Themes<a class="headerlink" href="#standard-themes" title="Permalink to this headline">¶</a></h3>
+<p>The following themes are contained in the standard <em>Sphinx</em> distribution.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab">
+<div class="centertab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 33%" />
+<col style="width: 36%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/agogo.png"><img alt="agogo" src="../_images/agogo.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/bizstyle.png"><img alt="bizstyle" src="../_images/bizstyle.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/default.png"><img alt="default" src="../_images/default.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/agogo/index.html#config-template-sphinx-agogo"><span class="std std-ref">agogo</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/bizstyle/index.html#config-template-sphinx-bizstyle"><span class="std std-ref">bizstyle</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/pydoc3/index.html#config-template-sphinx-default3"><span class="std std-ref">default</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/pydoc2.png"><img alt="Python2" src="../_images/pydoc2.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/pydoc3.png"><img alt="Python3" src="../_images/pydoc3.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/pydoc2/index.html#config-template-sphinx-default2"><span class="std std-ref">Python2</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/pydoc3/index.html#config-template-sphinx-default3"><span class="std std-ref">Python3</span></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/nature.png"><img alt="nature" src="../_images/nature.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/sphinxdoc.png"><img alt="sphinxdoc" src="../_images/sphinxdoc.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/traditional.png"><img alt="traditional" src="../_images/traditional.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/nature/index.html#config-template-sphinx-nature"><span class="std std-ref">nature</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinxdoc/index.html#config-template-sphinx-sphinxdoc"><span class="std std-ref">sphinxdoc</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/traditional/index.html#config-template-sphinx-traditional"><span class="std std-ref">traditional</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/agogo/index.html">5.1.1.1. agogo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/bizstyle/index.html">5.1.1.2. bizstyle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/default/index.html">5.1.1.3. default</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/nature/index.html">5.1.1.4. nature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/pydoc2/index.html">5.1.1.5. default</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/pydoc3/index.html">5.1.1.6. default</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/sphinxdoc/index.html">5.1.1.7. sphinxdoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/traditional/index.html">5.1.1.8. traditional</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="special-themes">
+<h3>5.1.2. Special Themes<a class="headerlink" href="#special-themes" title="Permalink to this headline">¶</a></h3>
+<p>The following themes are available as <em>OpenSource</em> for download.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 33%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/alabaster.png"><img alt="Alabaster" src="../_images/alabaster.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/bootstrap_menu.png"><img alt="Boostrap" src="../_images/bootstrap_menu.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/guzzle.png"><img alt="Guzzle" src="../_images/guzzle.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/alabaster/index.html#config-template-sphinx-alabaster"><span class="std std-ref">Alabaster</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_bootstrap_theme/index.html#config-template-sphinx-bootstrap"><span class="std std-ref">Boostrap</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/guzzle_sphinx_theme/index.html#config-template-sphinx-guzzle"><span class="std std-ref">Guzzle</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/alabaster/index.html">5.1.2.1. Alabaster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/sphinx_bootstrap_theme/index.html">5.1.2.2. Boostrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/guzzle_sphinx_theme/index.html">5.1.2.3. Guzzle</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="custom-themes">
+<h3>5.1.3. Custom Themes<a class="headerlink" href="#custom-themes" title="Permalink to this headline">¶</a></h3>
+<p>The following themes are adapted by custom entries and modifications.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab">
+<div class="centertab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 39%" />
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/html.png"><img alt="html" src="../_images/html.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/rtd_singlehtml.png"><img alt="singlehtml" src="../_images/rtd_singlehtml.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/epub.png"><img alt="epub" src="../_images/epub.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/html/index.html#config-template-sphinx-html"><span class="std std-ref">html</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_rtd_theme_single/index.html#config-template-sphinx-singlehtml"><span class="std std-ref">singlehtml</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/epub/index.html#config-template-sphinx-epub"><span class="std std-ref">epub</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/pdf.png"><img alt="pdf" src="../_images/pdf.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/man.png"><img alt="man" src="../_images/man.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/pdf/index.html#config-template-sphinx-pdf"><span class="std std-ref">pdf</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/man/index.html#config-template-sphinx-man"><span class="std std-ref">man</span></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/extended_default/index.html">5.1.3.1. extended_default</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/html/index.html">5.1.3.2. html</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/sphinx_rtd_theme_single/index.html">5.1.3.3. singlehtml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/pdf/index.html">5.1.3.4. pdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/epub/index.html">5.1.3.5. epub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/man/index.html">5.1.3.6. man</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="public-document-server">
+<h3>5.1.4. Public Document Server<a class="headerlink" href="#public-document-server" title="Permalink to this headline">¶</a></h3>
+<p>The following themes are available as <em>OpenSource</em> for download.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 54%" />
+<col style="width: 46%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/sphinx_rtd_theme.png"><img alt="ReadTheDocs" src="../_images/sphinx_rtd_theme.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/underconstruction.png"><img alt="GithubPages" src="../_images/underconstruction.png" style="width: 64px; height: 64px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="sphinx/sphinx_rtd_theme/index.html#config-template-sphinx-rtd"><span class="std std-ref">ReadTheDocs - Sphinx - readthedocs.org</span></a></p></td>
+<td><p><a class="reference internal" href="sphinx/sphinx_github_theme/index.html#config-template-sphinx-github"><span class="std std-ref">Github Pages - github.com</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/sphinx_rtd_theme/index.html">5.1.4.1. ReadTheDocs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx/sphinx_github_theme/index.html">5.1.4.2. GithubPages</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="apidoc">
+<h3>5.1.5. ApiDoc<a class="headerlink" href="#apidoc" title="Permalink to this headline">¶</a></h3>
+<p>Te <em>apidoc</em> themes are forseen to be used for the pure API generation by
+<a class="reference internal" href="../call_apidoc.html#call-apidoc"><span class="std std-ref">build_apidoc</span></a>.</p>
+</div>
+</div>
+<div class="section" id="epydoc">
+<h2>5.2. Epydoc<a class="headerlink" href="#epydoc" title="Permalink to this headline">¶</a></h2>
+<p>The current first version supports the outdated release of <em>Epydoc</em>.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab">
+<div class="centertab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 34%" />
+<col style="width: 35%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/epydoc_standalone1.png"><img alt="Epydoc Standalone" src="../_images/epydoc_standalone1.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/epydoc_sphinx_iframe1.png"><img alt="Epydoc in IFrame" src="../_images/epydoc_sphinx_iframe1.png" style="width: 256px; height: 148px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/sphinx_template_iframe1.png"><img alt="Epydoc Embedded" src="../_images/sphinx_template_iframe1.png" style="width: 256px; height: 148px;" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="epydoc/epydoc_standalone/index.html#config-epydoc-standalone"><span class="std std-ref">Epydoc Standalone</span></a></p></td>
+<td><p><a class="reference internal" href="epydoc/epydoc_sphinx_iframe/index.html#config-template-epydoc-embed-iframe"><span class="std std-ref">Embedded by HTML IFrame</span></a></p></td>
+<td><p><a class="reference internal" href="epydoc/epydoc_sphinx_template/index.html#config-template-epydoc-attach-sphinx-template"><span class="std std-ref">Epydoc Attached by Template</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div></div></blockquote>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="epydoc/epydoc_standalone/index.html">5.2.1. Epydoc Standalone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epydoc/epydoc_sphinx_iframe/index.html">5.2.2. Epydoc Embedded in IFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="epydoc/epydoc_sphinx_template/index.html">5.2.3. Attached by Sphinx Template</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="mkdocs">
+<h2>5.3. Mkdocs<a class="headerlink" href="#mkdocs" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mkdocs/mkdocs_rtd_theme/index.html">5.3.1. Read The Docs - mkdocs_rtd_theme</a></li>
+</ul>
+</div>
+<p>available soon</p>
+</div>
+<div class="section" id="list-available-templates">
+<h2>5.4. List Available Templates<a class="headerlink" href="#list-available-templates" title="Permalink to this headline">¶</a></h2>
+<p>The command <em>build_docx</em> provides the option <em>–list-templates</em>.
+This displays a list of all provided templates, see also options
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-list-templates-std"><span class="std std-ref">–list-templates-std</span></a>
+and
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-list-templates"><span class="std std-ref">–list-templates=</span></a>.</p>
+<p>For standar list with names only:</p>
+<blockquote>
+<div><pre class="literal-block">python setup.py build_docx <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-list-templates-std"><span class="std std-ref">–list-templates-std</span></a></pre>
+</div></blockquote>
+<p>For extended list with parameters</p>
+<blockquote>
+<div><pre class="literal-block">python setup.py build_docx <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-list-templates"><span class="std std-ref">–list-templates=”display=abs;”</span></a></pre>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinx/agogo/index.html" class="btn btn-neutral float-right" title="5.1.1.1. agogo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../setuplib_cli.html" class="btn btn-neutral float-left" title="4. Command Line Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

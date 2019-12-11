@@ -1,0 +1,700 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.16. sphinx.ext.imagewrap &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.17. sphinx.ext.literalincludewrap" href="setupdocx.sphinx.ext.literalincludewrap.html" />
+    <link rel="prev" title="7.15. setup.conf" href="setup_conf.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.16. sphinx.ext.imagewrap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-setupdocx.sphinx.ext.imagewrap">7.16.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">7.16.2. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cb-align-values-image">7.16.2.1. cb_align_values_image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#align-paths-to-top">7.16.2.2. align_paths_to_top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setup">7.16.2.3. setup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#imageext">7.16.3. ImageExt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#option-spec">7.16.3.1. option_spec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spec-imagewrap-run">7.16.3.2. align_paths_to_top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extract-own-options">7.16.3.3. extract_own_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#set-own-options">7.16.3.4. set_own_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run">7.16.3.5. run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#figureext">7.16.4. FigureExt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spec-figurewrap-option-spec">7.16.4.1. option_spec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#align-figure">7.16.4.2. align_figure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">7.16.4.3. extract_own_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setoptions-figure">7.16.4.4. setoptions_figure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">7.16.4.5. run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">7.16.5. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.16. sphinx.ext.imagewrap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setupdocx.sphinx.ext.imagewrap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><div class="section" id="sphinx-ext-imagewrap">
+<span id="index-0"></span><h1>7.16. sphinx.ext.imagewrap<a class="headerlink" href="#sphinx-ext-imagewrap" title="Permalink to this headline">¶</a></h1>
+<p>The Sphinx extension <em>setupdocx.sphinx.ext.imagewrap</em> handles required different sizes for multiple
+builders.
+This includes in particular <em>epub</em>, <em>html</em>, and <em>pdf*(*pdflatex</em>).
+This includes a simple syntax extension for multiple variants.
+The extension is inspired by the article “Using Sphinx to Write Technical Books”
+and the contained example “<em>Autoimage</em>” see <a class="reference internal" href="references.html#drpedrokroger" id="id1"><span>[DrPedroKroger]</span></a>.</p>
+<p>The <em>imagewrap</em> covers all possible parameters in order to simply
+wrap the <em>image</em> directive, without the introduction of extra features.
+The original directive</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">gnu</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>is extended by inheritance of the class <em>Image</em> to:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">imagewrap</span><span class="p">::</span> <span class="n">gnu</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Where the parameters are processed and passed to the class <em>Image</em>.
+For example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">imagewrap</span><span class="p">::</span> <span class="n">_static</span><span class="o">/</span><span class="n">gnu</span><span class="o">.</span><span class="n">png</span>
+   <span class="n">width</span><span class="o">-</span><span class="n">html</span><span class="p">:</span> <span class="mi">400</span><span class="n">px</span>         <span class="c1"># for HTML</span>
+   <span class="n">width</span><span class="o">-</span><span class="n">latexpdf</span><span class="p">:</span> <span class="mi">250</span><span class="n">px</span>     <span class="c1"># for latexpdf == PDF</span>
+   <span class="n">width</span><span class="o">-</span><span class="n">epub</span><span class="p">:</span> <span class="mi">150</span><span class="n">px</span>         <span class="c1"># for epub</span>
+   <span class="n">width</span><span class="o">-</span><span class="n">epub2</span><span class="p">:</span> <span class="mi">150</span><span class="n">px</span>        <span class="c1"># for epub</span>
+   <span class="n">width</span><span class="o">-</span><span class="n">mobi</span><span class="p">:</span> <span class="mi">150</span><span class="n">px</span>         <span class="c1"># for mobi</span>
+   <span class="n">width</span><span class="p">:</span> <span class="mi">200</span><span class="n">px</span>              <span class="c1"># for all non-specified</span>
+
+   <span class="n">scale</span><span class="o">-</span><span class="n">html</span><span class="s1">&#39;: directives.percentage,</span>
+   <span class="n">scale</span><span class="o">-</span><span class="n">latex</span><span class="s1">&#39;: directives.percentage,</span>
+   <span class="n">scale</span><span class="o">-</span><span class="n">epub</span><span class="s1">&#39;: directives.percentage,</span>
+   <span class="n">scale</span><span class="o">-</span><span class="n">epub2</span><span class="s1">&#39;: directives.percentage,</span>
+   <span class="n">scale</span><span class="o">-</span><span class="n">mobi</span><span class="s1">&#39;: directives.percentage,</span>
+   <span class="n">scale</span><span class="s1">&#39;: directives.percentage,</span>
+
+   <span class="n">height</span><span class="o">-</span><span class="n">html</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+   <span class="n">height</span><span class="o">-</span><span class="n">latex</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+   <span class="n">height</span><span class="o">-</span><span class="n">epub</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+   <span class="n">height</span><span class="o">-</span><span class="n">epub2</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+   <span class="n">height</span><span class="o">-</span><span class="n">mobi</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+   <span class="n">height</span><span class="s1">&#39;: directives.length_or_unitless,</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="module-setupdocx.sphinx.ext.imagewrap">
+<span id="module"></span><h2>7.16.1. Module<a class="headerlink" href="#module-setupdocx.sphinx.ext.imagewrap" title="Permalink to this headline">¶</a></h2>
+<p>Wrapper extension for the directive <em>image</em> / <em>Image</em> and <em>figure/Figure</em>.
+In order to avoid copy-of-code or mix-in, the instance is processed by functions.</p>
+</div>
+<div class="section" id="functions">
+<h2>7.16.2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cb-align-values-image">
+<h3>7.16.2.1. cb_align_values_image<a class="headerlink" href="#cb-align-values-image" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="setupdocx.sphinx.ext.imagewrap.cb_align_values_image">
+<code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">cb_align_values_image</code><span class="sig-paren">(</span><em class="sig-param">argument</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#cb_align_values_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.cb_align_values_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imported callback, see:</p>
+<ul class="simple">
+<li><p>docutils.parsers.rst.directives</p></li>
+<li><p>docutils.parsers.rst.directives.images.Image.align_values</p></li>
+</ul>
+</dd></dl>
+
+</div>
+<div class="section" id="align-paths-to-top">
+<h3>7.16.2.2. align_paths_to_top<a class="headerlink" href="#align-paths-to-top" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="setupdocx.sphinx.ext.imagewrap.align_paths_to_top">
+<code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">align_paths_to_top</code><span class="sig-paren">(</span><em class="sig-param">path</em>, <em class="sig-param">base</em>, <em class="sig-param">rel</em>, <em class="sig-param">depth</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#align_paths_to_top"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.align_paths_to_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aligns the provided image/figure relative paths. Checks first
+the existence of the path, if not exists adds the upward relative
+path as offset and checks the existence again. In case of a match
+the image path is replace by the existent, else kept unchanged.
+Ignores absolute paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> – Path to be aligned. Only non-absolute paths are processed.</p></li>
+<li><p><strong>base</strong> – Base for relative input. Either absolute or relative to
+current position.</p></li>
+<li><p><strong>rel</strong> – Relative paths as side-branch of the search.</p></li>
+<li><p><strong>depth</strong> – Maximum number of upward directory nodes to be searched.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Resolved path, either absolute or relative.</p>
+</dd>
+</dl>
+<p>Raises:</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setup">
+<h3>7.16.2.3. setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="setupdocx.sphinx.ext.imagewrap.setup">
+<code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">app</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#setup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the extension.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="imageext">
+<h2>7.16.3. ImageExt<a class="headerlink" href="#imageext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageExt">
+<em class="property">class </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">ImageExt</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageExt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageExt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps the class <em>Image</em>. Passes builder specific values.
+For the image parameters refer to <a class="reference internal" href="references.html#restdir" id="id2"><span>[restdir]</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When multiple builder are called, requires to run with
+the cache erase option.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">E</span> <span class="o">..</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<p>The wrapper is designed to be implemented as a mixin only.</p>
+</dd></dl>
+
+<div class="section" id="option-spec">
+<span id="spec-imagewrap-option-spec"></span><h3>7.16.3.1. option_spec<a class="headerlink" href="#option-spec" title="Permalink to this headline">¶</a></h3>
+<p>The member <em>option_spec</em> defines the known parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">option_spec</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;scale-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+
+    <span class="s1">&#39;height-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+
+    <span class="s1">&#39;width-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+
+    <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+
+<span class="p">}</span>  <span class="c1">#: wrap all image parameters</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="spec-imagewrap-run">
+<span id="id3"></span><h3>7.16.3.2. align_paths_to_top<a class="headerlink" href="#spec-imagewrap-run" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageExt.align_paths_to_top">
+<code class="sig-prename descclassname">ImageExt.</code><code class="sig-name descname">align_paths_to_top</code><span class="sig-paren">(</span><em class="sig-param">res</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageExt.align_paths_to_top"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageExt.align_paths_to_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aligns the provided image/figure relative paths. Checks first
+the existence of the path, if not exists adds the upward relative
+path as offset and checks the existence again. In case of a match
+the image path is replace by the existent, else kept unchanged.
+Ignores items with absolute paths.</p>
+<dl>
+<dt>Aligns::</dt><dd><p>source-path</p>
+<p>target-html
+target</p>
+</dd>
+</dl>
+<p>REMARK: Had to reengineer a bit of redundant attributes - so eventually some
+additional fixes may be required in future.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>res</strong> – result from call of ‘images.Image.run()’.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None, updates ‘res’.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="extract-own-options">
+<h3>7.16.3.3. extract_own_options<a class="headerlink" href="#extract-own-options" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageExt.extract_own_options">
+<code class="sig-prename descclassname">ImageExt.</code><code class="sig-name descname">extract_own_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageExt.extract_own_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageExt.extract_own_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the parameters, and maps the values to the parent class <em>Image</em>.
+The values are provided by the member <em>self.options</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">singlehtml</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">epub2</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">height</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">singlehtml</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">epub2</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">width</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">singlehtml</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">epub2</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">align</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">singlehtml</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">epub2</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">target</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">singlehtml</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">epub2</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+</pre></div>
+</div>
+<p>Defaults values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span>
+<span class="n">height</span>
+<span class="n">width</span>
+<span class="n">align</span>
+<span class="n">target</span>
+</pre></div>
+</div>
+<p>Fetches the known-and-present special options only from ‘self.options’.
+These are stored in ‘self.own_opts’, the original default values remain
+untouched.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="set-own-options">
+<h3>7.16.3.4. set_own_options<a class="headerlink" href="#set-own-options" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageExt.set_own_options">
+<code class="sig-prename descclassname">ImageExt.</code><code class="sig-name descname">set_own_options</code><span class="sig-paren">(</span><em class="sig-param">res</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageExt.set_own_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageExt.set_own_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the options of the result with the own extention-options.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>   <span class="o">=&gt;</span> <span class="n">scale</span>
+<span class="n">height</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>  <span class="o">=&gt;</span> <span class="n">height</span>
+<span class="n">width</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>   <span class="o">=&gt;</span> <span class="n">width</span>
+<span class="n">align</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>   <span class="o">=&gt;</span> <span class="n">align</span>
+<span class="n">target</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>  <span class="o">=&gt;</span> <span class="n">target</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>res</strong> – result from call of ‘images.Image.run()’.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None, updates ‘res’.</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>pass-through</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="run">
+<h3>7.16.3.5. run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageExt.run">
+<code class="sig-prename descclassname">ImageExt.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageExt.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageExt.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the parameters by <em>self.setoptions</em>, and calls
+the run method of the parent class <em>Image</em>. Inherits
+the option_spec from <em>docutils.parsers.rst.directives.images.Image</em>.
+Adds the following parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">height</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">width</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">align</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">target</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="figureext">
+<span id="setupdocxsphinxextfigurewrap"></span><h2>7.16.4. FigureExt<a class="headerlink" href="#figureext" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureExt">
+<em class="property">class </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">FigureExt</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureExt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureExt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps the class <em>Figure</em>. Passes builder specific values.
+For the figure parameters refer to <a class="reference internal" href="references.html#restdir" id="id4"><span>[restdir]</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When multiple builder are called, requires to run with
+the cache erase option.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="o">-</span><span class="n">build</span> <span class="o">-</span><span class="n">E</span> <span class="o">..</span><span class="p">,</span>
+</pre></div>
+</div>
+</div>
+<p>The permitted values of some parameters are slightly different from
+the parent image classes <a class="reference internal" href="references.html#restdir" id="id5"><span>[restdir]</span></a>. This is taken into account.</p>
+<p>For the complete parameter description refer to <a class="reference internal" href="references.html#restdir" id="id6"><span>[restdir]</span></a>, here a copy
+of the different semantics of “<em>width</em>” and “<em>figwidth</em>”.
+This option [figwidth] does not scale the included image;
+use the “width” image option for that.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+---------------------------+</span>
+<span class="o">|</span>        <span class="n">figure</span>             <span class="o">|</span>
+<span class="o">|</span>                           <span class="o">|</span>
+<span class="o">|&lt;------</span> <span class="n">figwidth</span> <span class="o">---------&gt;|</span>
+<span class="o">|</span>                           <span class="o">|</span>
+<span class="o">|</span>  <span class="o">+---------------------+</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">|</span>     <span class="n">image</span>           <span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">|</span>                     <span class="o">|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">|&lt;---</span> <span class="n">width</span> <span class="o">---------&gt;|</span>  <span class="o">|</span>
+<span class="o">|</span>  <span class="o">+---------------------+</span>  <span class="o">|</span>
+<span class="o">|</span>                           <span class="o">|</span>
+<span class="o">|</span><span class="n">The</span> <span class="n">figure</span><span class="s1">&#39;s caption should|</span>
+<span class="o">|</span><span class="n">wrap</span> <span class="n">at</span> <span class="n">this</span> <span class="n">width</span><span class="o">.</span>        <span class="o">|</span>
+<span class="o">+---------------------------+</span>
+</pre></div>
+</div>
+<p>The wrapper is designed to be implemented as a mixin only.</p>
+</dd></dl>
+
+<div class="section" id="spec-figurewrap-option-spec">
+<span id="id7"></span><h3>7.16.4.1. option_spec<a class="headerlink" href="#spec-figurewrap-option-spec" title="Permalink to this headline">¶</a></h3>
+<p>The member <em>option_spec</em> defines the known parameters.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">option_spec</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;scale-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+    <span class="s1">&#39;scale&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+
+    <span class="s1">&#39;height-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+
+    <span class="s1">&#39;width-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+    <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+
+    <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+
+<span class="p">}</span>  <span class="c1">#: wrap all image parameters</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="align-figure">
+<span id="spec-figurewrap-run"></span><h3>7.16.4.2. align_figure<a class="headerlink" href="#align-figure" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureExt.align_figure">
+<code class="sig-prename descclassname">FigureExt.</code><code class="sig-name descname">align_figure</code><span class="sig-paren">(</span><em class="sig-param">argument</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureExt.align_figure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureExt.align_figure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="id8">
+<h3>7.16.4.3. extract_own_options<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureExt.extract_own_options">
+<code class="sig-prename descclassname">FigureExt.</code><code class="sig-name descname">extract_own_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureExt.extract_own_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureExt.extract_own_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the parameters, and maps the values to the parent class <em>Figure</em>.
+The values are provided by the member <em>self.options</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">figwidth</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">figclass</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+</pre></div>
+</div>
+<p>Fetches the known-and-present special options only from ‘self.options’.
+These are stored in ‘self.own_opts’, the original default values remain
+untouched.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="setoptions-figure">
+<h3>7.16.4.4. setoptions_figure<a class="headerlink" href="#setoptions-figure" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureExt.setoptions_figure">
+<code class="sig-prename descclassname">FigureExt.</code><code class="sig-name descname">setoptions_figure</code><span class="sig-paren">(</span><em class="sig-param">inst</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureExt.setoptions_figure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureExt.setoptions_figure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the parameters, and maps the values to the parent class <em>Figure</em>.
+The values are provided by the member <em>self.options</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">figwidth</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">figclass</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id9">
+<h3>7.16.4.5. run<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureExt.run">
+<code class="sig-prename descclassname">FigureExt.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureExt.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureExt.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the parameters by <em>self.setoptions</em>, and calls
+the run method of the parent class <em>Figure</em>. Inherits
+the option_spec from <em>docutils.parsers.rst.directives.images.Figure</em>.
+Adds the following parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">figwidth</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+<span class="n">figclass</span><span class="o">-</span><span class="p">{</span><span class="n">html</span><span class="p">,</span> <span class="n">latex</span><span class="p">,</span> <span class="n">epub</span><span class="p">,</span> <span class="n">mobi</span><span class="p">,}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>7.16.5. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="setupdocx.sphinx.ext.imagewrap.ImageWrapError">
+<em class="property">exception </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">ImageWrapError</code><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#ImageWrapError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.ImageWrapError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Image wrapper failed.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="setupdocx.sphinx.ext.imagewrap.FigureWrapError">
+<em class="property">exception </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.imagewrap.</code><code class="sig-name descname">FigureWrapError</code><a class="reference internal" href="_modules/setupdocx/sphinx/ext/imagewrap.html#FigureWrapError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.imagewrap.FigureWrapError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Figure wrapper failed.</p>
+</dd></dl>
+
+</div>
+</div>
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setupdocx.sphinx.ext.literalincludewrap.html" class="btn btn-neutral float-right" title="7.17. sphinx.ext.literalincludewrap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup_conf.html" class="btn btn-neutral float-left" title="7.15. setup.conf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

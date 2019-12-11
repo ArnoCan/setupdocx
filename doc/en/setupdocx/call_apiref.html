@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.2. call_apiref.sh &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.3. call_doc.sh" href="call_doc.html" />
+    <link rel="prev" title="7.1. call_apidoc.sh" href="call_apidoc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. call_apiref.sh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#source">7.2.6. Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">7.2.7. Download</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.2. call_apiref.sh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/call_apiref.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="call-apiref-sh">
+<span id="call-apiref"></span><h1>7.2. call_apiref.sh<a class="headerlink" href="#call-apiref-sh" title="Permalink to this headline">¶</a></h1>
+<p>The wrapper <em>call_apiref.sh</em> implements a wrapper for the generation of the API reference.
+The curent default call is:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epydoc</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The call itself is deactivated by default, and requires for activation the
+parameter ‘–apiref’:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_docs</span> <span class="o">--</span><span class="n">apiref</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The expected output is the documentation as prepared <em>HTML</em>, containing the generated
+API specification in a format similar to javadoc.</p>
+<div class="section" id="source">
+<span id="call-apiref-source"></span><h2>7.2.6. Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">PROJECT</span><span class="o">=</span><span class="s1">&#39;setupdocx&#39;</span>
+<span class="nv">VERSION</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_VERSION</span><span class="k">:-</span><span class="sb">`</span>date +%Y.%m.%d<span class="sb">`</span><span class="si">}</span>
+<span class="nv">RELEASE</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_RELEASE</span><span class="k">:-</span><span class="nv">$VERSION</span><span class="si">}</span>
+<span class="nv">AUTHOR</span><span class="o">=</span><span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="nv">COPYRIGHT</span><span class="o">=</span><span class="s1">&#39;Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&#39;</span>
+<span class="nv">LICENSE</span><span class="o">=</span><span class="s1">&#39;Artistic-License-2.0 + Forced-Fairplay-Constraints&#39;</span>
+<span class="nv">STATUS</span><span class="o">=</span><span class="s1">&#39;beta&#39;</span>
+<span class="nv">MISSION</span><span class="o">=</span><span class="s1">&#39;Support extensions for setuptools / distutils.&#39;</span>
+<span class="nv">BUILDDATE</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
+
+cat <span class="s">&lt;&lt;EOF</span>
+<span class="s">################################################################</span>
+<span class="s">#                                                              #</span>
+<span class="s">$(printf &quot;# PROJECT = %-51s#&quot; $PROJECT)</span>
+<span class="s">#                                                              #</span>
+<span class="s"># Generate API reference - default: epydoc                     #</span>
+<span class="s">#                                                              #</span>
+<span class="s">################################################################</span>
+<span class="s">EOF</span>
+
+<span class="c1"># the absolute pathname for this source</span>
+<span class="nv">MYPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">%/*</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;X</span><span class="si">${</span><span class="nv">MYPATH</span><span class="p">#.</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;X</span><span class="nv">$MYPATH</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	<span class="nv">MYPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">MYPATH</span><span class="p">#.</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="nv">MYPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">MYPATH</span><span class="p">//</span><span class="se">\/\/</span><span class="p">/</span><span class="se">\/</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># input base directory</span>
+<span class="nv">INDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INDIR</span><span class="k">:-</span><span class="nv">$PWD</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;X</span><span class="si">${</span><span class="nv">INDIR</span><span class="p">#.</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;X</span><span class="nv">$INDIR</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	<span class="nv">INDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">INDIR</span><span class="p">#.</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="nv">INDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INDIR</span><span class="p">//</span><span class="se">\/\/</span><span class="p">/</span><span class="se">\/</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+<span class="nv">INDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">INDIR</span><span class="si">}</span><span class="s2">/&quot;</span>
+
+<span class="c1"># output base directory</span>
+<span class="nv">DOCX_BUILDDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="k">:-</span><span class="nv">build</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="k">if</span> <span class="o">[</span> ! -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">:</span><span class="nv">$PYTHONPATH</span><span class="s2">&quot;</span>
+
+<span class="c1"># document source directory</span>
+<span class="nv">DOCX_DOCSRC</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_DOCSRC</span><span class="k">:-</span><span class="nv">docsrc</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">DOCX_DOCSRC</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_DOCSRC</span><span class="p">%%/</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="c1"># document source directory</span>
+<span class="nv">DOCX_DOCNAME</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_DOCNAME</span><span class="k">:-</span><span class="nv">$PROJECT</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="nv">DOCX_VERBOSE</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_VERBOSE</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
+<span class="k">if</span><span class="o">((</span>DOCX_VERBOSE &gt; <span class="m">1</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">0</span><span class="p">##*/</span><span class="si">}</span><span class="s2">:Called:&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  </span><span class="nv">$0</span><span class="s2"> </span><span class="nv">$@</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">0</span><span class="p">##*/</span><span class="si">}</span><span class="s2">:Environ Options:&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_APIREF      = &#39;</span><span class="nv">$DOCX_APIREF</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_BUILDDIR    = &#39;</span><span class="nv">$DOCX_BUILDDIR</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_CONFDIR     = &#39;</span><span class="nv">$DOCX_CONFDIR</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_DOCNAME     = &#39;</span><span class="nv">$DOCX_DOCNAME</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_DOCSRC      = &#39;</span><span class="nv">$DOCX_DOCSRC</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_DOCTYPE     = &#39;</span><span class="nv">$DOCX_DOCTYPE</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_NAME        = &#39;</span><span class="nv">$DOCX_NAME</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_INDEXSRC    = &#39;</span><span class="nv">$DOCX_INDEXSRC</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_RAWDOC      = &#39;</span><span class="nv">$DOCX_RAWDOC</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_RELEASE     = &#39;</span><span class="nv">$DOCX_RELEASE</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_SRCDIR      = &#39;</span><span class="nv">$DOCX_SRCDIR</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_VERBOSE     = &#39;</span><span class="nv">$DOCX_VERBOSE</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  DOCX_VERSION     = &#39;</span><span class="nv">$DOCX_VERSION</span><span class="s2">&#39;&quot;</span>
+
+	<span class="nb">echo</span> <span class="s2">&quot;  PATH             = &#39;</span><span class="nv">$PATH</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  PYTHONPATH       = &#39;</span><span class="nv">$PYTHONPATH</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  MYPATH           = &#39;</span><span class="nv">$MYPATH</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;  INDIR            = &#39;</span><span class="nv">$INDIR</span><span class="s2">&#39;&quot;</span>
+	<span class="nb">echo</span>
+<span class="k">fi</span>
+
+<span class="c1">#</span>
+<span class="c1"># *** start exec ***</span>
+<span class="c1">#</span>
+
+<span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_CONFDIR</span><span class="si">}</span><span class="s2">/epydoc.conf&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	<span class="nv">REFCONF</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_CONFDIR</span><span class="si">}</span><span class="s2">/epydoc.conf&quot;</span>
+<span class="k">else</span>
+	<span class="nv">REFCONF</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_DOCSRC</span><span class="si">}</span><span class="s2">/conf/epydoc.conf&quot;</span>	
+<span class="k">fi</span>
+<span class="k">if</span> <span class="o">[</span> -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_CONFDIR</span><span class="si">}</span><span class="s2">/epydoc.css&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	<span class="nv">REFCSS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_CONFDIR</span><span class="si">}</span><span class="s2">/epydoc.css&quot;</span>
+<span class="k">else</span>
+	<span class="nv">REFCSS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_DOCSRC</span><span class="si">}</span><span class="s2">/conf/epydoc.css&quot;</span>	
+<span class="k">fi</span>
+
+
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> export PYTHONPATH=</span><span class="nv">$PWD</span><span class="s2">:</span><span class="nv">$PYTHONPATH</span><span class="s2">;&quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> epydoc &quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> --html &quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> --name &#39;</span><span class="si">${</span><span class="nv">DOCX_NAME</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="c1"># CALL=&quot;$CALL --url &#39;https://my/url&#39;&quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> --config &#39;</span><span class="si">${</span><span class="nv">REFCONF</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> --css &#39;</span><span class="si">${</span><span class="nv">REFCSS</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> --output &#39;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">/apidoc/</span><span class="si">${</span><span class="nv">DOCX_DOCNAME</span><span class="si">}</span><span class="s2">/apiref&#39; &quot;</span>
+
+<span class="k">if</span><span class="o">((</span>DOCX_VERBOSE &gt; <span class="m">1</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+	<span class="k">for</span><span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;DOCX_VERBOSE<span class="p">;</span>i++<span class="o">))</span><span class="p">;</span><span class="k">do</span>
+		<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> -v &quot;</span>
+	<span class="k">done</span>
+<span class="k">fi</span>
+
+<span class="nv">CALL</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$CALL</span><span class="s2"> </span><span class="nv">$@</span><span class="s2">&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -e <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">/sphinx/apidoc/apiref&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+	mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">/sphinx/apidoc/apiref&quot;</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="o">((</span>DOCX_VERBOSE &gt; <span class="m">1</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+	<span class="nb">echo</span>
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">0</span><span class="p">##*/</span><span class="si">}</span><span class="s2">:Call: </span><span class="nv">$CALL</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span>
+<span class="k">fi</span>
+
+
+<span class="nb">eval</span> <span class="nv">$CALL</span>
+
+<span class="nb">echo</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="download">
+<h2>7.2.7. Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="_static/call_apiref.sh">call_apiref.sh</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="call_doc.html" class="btn btn-neutral float-right" title="7.3. call_doc.sh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_apidoc.html" class="btn btn-neutral float-left" title="7.1. call_apidoc.sh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

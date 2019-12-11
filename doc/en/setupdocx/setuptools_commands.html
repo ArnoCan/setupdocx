@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2. Setup Document Commands &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6.3. Setup Extensions" href="setup_extensions.html" />
+    <link rel="prev" title="6.1. Build and Target Platforms" href="setup_platforms_build_target.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_part_documents.html">6. Documents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_platforms_build_target.html">6.1. Build and Target Platforms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. Setup Document Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-docx">6.2.1. build_docx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dist-docx">6.2.2. dist_docx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-docx">6.2.3. install_docx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-apidoc">6.2.4. build_apidoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-apiref">6.2.5. build_apiref</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup_extensions.html">6.3. Setup Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sw_design.html">6.4. Software Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_part_documents.html">6. Documents</a> &raquo;</li>
+        
+      <li>6.2. Setup Document Commands</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setuptools_commands.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-document-commands">
+<span id="setuplib-commands"></span><h1>6.2. Setup Document Commands<a class="headerlink" href="#setup-document-commands" title="Permalink to this headline">¶</a></h1>
+<p>The package <em>setupdocx</em> provides the creation, installation, and packaging of extended documentation.
+The provided tools offer a workflow for the local creation and installation during the authoring of
+the documents as well as the continous documentation during the software development process.
+The distribution for the remote installation is supported by the packaging command supporting a
+wide range of package types and archive formats.
+The commands are designed to be easily applicable by providing predefined configuration templates
+for altering the produced document view and type on the fly.
+Either automated, or by command line calls.</p>
+<div class="figure align-center" id="id27">
+<a class="reference internal image-reference" href="_images/document-flow.png"><img alt="_images/document-flow.png" src="_images/document-flow.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Documentation Workflow</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+<p>The produced types of documents comprise</p>
+<ul class="simple">
+<li><p>generated API documentation</p></li>
+<li><p>generated API references</p></li>
+<li><p>produced documents with optional integration of the API documentation and/or API references</p></li>
+<li><p>produced arbitrary documents</p></li>
+</ul>
+<div class="section" id="build-docx">
+<span id="setup-build-docx"></span><h2>6.2.1. build_docx<a class="headerlink" href="#build-docx" title="Permalink to this headline">¶</a></h2>
+<p>The command <em>build_docx</em> provides the creation of extended documentation based on a standard pattern.
+This includes optional the integrated creation of the API documentation and the API reference.
+The API documentation is hereby generated by a separate call which scans the code and creates
+documentation of a basic structure in printable style.
+In contars the optional API reference is based on a layout for the simplified navigation of large
+sets of structured interfaces in a JavaDoc style, thus mainly for <em>HTML</em> browsing.
+The two steps are tightly coupled with the processed document and provide the first basic
+integration.
+Thus these tools are bundled into one command, and could be optionally activated.
+The resulting document is a single bundled document ready for deployment.</p>
+<p>While the API documentation could be created as standalone document simply by setting the option
+<a class="reference internal" href="setuplib_cli.html#setupdocxbuild-options-rawdoc"><span class="std std-ref">–rawdoc</span></a>, the standalon API reference is available as a
+separate command, see <a class="reference internal" href="#setup-build-apiref"><span class="std std-ref">build_apiref</span></a>.</p>
+<p>The supported toolsets for the first release are <em>sphinx</em> and <em>epydoc</em>.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>CLI command</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-docx"><span class="std std-ref">build_docx</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>API class</p></td>
+<td><p><a class="reference external" href="_modules/setupdocx/build_docx.html#BuildDocX">setupdocx.build_docx.BuildDocX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>setup.cfg</p></td>
+<td><p><a class="reference internal" href="setup_conf.html#setupconf-build-docx"><span class="std std-ref">build_docx</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<p>The current release supports:</p>
+<ul class="simple">
+<li><p>Language: English</p></li>
+<li><p>Document format: HTML, PDF, EPUB, MAN (for integrated APIref HTML only)</p></li>
+<li><p>Document style: default based on ‘default’ of Python3</p></li>
+<li><p>Sidebar entries: Fixed / skippy with some configuraion options, template derived from ‘classic’</p></li>
+<li><p>Sphinx and Epydoc integration: ‘very basic’ fixed links by post-processing of HTML</p></li>
+<li><p>Platform support - package creation: supported for <em>bash</em>, tested on <em>Linux</em> only</p></li>
+<li><p>Platform support - distribution: any <a class="reference external" href="install.html#">supported platform</a></p></li>
+</ul>
+<p>Some project examples are:</p>
+<ul class="simple">
+<li><p>ePyUnit - <a class="reference internal" href="references.html#epyunit" id="id1"><span>[EPYUNIT]</span></a></p></li>
+<li><p>filesysobjects - <a class="reference internal" href="references.html#filesysobjects" id="id2"><span>[FILESYSOBJECTS]</span></a></p></li>
+<li><p>jsondata - <a class="reference internal" href="references.html#jsondata" id="id3"><span>[JSONDATA]</span></a></p></li>
+<li><p>platformids - OS Type and Distribution IDs of System Platforms - <a class="reference internal" href="references.html#platformids" id="id4"><span>[platformids]</span></a></p></li>
+<li><p>platformids - <a class="reference internal" href="references.html#platformids" id="id5"><span>[platformids]</span></a></p></li>
+<li><p>pysourceinfo - <a class="reference internal" href="references.html#pysourceinfo" id="id6"><span>[PYSOURCEINFO]</span></a></p></li>
+<li><p>pythonids - Python Interpreter and Compiler IDs - <a class="reference internal" href="references.html#pythonids" id="id7"><span>[pythonids]</span></a></p></li>
+<li><p>syscalls - <a class="reference internal" href="references.html#syscalls" id="id8"><span>[SYSCALLS]</span></a></p></li>
+<li><p>etc. …</p></li>
+</ul>
+</div>
+<div class="section" id="dist-docx">
+<span id="setup-dist-docx"></span><h2>6.2.2. dist_docx<a class="headerlink" href="#dist-docx" title="Permalink to this headline">¶</a></h2>
+<p>The command <em>dist_docx</em> provides the creation distribution packages for documents.
+This includes the first release of the draft integration of <em>sphinx</em> and <em>epydoc</em>.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>CLI command</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-dist-docx"><span class="std std-ref">dist_docx</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>API class</p></td>
+<td><p><a class="reference external" href="_modules/setupdocx/dist_docx.html#DistDocX">setupdocx.dist_docx.DistDocX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>setup.cfg</p></td>
+<td><p><a class="reference internal" href="setup_conf.html#setupconf-dist-docx"><span class="std std-ref">dist_docx</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<p>The current release supports:</p>
+<ul class="simple">
+<li><p>Language: English</p></li>
+<li><p>Docuent format: HTML, PDF, EPUB, MAN</p></li>
+<li><p>PAckage format: TAR, TARGZ, TGZ, XZ, ZIP</p></li>
+<li><p>Platform support - package creation: supported for <em>bash</em>, tested on <em>Linux</em> only</p></li>
+<li><p>Platform support - distribution: any <a class="reference external" href="install.html#">supported platform</a></p></li>
+</ul>
+</div>
+<div class="section" id="install-docx">
+<span id="setup-install-docx"></span><h2>6.2.3. install_docx<a class="headerlink" href="#install-docx" title="Permalink to this headline">¶</a></h2>
+<p>The <em>install_docx</em> command installs the created document by <em>build_docx</em> from the
+<em>build</em> directory into the target directory.
+By default either within the project into <em>doc</em>, or into the users home directory.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>CLI command</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-install-docx"><span class="std std-ref">install_docx</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>API class</p></td>
+<td><p><a class="reference external" href="_modules/setupdocx/install_docx.html#InstallDocX">setupdocx.install_docx.InstallDocX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>setup.cfg</p></td>
+<td><p><a class="reference internal" href="setup_conf.html#setupconf-install-docx"><span class="std std-ref">install_docx</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+</div>
+<div class="section" id="build-apidoc">
+<span id="setup-build-apidoc"></span><h2>6.2.4. build_apidoc<a class="headerlink" href="#build-apidoc" title="Permalink to this headline">¶</a></h2>
+<p>The command <em>build_apidoc</em> provides the standalone generation of the API standard documentation format.
+The standard call is embedded into <a class="reference internal" href="#setup-build-docx"><span class="std std-ref">build_docx</span></a> by the option
+<a class="reference internal" href="setuplib_cli.html#setupdocxbuild-options-apidoc"><span class="std std-ref">–apidoc</span></a>.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>CLI command</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apidoc"><span class="std std-ref">build_apidoc</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>API class</p></td>
+<td><p><a class="reference external" href="_modules/setupdocx/build_apidoc.html#BuildApidocX">setupdocx.build_apidoc.BuildApidocX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>setup.cfg</p></td>
+<td><p><a class="reference internal" href="setup_conf.html#setupconf-build-apidoc"><span class="std std-ref">build_apidoc</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<p>The current release supports:</p>
+<ul class="simple">
+<li><p>Language: English</p></li>
+<li><p>Document format: HTML, PDF, EPUB, MAN (for integrated APIref HTML only)</p></li>
+<li><p>Document style: default based on ‘default’ of Python3</p></li>
+<li><p>Sidebar entries: Fixed / skippy with some configuraion options, template derived from ‘classic’</p></li>
+<li><p>Sphinx and Epydoc integration: ‘very basic’ fixed links by post-processing of HTML</p></li>
+<li><p>Platform support - package creation: supported for <em>bash</em>, tested on <em>Linux</em> only</p></li>
+<li><p>Platform support - distribution: any <a class="reference external" href="install.html#">supported platform</a></p></li>
+</ul>
+<p>Some project examples are:</p>
+<ul class="simple">
+<li><p>ePyUnit - <a class="reference internal" href="references.html#epyunit" id="id11"><span>[EPYUNIT]</span></a></p></li>
+<li><p>filesysobjects - <a class="reference internal" href="references.html#filesysobjects" id="id12"><span>[FILESYSOBJECTS]</span></a></p></li>
+<li><p>jsondata - <a class="reference internal" href="references.html#jsondata" id="id13"><span>[JSONDATA]</span></a></p></li>
+<li><p>platformids - OS Type and Distribution IDs of System Platforms - <a class="reference internal" href="references.html#platformids" id="id14"><span>[platformids]</span></a></p></li>
+<li><p>pysourceinfo - <a class="reference internal" href="references.html#pysourceinfo" id="id15"><span>[PYSOURCEINFO]</span></a></p></li>
+<li><p>pythonids - Python Interpreter and Compiler IDs - <a class="reference internal" href="references.html#pythonids" id="id16"><span>[pythonids]</span></a></p></li>
+<li><p>syscalls - <a class="reference internal" href="references.html#syscalls" id="id17"><span>[SYSCALLS]</span></a></p></li>
+<li><p>etc. …</p></li>
+</ul>
+</div>
+<div class="section" id="build-apiref">
+<span id="setup-build-apiref"></span><h2>6.2.5. build_apiref<a class="headerlink" href="#build-apiref" title="Permalink to this headline">¶</a></h2>
+<p>The command <em>build_apiref</em> provides the creation of the standalone API reference in <em>JavaDoc</em> style.
+The standard call is embedded into <a class="reference internal" href="#setup-build-docx"><span class="std std-ref">build_docx</span></a> by the option
+<a class="reference internal" href="setuplib_cli.html#setupdocxbuild-options-apiref"><span class="std std-ref">–apiref</span></a>.</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 88%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>CLI command</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apiref"><span class="std std-ref">build_apiref</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>API class</p></td>
+<td><p><a class="reference external" href="_modules/setupdocx/build_apiref.html#BuildApirefX">setupdocx.build_apiref.BuildApirefX</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>setup.cfg</p></td>
+<td><p><a class="reference internal" href="setup_conf.html#setupconf-build-apiref"><span class="std std-ref">build_apiref</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<p>The current release supports:</p>
+<ul class="simple">
+<li><p>Language: English</p></li>
+<li><p>Docuent format: HTML, PDF</p></li>
+<li><p>Document style: default based on ‘default’ of epydoc</p></li>
+<li><p>Sidebar entries: Fixed</p></li>
+<li><p>Platform support - package creation: supported for <em>bash</em>, tested on <em>Linux</em> only</p></li>
+<li><p>Platform support - distribution: any <a class="reference external" href="install.html#">supported platform</a></p></li>
+</ul>
+<p>Some project examples are:</p>
+<ul class="simple">
+<li><p>ePyUnit - <a class="reference internal" href="references.html#epyunit" id="id19"><span>[EPYUNIT]</span></a></p></li>
+<li><p>filesysobjects - <a class="reference internal" href="references.html#filesysobjects" id="id20"><span>[FILESYSOBJECTS]</span></a></p></li>
+<li><p>jsondata - <a class="reference internal" href="references.html#jsondata" id="id21"><span>[JSONDATA]</span></a></p></li>
+<li><p>platformids - OS Type and Distribution IDs of System Platforms - <a class="reference internal" href="references.html#platformids" id="id22"><span>[platformids]</span></a></p></li>
+<li><p>platformids - <a class="reference internal" href="references.html#platformids" id="id23"><span>[platformids]</span></a></p></li>
+<li><p>pysourceinfo - <a class="reference internal" href="references.html#pysourceinfo" id="id24"><span>[PYSOURCEINFO]</span></a></p></li>
+<li><p>pythonids - Python Interpreter and Compiler IDs - <a class="reference internal" href="references.html#pythonids" id="id25"><span>[pythonids]</span></a></p></li>
+<li><p>syscalls - <a class="reference internal" href="references.html#syscalls" id="id26"><span>[SYSCALLS]</span></a></p></li>
+<li><p>etc. …</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setup_extensions.html" class="btn btn-neutral float-right" title="6.3. Setup Extensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup_platforms_build_target.html" class="btn btn-neutral float-left" title="6.1. Build and Target Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

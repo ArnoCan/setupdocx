@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.17. sphinx.ext.literalincludewrap &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. Indices and tables" href="index_part_indices.html" />
+    <link rel="prev" title="7.16. sphinx.ext.imagewrap" href="setupdocx.sphinx.ext.imagewrap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.17. sphinx.ext.literalincludewrap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-setupdocx.sphinx.ext.literalincludewrap">7.17.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">7.17.2. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#align-paths-to-top">7.17.2.1. align_paths_to_top</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#literalincludewrap">7.17.3. LiteralIncludeWrap</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run">7.17.3.1. run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">7.17.4. Exceptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.17. sphinx.ext.literalincludewrap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setupdocx.sphinx.ext.literalincludewrap.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><div class="section" id="sphinx-ext-literalincludewrap">
+<span id="index-0"></span><h1>7.17. sphinx.ext.literalincludewrap<a class="headerlink" href="#sphinx-ext-literalincludewrap" title="Permalink to this headline">¶</a></h1>
+<p>The Sphinx extension <em>setupdocx.sphinx.ext.literalincludewrap</em> adjusts the path argument to the top
+of the document tree.</p>
+<div class="section" id="module-setupdocx.sphinx.ext.literalincludewrap">
+<span id="module"></span><h2>7.17.1. Module<a class="headerlink" href="#module-setupdocx.sphinx.ext.literalincludewrap" title="Permalink to this headline">¶</a></h2>
+<p>Wrapper extension for the directive <em>literalinclude</em>.
+Extends path by search.</p>
+</div>
+<div class="section" id="functions">
+<h2>7.17.2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="align-paths-to-top">
+<h3>7.17.2.1. align_paths_to_top<a class="headerlink" href="#align-paths-to-top" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="setupdocx.sphinx.ext.literalincludewrap.align_paths_to_top">
+<code class="sig-prename descclassname">setupdocx.sphinx.ext.literalincludewrap.</code><code class="sig-name descname">align_paths_to_top</code><span class="sig-paren">(</span><em class="sig-param">inst</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/literalincludewrap.html#align_paths_to_top"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.literalincludewrap.align_paths_to_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aligns the provided include relative paths. Checks first
+the existence of the path, if not exists adds the upward relative
+path as offset and checks the existence again. In case of a match
+the path is replace by the existent, else kept unchanged.
+Ignores absolute paths.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="literalincludewrap">
+<h2>7.17.3. LiteralIncludeWrap<a class="headerlink" href="#literalincludewrap" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap">
+<em class="property">class </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.literalincludewrap.</code><code class="sig-name descname">LiteralIncludeWrap</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">arguments</em>, <em class="sig-param">options</em>, <em class="sig-param">content</em>, <em class="sig-param">lineno</em>, <em class="sig-param">content_offset</em>, <em class="sig-param">block_text</em>, <em class="sig-param">state</em>, <em class="sig-param">state_machine</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/literalincludewrap.html#LiteralIncludeWrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps the class <em>Literalinclude</em>. Adjusts paths and passes to parent class.
+Thus allows position independed include paths.</p>
+</dd></dl>
+
+<div class="section" id="run">
+<span id="spec-literalincludewrap-run"></span><h3>7.17.3.1. run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap.run">
+<code class="sig-prename descclassname">LiteralIncludeWrap.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/sphinx/ext/literalincludewrap.html#LiteralIncludeWrap.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process the paths by <em>self.setoptions</em>, and calls
+the run method of the parent class <em>LiteralInclude</em>. Inherits
+the option_spec from <em>sphinx.directives.code.LiteralInclude</em>.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>7.17.4. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrapError">
+<em class="property">exception </em><code class="sig-prename descclassname">setupdocx.sphinx.ext.literalincludewrap.</code><code class="sig-name descname">LiteralIncludeWrapError</code><a class="reference internal" href="_modules/setupdocx/sphinx/ext/literalincludewrap.html#LiteralIncludeWrapError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrapError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="index_part_indices.html" class="btn btn-neutral float-right" title="8. Indices and tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setupdocx.sphinx.ext.imagewrap.html" class="btn btn-neutral float-left" title="7.16. sphinx.ext.imagewrap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

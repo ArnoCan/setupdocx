@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>setupdocx.sphinx.ext.literalincludewrap &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../setupdocx.html">setupdocx</a> &raquo;</li>
+        
+      <li>setupdocx.sphinx.ext.literalincludewrap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for setupdocx.sphinx.ext.literalincludewrap</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Wrapper extension for the directive *literalinclude*.</span>
+<span class="sd">Extends path by search.  </span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">sphinx.directives</span> <span class="k">import</span> <span class="n">code</span>
+
+<span class="kn">from</span> <span class="nn">setupdocx</span> <span class="k">import</span> <span class="n">SetupDocXError</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="n">__author_email__</span> <span class="o">=</span> <span class="s1">&#39;acue_sf2@sourceforge.net&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
+<span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;45167c30-3261-4a38-9de4-d7151348ba48&quot;</span>
+
+
+<div class="viewcode-block" id="LiteralIncludeWrapError"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.literalincludewrap.html#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrapError">[docs]</a><span class="k">class</span> <span class="nc">LiteralIncludeWrapError</span><span class="p">(</span><span class="n">SetupDocXError</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<span class="n">_up</span> <span class="o">=</span> <span class="s1">&#39;..&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+<div class="viewcode-block" id="align_paths_to_top"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.literalincludewrap.html#setupdocx.sphinx.ext.literalincludewrap.align_paths_to_top">[docs]</a><span class="k">def</span> <span class="nf">align_paths_to_top</span><span class="p">(</span><span class="n">inst</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Aligns the provided include relative paths. Checks first</span>
+<span class="sd">    the existence of the path, if not exists adds the upward relative</span>
+<span class="sd">    path as offset and checks the existence again. In case of a match </span>
+<span class="sd">    the path is replace by the existent, else kept unchanged.</span>
+<span class="sd">    Ignores absolute paths. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span>
+
+    <span class="n">_base</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">srcdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+    <span class="n">_rel</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+    <span class="n">_depth</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_rel</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+    
+    <span class="n">_f</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">_f</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">_f</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_base</span> <span class="o">+</span> <span class="n">_rel</span> <span class="o">+</span> <span class="n">_f</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_base</span> <span class="o">+</span> <span class="n">_f</span><span class="p">):</span>
+                <span class="n">inst</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span>  <span class="n">_up</span> <span class="o">*</span> <span class="n">_depth</span> <span class="o">+</span> <span class="n">_f</span></div>
+
+
+<div class="viewcode-block" id="LiteralIncludeWrap"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.literalincludewrap.html#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap">[docs]</a><span class="k">class</span> <span class="nc">LiteralIncludeWrap</span><span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">LiteralInclude</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wraps the class *Literalinclude*. Adjusts paths and passes to parent class.</span>
+<span class="sd">    Thus allows position independed include paths.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="LiteralIncludeWrap.run"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.literalincludewrap.html#setupdocx.sphinx.ext.literalincludewrap.LiteralIncludeWrap.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Process the paths by *self.setoptions*, and calls </span>
+<span class="sd">        the run method of the parent class *LiteralInclude*. Inherits</span>
+<span class="sd">        the option_spec from *sphinx.directives.code.LiteralInclude*.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">align_paths_to_top</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">LiteralIncludeWrap</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span></div></div>
+
+
+<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize the extension.&quot;&quot;&quot;</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;literalincludewrap&#39;</span><span class="p">,</span> <span class="n">LiteralIncludeWrap</span><span class="p">)</span>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

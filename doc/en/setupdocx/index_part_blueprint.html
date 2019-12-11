@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Blueprint &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Command Line Interface" href="setuplib_cli.html" />
+    <link rel="prev" title="2. Platform Support" href="index_part_platform_support.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>3. Blueprint</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index_part_blueprint.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blueprint">
+<h1>3. Blueprint<a class="headerlink" href="#blueprint" title="Permalink to this headline">¶</a></h1>
+<p id="reference-architecture">The modern landscapes of information infrastructures are commonly designed
+and organized as stacks of heterogeneous runtime environments
+with comon frameworks.
+This frequently requires the installation of specific components for various
+platforms, including the generation of adapted packages, extended documentation,
+and the automation of distributed large-scale tests.
+The <em>setupdocxs</em> extends the <em>setuptools</em> for the required commands and options.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/setupdocx-architecture.png"><img alt="_images/setupdocx-architecture.png" src="_images/setupdocx-architecture.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">Figure: SetupDocX Integration</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The package <em>setupdocx</em> provides the logical functions</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/setupdocx-components.png"><img alt="_images/setupdocx-components.png" src="_images/setupdocx-components.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">Figure: SetupDocX functions <em>apidoc</em> and <em>apiref</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><em>build_docx</em></p>
+<ul>
+<li><p><em>doc</em> - Create documentation composed by edited reST modules and optional
+documentation generated from the code.</p></li>
+<li><p><em>apidoc</em> - Create documentation composed by edited reST modules and optional
+extracted inline documentation generated from the code.</p></li>
+</ul>
+</li>
+<li><p><em>build_apiref</em></p>
+<ul>
+<li><p><em>apiref</em> - Create optional <em>API</em> reference by automated code analysis extended
+by optional inline documentation.</p></li>
+</ul>
+</li>
+<li><p><em>dist_docx</em></p>
+<ul>
+<li><p>create archives and distribution packages</p></li>
+</ul>
+</li>
+<li><p><em>install_docx</em></p>
+<ul>
+<li><p>install locally from source-build or distribution packages</p></li>
+</ul>
+</li>
+</ul>
+<p>The current implemented components are:</p>
+<blockquote>
+<div><div class="indextab">
+<div class="nonbreakheadtab">
+<div class="autocoltab"><table class="docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 45%" />
+<col style="width: 25%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>function</p></th>
+<th class="head"><p>command</p></th>
+<th class="head"><p>wrapper</p></th>
+<th class="head"><p>builder</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>doc</p></td>
+<td><p><a class="reference internal" href="setuptools_commands.html#setup-build-docx"><span class="std std-ref">build_docx –apidoc=’’</span></a></p></td>
+<td><p><a class="reference internal" href="call_apidoc.html#call-apidoc"><span class="std std-ref">call_doc.sh</span></a></p></td>
+<td><p>sphinx-build(1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>apidoc</p></td>
+<td><p><a class="reference internal" href="setuptools_commands.html#setup-build-docx"><span class="std std-ref">build_docx</span></a></p></td>
+<td><p><a class="reference internal" href="call_apidoc.html#call-apidoc"><span class="std std-ref">call_apidoc.sh</span></a></p></td>
+<td><p>sphinx-build(1) + sphinx-apidoc(2)</p></td>
+</tr>
+<tr class="row-even"><td><p>apidoc</p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxbuild-options-apiref"><span class="std std-ref">build_docx option “–apiref”</span></a></p></td>
+<td><p><a class="reference internal" href="call_apidoc.html#call-apidoc"><span class="std std-ref">call_apidoc.sh</span></a>
++ <a class="reference internal" href="call_apiref.html#call-apiref"><span class="std std-ref">call_apiref.sh</span></a></p></td>
+<td><p>sphinx-build(1) + sphinx-apidoc(2)
++ epydoc(3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>apiref</p></td>
+<td><p><a class="reference internal" href="setuptools_commands.html#setup-build-apiref"><span class="std std-ref">build_apiref</span></a></p></td>
+<td><p><a class="reference internal" href="call_apiref.html#call-apiref"><span class="std std-ref">call_apiref.sh</span></a></p></td>
+<td><p>epydoc(3)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div></blockquote>
+<p><strong>(1)</strong>: see <a class="reference internal" href="references.html#sphinx" id="id1"><span>[sphinx]</span></a>, <a class="reference internal" href="references.html#sphinx-build" id="id2"><span>[sphinx-build]</span></a> - calls by default ‘build_doc’, “–apidoc=’’” deactivates the  ‘build_apidoc’ call</p>
+<p><strong>(2)</strong>: see <a class="reference internal" href="references.html#sphinx-apidoc" id="id3"><span>[sphinx-apidoc]</span></a></p>
+<p><strong>(3)</strong>: see <a class="reference internal" href="references.html#epydoc" id="id4"><span>[epydoc]</span></a>, requires for some syntax elements of Python3 some patches which will be publicly available soon</p>
+<p>A widespread of commonly required themes and formats for the automation
+of internal and external publishing is contained by prepared
+<a class="reference internal" href="configurations/index.html#configurationtemplates"><span class="std std-ref">configuration templates</span></a>,
+additonal are available.
+Custom themes and templates could be easily added.
+The automation of open publication on various local and remote sites - e.g.
+local filesystem, local servers, github-pages, ReadTheDocs.org, SourceForge.io - is
+available by the distribution command <a class="reference internal" href="setuptools_commands.html#setup-install-docx"><span class="std std-ref">install_docx</span></a>.</p>
+<p>The current extension commands provide the complete flow of document creation,
+packaging for distribution, and the installation.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/quickstart-flow.png"><img alt="_images/quickstart-flow.png" src="_images/quickstart-flow.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Basic Documentation Workflow  <a class="reference internal" href="setuptools_commands.html#setuplib-commands"><span class="std std-ref">more…</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<ul>
+<li><p>Document creation, packaging, distribution, and installation with <em>sphinx</em> and <em>epdydoc</em> integration:</p>
+<blockquote>
+<div><pre class="literal-block">python <a class="reference internal" href="setupdocx.setup.html#setuppysrc"><span class="std std-ref">setup.py</span></a> <a class="reference internal" href="setuptools_commands.html#setup-build-docx"><span class="std std-ref">build_docx</span></a>        # compiles documents
+python <a class="reference internal" href="setupdocx.setup.html#setuppysrc"><span class="std std-ref">setup.py</span></a> <a class="reference internal" href="setuptools_commands.html#setup-build-apiref"><span class="std std-ref">build_apiref</span></a>      # compiles documents
+python <a class="reference internal" href="setupdocx.setup.html#setuppysrc"><span class="std std-ref">setup.py</span></a> <a class="reference internal" href="setuptools_commands.html#setup-dist-docx"><span class="std std-ref">dist_docx</span></a>         # creates document distribution packages
+python <a class="reference internal" href="setupdocx.setup.html#setuppysrc"><span class="std std-ref">setup.py</span></a> <a class="reference internal" href="setuptools_commands.html#setup-install-docx"><span class="std std-ref">install_docx</span></a>      # installs local from build directory</pre>
+</div></blockquote>
+</li>
+</ul>
+<p>The processed programming languages, document types, and presentation styles could be easily adapted to a variety
+of predefined templates, and/or custom made designs.
+The customization provides for configurations, builder for various languages and document types, and
+presentation styles.
+The directory structure is the same for the the provided templates as required for user defined
+custom setups.</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/source-dir-tree.png"><img alt="_images/source-dir-tree.png" src="_images/source-dir-tree.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">Figure: Standard and custom template directories.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setuplib_cli.html" class="btn btn-neutral float-right" title="4. Command Line Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index_part_platform_support.html" class="btn btn-neutral float-left" title="2. Platform Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

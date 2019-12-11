@@ -1,0 +1,1376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.15. setup.conf &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.16. sphinx.ext.imagewrap" href="setupdocx.sphinx.ext.imagewrap.html" />
+    <link rel="prev" title="7.14. setup.py" href="setupdocx.setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.15. setup.conf</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#source">7.15.1. Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">7.15.2. Download</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.15. setup.conf</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setup_conf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-conf">
+<span id="id1"></span><h1>7.15. setup.conf<a class="headerlink" href="#setup-conf" title="Permalink to this headline">¶</a></h1>
+<p>Configuration parameters for the commands provided by <a class="reference internal" href="setuptools_commands.html#setuplib-commands"><span class="std std-ref">setupdocx</span></a> refer to:</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>summary</p></th>
+<th class="head"><p>conf section</p></th>
+<th class="head"><p>cli command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="setuptools_commands.html#setup-build-docx"><span class="std std-ref">setup.py &lt;any&gt;</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-metadata"><span class="std std-ref">metadata</span></a></p></td>
+<td><p>all</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="setuptools_commands.html#setup-build-docx"><span class="std std-ref">setup.py build_docx</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-build-docx"><span class="std std-ref">build_docx</span></a></p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-docx"><span class="std std-ref">build_docx</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="setuptools_commands.html#setup-dist-docx"><span class="std std-ref">setup.py dist_docx</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-dist-docx"><span class="std std-ref">dist_docx</span></a></p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-dist-docx"><span class="std std-ref">dist_docx</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="setuptools_commands.html#setup-install-docx"><span class="std std-ref">setup.py install_docx</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-install-docx"><span class="std std-ref">install_docx</span></a></p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-install-docx"><span class="std std-ref">install_docx</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="setuptools_commands.html#setup-build-apidoc"><span class="std std-ref">setup.py build_apidoc</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-build-apidoc"><span class="std std-ref">build_apidoc</span></a></p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apidoc"><span class="std std-ref">build_apidoc</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="setuptools_commands.html#setup-build-apiref"><span class="std std-ref">setup.py build_apiref</span></a></p></td>
+<td><p><a class="reference internal" href="#setupconf-build-apiref"><span class="std std-ref">build_apiref</span></a></p></td>
+<td><p><a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apiref"><span class="std std-ref">build_apiref</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The configuration data is used as static default values for the assigned command or metadata.
+The evaluation is processed in the order with the falling priority:</p>
+<ol class="arabic simple">
+<li><p>command line parameters</p></li>
+<li><p><em>setup.conf</em> config</p></li>
+<li><p>default values from the derived class provided by the member <em>docx_defaults</em>.</p></li>
+<li><p>hard coded final defaults</p></li>
+</ol>
+<p>Be aware that some parameters are combined for resulting parameter values.
+When these are set static the values are used, and further evaluation is suppressed.</p>
+<p>For additional information refer to <em>distutils</em> <a class="reference internal" href="references.html#distutils" id="id2"><span>[distutils]</span></a>.</p>
+<ul class="simple" id="setupconf-metadata">
+<li><dl class="simple">
+<dt>metadata</dt><dd><p>The section <em>[metadata]</em> contains the parameters supported by the classes derived from
+<em>distutils.dist.Distribution</em>.
+This comprises common data and global options of the <em>setup</em> call within <em>setup.py</em>.
+See <a class="reference internal" href="references.html#distutils" id="id3"><span>[distutils]</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="setupconf-build-docx">
+<li><dl class="simple">
+<dt>build_docx</dt><dd><p>The section <em>[build_docx]</em> provides default values for static parameters used by <em>build_docx</em>.
+See <a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-docx"><span class="std std-ref">build_docx</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="setupconf-dist-docx">
+<li><dl class="simple">
+<dt>dist_docx</dt><dd><p>The section <em>[dist_docx]</em> provides default values for static parameters used by <em>dist_docx</em>.
+See <a class="reference internal" href="setuplib_cli.html#setupdocxcommands-dist-docx"><span class="std std-ref">dist_docx</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="setupconf-install-docx">
+<li><dl class="simple">
+<dt>install_docx</dt><dd><p>The section <em>[dist_docx]</em> provides default values for static parameters used by <em>install_docx</em>.
+See <a class="reference internal" href="setuplib_cli.html#setupdocxcommands-install-docx"><span class="std std-ref">install_docx</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="setupconf-build-apidoc">
+<li><dl class="simple">
+<dt>build_apidoc</dt><dd><p>The section <em>[build_apidoc]</em> provides default values for static parameters used by <em>build_apidoc</em>.
+See <a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apidoc"><span class="std std-ref">build_apidoc</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple" id="setupconf-build-apiref">
+<li><dl class="simple">
+<dt>build_apiref</dt><dd><p>The section <em>[build_apiref]</em> provides default values for static parameters used by <em>build_apiref</em>.
+See <a class="reference internal" href="setuplib_cli.html#setupdocxcommands-build-apiref"><span class="std std-ref">build_apiref</span></a>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="source">
+<span id="setupconfsrc"></span><h2>7.15.1. Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<p>The <em>setup.conf</em> provides static default values for command line options.
+Be aware, that the most of the values are assigned dynamic at runtime.
+This in particular comprises the combination of multiple entries, which is
+omitted in case of provided configuration values.
+The use of these values has to be considered thoroughly.
+See <a class="reference internal" href="references.html#distutils" id="id4"><span>[distutils]</span></a>.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
+<span class="p">[</span><span class="n">build_docx</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># the static configuration options, these serve as defaults when the corresponding</span>
+<span class="c1"># command line option is present </span>
+<span class="c1">#</span>
+
+<span class="c1"># activates --apiref  </span>
+<span class="c1"># apiref = </span>
+
+
+<span class="c1"># default: search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apidoc.sh</span>
+<span class="c1"># build-apidoc =  </span>
+
+
+<span class="c1"># default:search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apiref.sh</span>
+<span class="c1"># build_apiref = </span>
+
+
+<span class="c1"># default:search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_doc.sh</span>
+<span class="c1"># build_doc = </span>
+
+
+<span class="c1"># root of the build directory</span>
+<span class="c1"># build_dir = build/</span>
+
+
+<span class="c1"># cleans old output</span>
+<span class="c1"># clean = False</span>
+
+
+<span class="c1"># configuration directory</span>
+<span class="c1"># conf_dir = &lt;docsource&gt;/conf/</span>
+
+
+<span class="c1"># attribute of derived class &lt;&lt;self.name&gt;&gt;</span>
+<span class="c1"># docname = setupdocx</span>
+
+
+<span class="c1"># document source</span>
+<span class="c1"># docsource = docsrc/</span>
+
+
+<span class="c1"># created document type</span>
+<span class="c1"># see --help-doctypes</span>
+<span class="c1"># doctype = html</span>
+
+
+<span class="c1"># top index file to be used as replacement for the document</span>
+<span class="c1"># indexsrc = docsrc/index.rst</span>
+
+
+<span class="c1"># attribute of derived class &lt;&lt;self.name&gt;&gt;</span>
+<span class="c1"># name = setupdocx</span>
+
+
+<span class="c1"># &lt;year&gt;.&lt;month&gt;.&lt;day&gt;</span>
+<span class="c1"># release = test-release </span>
+
+
+<span class="c1"># path list of source directories to be processed by call_apidoc.sh and call_apiref.sh</span>
+<span class="c1"># the syntax is a semicolon separated list, e.g.:</span>
+<span class="c1">#</span>
+<span class="c1">#   srcdir = setupdocx;bin</span>
+<span class="c1">#</span>
+<span class="c1"># srcdir = setupdocx;bin;utilities</span>
+
+
+<span class="c1"># the document version</span>
+<span class="c1"># version =  </span>
+
+<span class="c1"># optonal coyright text, default: (C) &lt;year&gt; &lt;author&gt;</span>
+<span class="c1"># copyright =</span>
+
+
+<span class="p">[</span><span class="n">install_docx</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># installs form a directory - by default </span>
+<span class="c1">#</span>
+
+<span class="c1"># package name, changes &lt;&lt;self.name&gt;&gt; of the instance of install_docx</span>
+<span class="c1"># resulting in the created document &lt;build-dir&gt;/apidoc/&lt;name-or-docname&gt;</span>
+<span class="c1"># name = &lt;&lt;self.name&gt;&gt;</span>
+
+
+<span class="c1"># installation source tree</span>
+<span class="c1"># build-dir = build/</span>
+
+
+<span class="c1"># document name, could be different from --name,</span>
+<span class="c1"># used as the input and the output name of the document</span>
+<span class="c1"># resulting in the created document &lt;build-dir&gt;/apidoc/&lt;name-or-docname&gt;</span>
+<span class="c1"># docname = &lt;self.name&gt; </span>
+
+
+<span class="c1"># installation target directory, PEP-370, user data directory</span>
+<span class="c1"># dist-dir = /user/data/ + doc/en/html/man3</span>
+
+
+<span class="c1"># document type to install</span>
+<span class="c1"># see --help-doctypes</span>
+<span class="c1"># doctype = html </span>
+
+
+<span class="c1"># print only, do not execute</span>
+<span class="c1"># no-exec = 0</span>
+
+
+<span class="c1"># debug flag, higher numbers raise level</span>
+<span class="c1"># debug = 0</span>
+
+
+<span class="c1"># verbose flag, higher numbers raise level</span>
+<span class="c1"># verbose = 0</span>
+
+
+<span class="p">[</span><span class="n">dist_docx</span><span class="p">]</span>
+
+<span class="c1"># append files to existing archive, default: create new</span>
+<span class="c1"># can be used to add new unpack-dir</span>
+<span class="c1"># append = </span>
+
+
+<span class="c1"># document source location</span>
+<span class="c1"># build-dir = build/</span>
+
+
+<span class="c1"># debug flag</span>
+<span class="c1"># debug = 0</span>
+
+
+<span class="c1"># document type to pack</span>
+<span class="c1"># see --help-doctypes</span>
+<span class="c1"># doctype = html</span>
+
+
+<span class="c1"># type of the created package</span>
+<span class="c1"># see --help-formats</span>
+<span class="c1"># format = zip</span>
+
+
+<span class="c1"># changes package name</span>
+<span class="c1"># name = &lt;self.name&gt;</span>
+
+
+<span class="c1"># input package name</span>
+<span class="c1"># name-in = &lt;self.name&gt;</span>
+
+
+<span class="c1"># output package name</span>
+<span class="c1"># name-out = &lt;self.name&gt;</span>
+
+
+<span class="c1"># sets version of created archive, else date</span>
+<span class="c1"># set-version = &lt;year&gt;.&lt;month&gt;.&lt;day&gt;</span>
+
+
+<span class="c1"># archive location for creation</span>
+<span class="c1"># dist-dir = dist/</span>
+
+
+<span class="c1">#</span>
+<span class="c1"># name of prefix directory to unpack to, also archive prefix,</span>
+<span class="c1"># relative subdirectories only,</span>
+<span class="c1">#</span>
+<span class="c1">#   self.release = &lt;self.name&gt;-doc-&lt;self.doctype&gt;-&lt;self.version&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># for example setupdocx-doc-html-20190501</span>
+<span class="c1">#</span>
+<span class="c1"># unpack-dir = self.release</span>
+
+
+
+<span class="p">[</span><span class="n">build_apiref</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># the static configuration options, these serve as defaults when the corresponding</span>
+<span class="c1"># command line option is present </span>
+<span class="c1">#</span>
+
+<span class="c1"># default:search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apiref.sh</span>
+<span class="c1"># build_apiref = </span>
+
+
+<span class="c1"># root of the build directory</span>
+<span class="c1"># build_dir = build/</span>
+
+
+<span class="c1"># cleans old output</span>
+<span class="c1"># clean = False</span>
+
+
+<span class="c1"># configuration directory</span>
+<span class="c1"># conf_dir = &lt;docsource&gt;/conf/</span>
+
+
+<span class="c1"># attribute of derived class &lt;&lt;self.name&gt;&gt;</span>
+<span class="c1"># docname = setupdocx</span>
+
+
+<span class="c1"># document source</span>
+<span class="c1"># docsource = docsrc/</span>
+
+
+<span class="c1"># created document type</span>
+<span class="c1"># see --help-doctypes</span>
+<span class="c1"># doctype = html</span>
+
+
+<span class="c1"># attribute of derived class &lt;&lt;self.name&gt;&gt;</span>
+<span class="c1"># name = setupdocx</span>
+
+
+<span class="c1"># &lt;year&gt;.&lt;month&gt;.&lt;day&gt;</span>
+<span class="c1"># release = test-release </span>
+
+
+<span class="c1"># path list of source directories to be processed by call_apidoc.sh and call_apiref.sh</span>
+<span class="c1"># the syntax is a semicolon separated list, e.g.:</span>
+<span class="c1">#</span>
+<span class="c1">#   srcdir = setupdocx;bin</span>
+<span class="c1">#</span>
+<span class="c1"># srcdir = setupdocx;bin;utilities</span>
+
+
+<span class="c1"># the document version</span>
+<span class="c1"># version=  </span>
+
+
+<span class="p">[</span><span class="n">metadata</span><span class="p">]</span>
+<span class="c1">#</span>
+<span class="c1"># some minor static metadata are located here, while the main metada remains in &#39;setup.py&#39;, </span>
+<span class="c1"># in particular the combined and dynamic evaluated parameters </span>
+<span class="c1">#</span>
+
+<span class="c1"># maintainer</span>
+<span class="n">maintainer</span> <span class="o">=</span> <span class="n">acue</span>
+
+
+<span class="c1"># maintainer email</span>
+<span class="n">maintainer_email</span> <span class="o">=</span> <span class="n">acue_sf2</span><span class="nd">@sourceforge</span><span class="o">.</span><span class="n">net</span>
+
+
+<span class="c1"># urls</span>
+<span class="n">project_urls</span> <span class="o">=</span> 
+	<span class="n">home</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">setupdocx</span><span class="s2">&quot;</span>
+	<span class="n">documents</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">setupdocx</span><span class="o">.</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">io</span><span class="o">/</span>
+	<span class="n">runtimerepo</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">downloads</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">project</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">downloads1</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ArnoCan</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">source1</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sourceforge</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">source2</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bitbucket</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">acue</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span>
+    <span class="n">tracker</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ArnoCan</span><span class="o">/</span><span class="n">setupdocx</span><span class="o">/</span><span class="n">issues</span>
+
+
+<span class="c1"># the classification of this package</span>
+<span class="n">classifiers</span> <span class="o">=</span> 
+	<span class="n">Framework</span> <span class="p">::</span> <span class="n">Setuptools</span> <span class="n">Plugin</span>
+    <span class="n">Development</span> <span class="n">Status</span> <span class="p">::</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">Alpha</span>
+    <span class="n">Environment</span> <span class="p">::</span> <span class="n">Console</span>
+    <span class="n">Environment</span> <span class="p">::</span> <span class="n">MacOS</span> <span class="n">X</span>
+    <span class="n">Environment</span> <span class="p">::</span> <span class="n">Other</span> <span class="n">Environment</span>
+    <span class="n">Environment</span> <span class="p">::</span> <span class="n">Win32</span> <span class="p">(</span><span class="n">MS</span> <span class="n">Windows</span><span class="p">)</span>
+    <span class="n">Environment</span> <span class="p">::</span> <span class="n">X11</span> <span class="n">Applications</span>
+    <span class="n">Framework</span> <span class="p">::</span> <span class="n">IPython</span>
+    <span class="n">Intended</span> <span class="n">Audience</span> <span class="p">::</span> <span class="n">Developers</span>
+    <span class="n">Intended</span> <span class="n">Audience</span> <span class="p">::</span> <span class="n">System</span> <span class="n">Administrators</span>
+    <span class="n">License</span> <span class="p">::</span> <span class="n">Free</span> <span class="n">To</span> <span class="n">Use</span> <span class="n">But</span> <span class="n">Restricted</span>
+    <span class="n">License</span> <span class="p">::</span> <span class="n">OSI</span> <span class="n">Approved</span> <span class="p">::</span> <span class="n">Artistic</span> <span class="n">License</span>
+    <span class="n">Natural</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">English</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">MacOS</span> <span class="p">::</span> <span class="n">MacOS</span> <span class="n">X</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Microsoft</span> <span class="p">::</span> <span class="n">Windows</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Other</span> <span class="n">OS</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span> <span class="p">::</span> <span class="n">BSD</span> <span class="p">::</span> <span class="n">FreeBSD</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span> <span class="p">::</span> <span class="n">BSD</span> <span class="p">::</span> <span class="n">OpenBSD</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span> <span class="p">::</span> <span class="n">Linux</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span> <span class="p">::</span> <span class="n">Other</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">POSIX</span> <span class="p">::</span> <span class="n">SunOS</span><span class="o">/</span><span class="n">Solaris</span>
+    <span class="n">Operating</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Unix</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">C</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">C</span><span class="o">++</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Cython</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Java</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mi">2</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">2.7</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mi">3</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.5</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.6</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.7</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.8</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="mf">3.9</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="n">Implementation</span> <span class="p">::</span> <span class="n">CPython</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="n">Implementation</span> <span class="p">::</span> <span class="n">IronPython</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="n">Implementation</span> <span class="p">::</span> <span class="n">Jython</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Python</span> <span class="p">::</span> <span class="n">Implementation</span> <span class="p">::</span> <span class="n">PyPy</span>
+    <span class="n">Programming</span> <span class="n">Language</span> <span class="p">::</span> <span class="n">Unix</span> <span class="n">Shell</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Home</span> <span class="n">Automation</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Internet</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Scientific</span><span class="o">/</span><span class="n">Engineering</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Scientific</span><span class="o">/</span><span class="n">Engineering</span> <span class="p">::</span> <span class="n">Interface</span> <span class="n">Engine</span><span class="o">/</span><span class="n">Protocol</span> <span class="n">Translator</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Security</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Build</span> <span class="n">Tools</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Code</span> <span class="n">Generators</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Compilers</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Debuggers</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Embedded</span> <span class="n">Systems</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Interpreters</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Libraries</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Libraries</span> <span class="p">::</span> <span class="n">Application</span> <span class="n">Frameworks</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Libraries</span> <span class="p">::</span> <span class="n">Java</span> <span class="n">Libraries</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Libraries</span> <span class="p">::</span> <span class="n">Python</span> <span class="n">Modules</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Libraries</span> <span class="p">::</span> <span class="n">pygame</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Pre</span><span class="o">-</span><span class="n">processors</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Development</span> <span class="p">::</span> <span class="n">Testing</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Distributed</span> <span class="n">Computing</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Installation</span><span class="o">/</span><span class="n">Setup</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Logging</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Monitoring</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Networking</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Operating</span> <span class="n">System</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Shells</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Software</span> <span class="n">Distribution</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">System</span> <span class="n">Shells</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">System</span> <span class="p">::</span> <span class="n">Systems</span> <span class="n">Administration</span>
+    <span class="n">Topic</span> <span class="p">::</span> <span class="n">Utilities</span>
+
+
+<span class="c1"># keywords</span>
+<span class="n">keywords</span> <span class="o">=</span> <span class="n">ARM</span>
+	<span class="n">GhostBSD</span>
+	<span class="n">LinuxMint</span>
+	<span class="n">Manjaro</span>
+	<span class="n">TrueOS</span>
+    <span class="n">Aix</span>
+    <span class="n">Alpine</span>
+    <span class="n">AlpineLinux</span>
+    <span class="n">Arch</span>
+    <span class="n">ArchLinux</span>
+    <span class="n">ArchLinuxARM</span>
+    <span class="n">Armbian</span>
+    <span class="n">BSD</span>
+    <span class="n">BlackArch</span>
+    <span class="n">BlackArchLinux</span>
+    <span class="n">CPython</span>
+    <span class="n">CentOS</span>
+    <span class="n">Cygwin</span>
+    <span class="n">Darwin</span>
+    <span class="n">Debian</span>
+    <span class="n">Distribution</span>
+    <span class="n">DragonFlyBSD</span>
+    <span class="n">Fedora</span>
+    <span class="n">FigureWrap</span>
+    <span class="n">FreeBSD</span>
+    <span class="n">Gentoo</span>
+    <span class="n">HP</span><span class="o">-</span><span class="n">UX</span>
+    <span class="n">IPython</span>
+    <span class="n">ImageWrap</span>
+    <span class="n">IronPython</span>
+    <span class="n">Java</span>
+    <span class="n">Java</span>
+    <span class="n">Jython</span>
+    <span class="n">Kali</span>
+    <span class="n">KaliLinux</span>
+    <span class="n">Linux</span>
+    <span class="n">MacOS</span>
+    <span class="n">Minix</span>
+    <span class="n">Minx3</span>
+    <span class="n">NetBSD</span>
+    <span class="n">OS</span><span class="o">-</span><span class="n">X</span>
+    <span class="n">OpenBSD</span>
+    <span class="n">OpenSUSE</span>
+    <span class="n">OpenWRT</span>
+    <span class="n">PyPy</span>
+    <span class="n">Python2</span>
+    <span class="n">Python3</span>
+    <span class="n">RHEL</span>
+    <span class="n">Raspbian</span>
+    <span class="n">ReactOS</span>
+    <span class="n">SLES</span>
+    <span class="n">Scriptin</span>
+    <span class="n">SnowLeopard</span>
+    <span class="n">Solaris</span>
+    <span class="n">Sphinx</span>
+    <span class="n">Sphinx</span>
+    <span class="n">SuSE</span>
+    <span class="n">SunOS</span>
+    <span class="n">SunOS5</span>
+    <span class="n">Ubuntu</span>
+    <span class="n">Unix</span>
+    <span class="n">WSL</span>
+    <span class="n">WSL</span> <span class="mf">1.0</span>
+    <span class="n">WSL</span> <span class="mf">2.0</span>
+    <span class="n">WSL</span><span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">WSL</span><span class="o">-</span><span class="mf">2.0</span>
+    <span class="n">Windows</span>
+    <span class="n">Windows10</span>
+    <span class="n">Windows2003</span>
+    <span class="n">Windows2008</span>
+    <span class="n">Windows2010</span>
+    <span class="n">Windows2012</span>
+    <span class="n">Windows2016</span>
+    <span class="n">Windows2019</span>
+    <span class="n">Windows2019se</span>
+    <span class="n">Windows7</span>
+    <span class="n">Windows8</span>
+    <span class="n">WindowsXP</span>
+    <span class="n">bitarray</span>
+    <span class="n">bitmask</span>
+    <span class="n">build_apidoc</span>
+    <span class="n">build_apiref</span>
+    <span class="n">build_docx</span>
+    <span class="n">commands</span>
+    <span class="n">distutils</span>
+    <span class="n">doc</span>
+    <span class="n">documentation</span>
+    <span class="n">docx</span>
+    <span class="nb">enumerate</span>
+    <span class="n">epydoc</span>
+    <span class="n">extension</span>
+    <span class="n">hexvalue</span>
+    <span class="n">image</span>
+    <span class="n">imagewrap</span>
+    <span class="n">info</span>
+    <span class="n">install_docx</span>
+    <span class="nb">list</span>
+    <span class="n">literalincludewrap</span>
+    <span class="n">mkdocs</span>
+    <span class="n">pandoc</span>
+    <span class="n">pkg_docx</span>
+    <span class="n">setup</span>
+    <span class="n">setup</span> <span class="n">commands</span>
+    <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+    <span class="n">setuplib</span>
+    <span class="n">setuplib</span><span class="o">.</span><span class="n">dist</span><span class="o">.</span><span class="n">Distribution</span>
+    <span class="n">setuptools</span>
+    <span class="n">show</span>
+    <span class="n">sphinx</span>
+    <span class="n">sphinx</span> <span class="n">extensions</span>
+    <span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span>
+    <span class="n">sphinx</span><span class="o">-</span><span class="n">build</span>
+    <span class="n">sphinx</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">imagewrap</span>
+    <span class="n">sphinx</span><span class="o">.</span><span class="n">ext</span><span class="o">.</span><span class="n">literalincludewrap</span>
+
+
+<span class="n">platforms</span> <span class="o">=</span> <span class="n">Aix</span>
+	<span class="n">GhostBSD</span>
+	<span class="n">LinuxMint</span>
+	<span class="n">Manjaro</span>
+	<span class="n">TrueOS</span>
+    <span class="n">AlpineLinux</span>
+    <span class="n">ArchLinux</span>
+    <span class="n">ArchLinuxARM</span>
+    <span class="n">Armbian</span>
+    <span class="n">BlackArchLinux</span>
+    <span class="n">CentOS</span>
+    <span class="n">Cygwin</span>
+    <span class="n">Darwin</span>
+    <span class="n">Debian</span>
+    <span class="n">DragonFlyBSD</span>
+    <span class="n">FedoraLinux</span>
+    <span class="n">FreeBSD</span>
+    <span class="n">GentooLinux</span>
+    <span class="n">HP</span><span class="o">-</span><span class="n">UX</span>
+    <span class="n">KaliLinux</span>
+    <span class="n">MacOS</span>
+    <span class="n">Minix</span>
+    <span class="n">Minx3</span>
+    <span class="n">NetBSD</span>
+    <span class="n">OS</span><span class="o">-</span><span class="n">X</span>
+    <span class="n">OpenBSD</span>
+    <span class="n">OpenSUSE</span>
+    <span class="n">OpenWRT</span>
+    <span class="n">RHEL</span>
+    <span class="n">Raspbian</span>
+    <span class="n">ReactOS</span>
+    <span class="n">SLES</span>
+    <span class="n">Solaris</span>
+    <span class="n">SuSE</span>
+    <span class="n">SunOS</span>
+    <span class="n">SunOS5</span>
+    <span class="n">Ubuntu</span>
+    <span class="n">Unix</span>
+    <span class="n">Windows10</span>
+    <span class="n">Windows2003</span>
+    <span class="n">Windows2008</span>
+    <span class="n">Windows2010</span>
+    <span class="n">Windows2012</span>
+    <span class="n">Windows2016</span>
+    <span class="n">Windows2019</span>
+    <span class="n">Windows2019se</span>
+    <span class="n">Windows7</span>
+    <span class="n">Windows8</span>
+    <span class="n">WindowsXP</span>
+
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="download">
+<h2>7.15.2. Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="_static/setup.conf">setup.conf</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setupdocx.sphinx.ext.imagewrap.html" class="btn btn-neutral float-right" title="7.16. sphinx.ext.imagewrap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setupdocx.setup.html" class="btn btn-neutral float-left" title="7.14. setup.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

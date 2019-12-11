@@ -1,0 +1,459 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.9. setupdocx.__init__ &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.10. setupdocx.build_apiref" href="setupdocx.build_apiref.html" />
+    <link rel="prev" title="7.8. Makefile_docx" href="makefile.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.9. setupdocx.__init__</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-setupdocx.__init__">7.9.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">7.9.2. Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#conf-list">7.9.2.1. conf_list</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">7.9.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.9. setupdocx.__init__</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setupdocx.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab"><div class="section" id="setupdocx-init">
+<h1>7.9. setupdocx.__init__<a class="headerlink" href="#setupdocx-init" title="Permalink to this headline">¶</a></h1>
+<p>Common functions and definitions.</p>
+<div class="section" id="module-setupdocx.__init__">
+<span id="module"></span><h2>7.9.1. Module<a class="headerlink" href="#module-setupdocx.__init__" title="Permalink to this headline">¶</a></h2>
+<p>Library for the creation of documentation.
+Supports he management of multiple builders, output formats, and
+templates.</p>
+<p>Contains components for the creation of API documentation, API references in Javadoc style,
+variable composition of document variants, packaging, and installation.</p>
+</div>
+<div class="section" id="functions">
+<h2>7.9.2. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conf-list">
+<span id="api-setupdocx-conf-list"></span><h3>7.9.2.1. conf_list<a class="headerlink" href="#conf-list" title="Permalink to this headline">¶</a></h3>
+<dl class="function">
+<dt id="setupdocx.conf_list">
+<code class="sig-prename descclassname">setupdocx.</code><code class="sig-name descname">conf_list</code><span class="sig-paren">(</span><em class="sig-param">baselist=None</em>, <em class="sig-param">**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx.html#conf_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.conf_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists current available configuration templates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>baselist</strong> – <p>List of base directories to scan:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baselist</span> <span class="p">:</span><span class="o">=</span> <span class="o">&lt;</span><span class="n">base</span><span class="o">-</span><span class="n">directory</span><span class="o">&gt;</span> <span class="p">[,</span> <span class="o">&lt;</span><span class="n">baselist</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Supports groups and nested subgroups of templates.
+Expects the following subdirectory structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;base-directory&gt;
+└── &lt;builder&gt;
+    ├── &lt;conf-template-name&gt;
+    │   ├── &lt;doctype&gt;
+    │
+    ├── &lt;conf-template-name&gt;
+    │   ├── &lt;doctype&gt;
+    │
+    ├── &lt;conf-template-group-name&gt;
+    │   ├── &lt;conf-template-name&gt;
+    │   │   ├── &lt;doctype&gt;
+    │
+    ├── &lt;conf-template-group-name&gt;
+    │   ├── &lt;conf-template-group-name&gt;
+    │   │   ├── &lt;conf-template-name&gt;
+    │   │   │   ├── &lt;doctype&gt;
+    │
+    ├── ...
+</pre></div>
+</div>
+<p>The default themes as provided by <em>setupdocx</em> are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>setupdocx/config/
+├── epydoc
+│   ├── embedded
+│   │   └── sphinx
+│   │       ├── rtd
+│   │       │   └── html
+│   │       │       └── iframe
+│   │       └── white-green
+│   │           └── html
+│   │               └── iframe
+│   └── standalone
+│       └── html
+├── mkdocs
+│   ├── default
+│   │   └── html
+│   └── rtd
+│       └── html
+├── pandoc
+└── sphinx
+    ├── agogo
+    │   └── html
+    ├── alabaster
+    │   └── html
+    ├── bizstyle
+    │   └── html
+    ├── bootstrap
+    │   └── html
+    ├── default
+    │   └── html
+    ├── guzzle
+    │   └── html
+    ├── nature
+    │   └── html
+    ├── rtd
+    │   ├── devhelp
+    │   ├── epub
+    │   ├── html
+    │   ├── htmlhelp
+    │   ├── man
+    │   ├── pdf
+    │   └── singlehtml
+    ├── rtd-github
+    │   └── html
+    ├── rtd-readthedocs
+    │   └── html
+    ├── sphinxdoc
+    └── traditional
+        └── html
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>kargs</strong> – <dl>
+<dt>depth:</dt><dd><p>The depth of subdirectories within the configuration directories:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="p">:</span><span class="o">=</span> <span class="nb">int</span> <span class="o">&gt;=</span><span class="mi">0</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</dd>
+<dt>display:</dt><dd><p>Type of display for configuration names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">display</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+      <span class="kc">None</span>      <span class="c1"># name only</span>
+    <span class="o">|</span> <span class="n">std</span>       <span class="c1">#   alias for None</span>
+    <span class="o">|</span> <span class="n">standard</span>  <span class="c1">#   alias for None</span>
+    <span class="o">|</span> <span class="n">full</span>      <span class="c1"># as provided by baselist, either absolute or relative path</span>
+    <span class="o">|</span> <span class="nb">abs</span>       <span class="c1"># absolute path</span>
+    <span class="o">|</span> <span class="n">rel</span>       <span class="c1"># relative path</span>
+<span class="p">)</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</dd>
+<dt>filter:</dt><dd><p>Python-Regular expression as filter. The provided filter is used literally as
+a regular expression which is compiled and used for ‘re.search()’ operations.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span><span class="o">=</span><span class="n">agogo</span><span class="p">,</span><span class="n">alabaster</span>
+<span class="nb">filter</span><span class="o">=</span><span class="n">a</span><span class="o">.*</span>
+<span class="nb">filter</span><span class="o">=</span><span class="p">(</span><span class="n">rtd</span><span class="p">)</span>
+<span class="nb">filter</span><span class="o">=</span><span class="n">pdf</span>
+<span class="nb">filter</span><span class="o">=</span><span class="n">html</span><span class="p">,</span><span class="n">epub</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="kc">None</span>  <span class="c1"># non-filtered</span>
+</pre></div>
+</div>
+</dd>
+<dt>separator:</dt><dd><p>The type of the separator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">separator</span> <span class="p">:</span><span class="o">=</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="n">table</span><span class="o">-</span><span class="n">index</span><span class="o">&gt;</span>
+    <span class="o">|</span> <span class="o">&lt;</span><span class="n">char</span><span class="o">-</span><span class="n">string</span><span class="o">&gt;</span>
+<span class="p">)</span>
+<span class="n">table</span><span class="o">-</span><span class="n">index</span> <span class="p">:</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span>  <span class="c1"># index into predefined &#39;separators&#39;</span>
+                      <span class="c1">#  0: slash &#39;/&#39;</span>
+                      <span class="c1">#  1: back-slash &#39;\\&#39;</span>
+                      <span class="c1">#  2: dot &#39;.&#39;</span>
+                      <span class="c1">#  3: comma &#39;,&#39;</span>
+                      <span class="c1">#  4: semicolon &#39;;&#39;</span>
+                      <span class="c1">#  5: colon &#39;:&#39;</span>
+                      <span class="c1">#  6: pipe &#39;|&#39;</span>
+                      <span class="c1">#  7: hyphen &#39;-&#39;</span>
+                      <span class="c1">#  8: underscore &#39;_&#39;</span>
+
+<span class="n">char</span><span class="o">-</span><span class="n">string</span> <span class="p">:</span><span class="o">=</span> <span class="o">.*</span>     <span class="c1"># any string of 1 or more characters</span>
+                      <span class="c1"># the control character semicolon as</span>
+                      <span class="c1"># load character needs to be masked</span>
+                      <span class="c1"># as a character class:</span>
+                      <span class="c1">#   [;]</span>
+
+<span class="n">default</span> <span class="p">:</span><span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</dd>
+<dt>_dev_debug:</dt><dd><p>Developer feature.</p>
+<p>Debug the list call only. This enables the isolated display of the
+tree resolution.</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#setupdocx.__init__.SetupDocXError" title="setupdocx.__init__.SetupDocXError"><strong>SetupDocXError</strong></a> – </p></li>
+<li><p><strong>pass-through</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>7.9.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="setupdocx.__init__.SetupDocXError">
+<em class="property">exception </em><code class="sig-prename descclassname">setupdocx.__init__.</code><code class="sig-name descname">SetupDocXError</code><a class="reference internal" href="_modules/setupdocx/__init__.html#SetupDocXError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.__init__.SetupDocXError" title="Permalink to this definition">¶</a></dt>
+<dd><p>setupdocx error.</p>
+</dd></dl>
+
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setupdocx.build_apiref.html" class="btn btn-neutral float-right" title="7.10. setupdocx.build_apiref" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="makefile.html" class="btn btn-neutral float-left" title="7.8. Makefile_docx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

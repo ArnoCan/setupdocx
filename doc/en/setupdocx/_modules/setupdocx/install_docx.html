@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>setupdocx.install_docx &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../setupdocx.html">setupdocx</a> &raquo;</li>
+        
+      <li>setupdocx.install_docx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for setupdocx.install_docx</h1><div class="highlight"><pre>
+<span></span><span class="c1">#-*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;installs created documetation</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">import</span> <span class="nn">distutils.cmd</span>
+
+<span class="kn">import</span> <span class="nn">setupdocx</span>
+<span class="kn">import</span> <span class="nn">setuplib</span>
+
+<span class="kn">import</span> <span class="nn">yapyutils.files.utilities</span> <span class="k">as</span> <span class="nn">utilities</span> 
+<span class="kn">import</span> <span class="nn">yapyutils.files.finder</span> <span class="k">as</span> <span class="nn">finder</span> 
+<span class="kn">import</span> <span class="nn">yapyutils.config.capabilities</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="n">__author_email__</span> <span class="o">=</span> <span class="s1">&#39;acue_sf2@sourceforge.net&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
+<span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;1ba7bffb-c00b-4691-a3e9-e392f968e437&quot;</span>
+
+
+<div class="viewcode-block" id="SetupDocXInstallError"><a class="viewcode-back" href="../../setupdocx.install_docx.html#setupdocx.install_docx.SetupDocXInstallError">[docs]</a><span class="k">class</span> <span class="nc">SetupDocXInstallError</span><span class="p">(</span><span class="n">setupdocx</span><span class="o">.</span><span class="n">SetupDocXError</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="InstallDocX"><a class="viewcode-back" href="../../setupdocx.install_docx.html#setupdocx.install_docx.InstallDocX">[docs]</a><span class="k">class</span> <span class="nc">InstallDocX</span><span class="p">(</span><span class="n">distutils</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">Command</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Compile and install documentation.&quot;&quot;&quot;</span>
+
+    <span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Install documentation locally from build directory.&#39;</span>
+    <span class="n">user_options</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;build-dir=&#39;</span><span class="p">,</span>      <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;installation source, &quot;</span>
+                                  <span class="s2">&quot;default &#39;build&#39;, &quot;</span>
+                                  <span class="s2">&quot;resulting in the created document &#39;build/doc/&lt;docname&gt;&#39;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;clean&#39;</span><span class="p">,</span>           <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;removes the previous document, be careful with this and check the target twice,&quot;</span>
+                                  <span class="s2">&quot;no additional confirmation is requested, default: False&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">,</span>           <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;debug flag&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;docname=&#39;</span><span class="p">,</span>        <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;document name, could be different from &#39;--name&#39; &quot;</span>
+                                  <span class="s2">&quot;used as the input and the output name of the document, &quot;</span>
+                                  <span class="s2">&quot;default: &#39;self.name&#39;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;doctype=&#39;</span><span class="p">,</span>        <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;document type to install, default &#39;html&#39; only&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;force&#39;</span><span class="p">,</span>           <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Force to processing by deactivating non-essential checks, &quot;</span>
+                                  <span class="s2">&quot;suppresses validation, &quot;</span>
+                                  <span class="s2">&quot;default: False&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;forcedir&#39;</span><span class="p">,</span>        <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Force to pack directories, in case of single document types &quot;</span>
+                                  <span class="s2">&quot;such as PDF too. Else the types PDF, and EPUB are compressed &quot;</span>
+                                  <span class="s2">&quot;without the containing directory. The name of single-file documents is &quot;</span>
+                                  <span class="s2">&quot;changed when archive name, version, etc. are provided. &quot;</span>
+                                  <span class="s2">&quot;Default: False&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;name=&#39;</span><span class="p">,</span>           <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;package name, changes &#39;self.name&#39;, &quot;</span>
+                                  <span class="s2">&quot;default: &#39;self.name&#39;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;no-exec&#39;</span><span class="p">,</span>        <span class="s1">&#39;n&#39;</span><span class="p">,</span>   <span class="s2">&quot;print only, do not execute&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;target-dir=&#39;</span><span class="p">,</span>     <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;installation target directory, PEP-370, user data directory, &quot;</span>
+                                  <span class="s2">&quot;default &#39;/user/data/&#39; + &#39;doc/en/html/man3&#39;&quot;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;verbose&#39;</span><span class="p">,</span>         <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;verbose flag&quot;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="c1">#: The provided capabilities of the builder and it&#39;s components.</span>
+    <span class="n">capabilities</span> <span class="o">=</span> <span class="n">yapyutils</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">capabilities</span><span class="o">.</span><span class="n">Capability</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;components&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;default&quot;</span><span class="p">:</span>          <span class="s2">&quot;sphinx-apidoc&quot;</span><span class="p">,</span>  <span class="c1"># adjusted in dependence of the &#39;doctype&#39;</span>
+                <span class="s2">&quot;sphinx&quot;</span><span class="p">:</span>           <span class="s2">&quot;sphinx-apidoc&quot;</span><span class="p">,</span>  <span class="c1"># extract rst for sphinx-build</span>
+                <span class="s2">&quot;sphinx-apidoc&quot;</span><span class="p">:</span>    <span class="s2">&quot;sphinx-apidoc&quot;</span><span class="p">,</span>  <span class="c1"># extract rst for sphinx-build</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;sphinx-apidoc&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;metatypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;rst&quot;</span><span class="p">,</span>                            <span class="c1"># reStructuredText</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;doctypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;html&quot;</span><span class="p">,</span>                           <span class="c1"># reStructuredText</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;defaults&quot;</span><span class="p">:</span> <span class="p">{</span>                             <span class="c1"># DEFAULTS: updated by capabilities.json</span>
+                <span class="s2">&quot;builder&quot;</span><span class="p">:</span>          <span class="s2">&quot;default&quot;</span><span class="p">,</span>        <span class="c1"># False</span>
+                <span class="s2">&quot;builder_path&quot;</span><span class="p">:</span>     <span class="kc">None</span><span class="p">,</span>             <span class="c1"># search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apidoc.sh</span>
+                <span class="s2">&quot;build_dir&quot;</span><span class="p">:</span>        <span class="s2">&quot;build/&quot;</span><span class="p">,</span>         <span class="c1"># build/</span>
+                <span class="s2">&quot;build_reldir&quot;</span><span class="p">:</span>     <span class="s2">&quot;sphinx/apidoc/&quot;</span><span class="p">,</span> <span class="c1"># apidoc/sphinx/</span>
+                <span class="s2">&quot;clean&quot;</span><span class="p">:</span>            <span class="kc">None</span><span class="p">,</span>             <span class="c1"># False</span>
+                <span class="s2">&quot;config_path&quot;</span><span class="p">:</span>      <span class="kc">None</span><span class="p">,</span>             <span class="c1"># &lt;docsource&gt;/conf/</span>
+                <span class="s2">&quot;docname&quot;</span><span class="p">:</span>          <span class="kc">None</span><span class="p">,</span>             <span class="c1"># attribute of derived class, see self.name</span>
+                <span class="s2">&quot;docsource&quot;</span><span class="p">:</span>        <span class="s2">&quot;docsrc/&quot;</span><span class="p">,</span>        <span class="c1"># docsrc/</span>
+                <span class="s2">&quot;doctype&quot;</span><span class="p">:</span>          <span class="kc">None</span><span class="p">,</span>             <span class="c1"># html</span>
+                <span class="s2">&quot;indexsrc&quot;</span><span class="p">:</span>         <span class="s2">&quot;index.rst&quot;</span><span class="p">,</span>      <span class="c1"># &#39;index.rst&#39;</span>
+                <span class="s2">&quot;name&quot;</span><span class="p">:</span>             <span class="kc">None</span><span class="p">,</span>             <span class="c1"># attribute of derived class, see self.name</span>
+                <span class="s2">&quot;release&quot;</span><span class="p">:</span>          <span class="kc">None</span><span class="p">,</span>             <span class="c1"># </span>
+                <span class="s2">&quot;srcdir&quot;</span><span class="p">:</span>           <span class="kc">None</span><span class="p">,</span>             <span class="c1"># list/tuple(&lt;name&gt;/,)</span>
+                <span class="s2">&quot;template&quot;</span><span class="p">:</span>         <span class="s2">&quot;&quot;</span><span class="p">,</span>               <span class="c1"># default template, default:=alabaster</span>
+                <span class="s2">&quot;version&quot;</span><span class="p">:</span>          <span class="kc">None</span><span class="p">,</span>             <span class="c1"># </span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="n">doctypes_supported</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;html&quot;</span><span class="p">,</span>  <span class="c1"># simple HTML with defaults for sphinx and epydoc</span>
+        <span class="s2">&quot;singlehtml&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;epub&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;latexpdf&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;latexpdfja&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;man&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;mangz&quot;</span><span class="p">,</span>
+
+        <span class="c1"># &quot;devhelp&quot;,</span>
+        <span class="c1"># &quot;htmlhelp&quot;,</span>
+        <span class="c1"># &quot;qthelp&quot;,</span>
+    <span class="p">)</span>
+
+    <span class="n">doctypes_suffix</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;epub&quot;</span> <span class="p">:</span> <span class="s1">&#39;.epub&#39;</span><span class="p">,</span> 
+        <span class="s2">&quot;pdf&quot;</span><span class="p">:</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">,</span> 
+        <span class="s2">&quot;latexpdf&quot;</span><span class="p">:</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">,</span> 
+        <span class="s2">&quot;latexpdfja&quot;</span><span class="p">:</span> <span class="s1">&#39;.pdf&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;mangz&quot;</span><span class="p">:</span> <span class="s1">&#39;.gz&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1"># Sets default values for call options</span>
+    <span class="c1"># Foreseen to be set by the derived class</span>
+    <span class="c1"># in &#39;setup.py&#39;.</span>
+    <span class="n">docx_defaults</span> <span class="o">=</span> <span class="p">{</span>             <span class="c1"># DEFAULTS:</span>
+        <span class="s1">&#39;apidoc&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>          <span class="c1"># False</span>
+        <span class="s1">&#39;apiref&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>          <span class="c1"># False</span>
+        <span class="s1">&#39;build_apidoc&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>     <span class="c1"># search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apidoc.sh</span>
+        <span class="s1">&#39;build_apiref&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>     <span class="c1"># search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_apiref.sh</span>
+        <span class="s1">&#39;build_doc&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>        <span class="c1"># search(&lt;conf-dir&gt;, &lt;configdir&gt;, &lt;docsrc&gt;/conf)/call_doc.sh</span>
+        <span class="s1">&#39;build_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;build/&#39;</span><span class="p">,</span>    <span class="c1"># build/</span>
+        <span class="s1">&#39;build_reldir&#39;</span><span class="p">:</span> <span class="s1">&#39;apidoc/sphinx/&#39;</span><span class="p">,</span> <span class="c1"># apidoc/sphinx/</span>
+        <span class="s1">&#39;clean&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>            <span class="c1"># False</span>
+        <span class="s1">&#39;conf_dir&#39;</span><span class="p">:</span>  <span class="kc">None</span><span class="p">,</span>        <span class="c1"># &lt;docsource&gt;/conf/</span>
+        <span class="s1">&#39;docname&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># attribute of derived class, see self.name</span>
+        <span class="s1">&#39;docsource&#39;</span><span class="p">:</span> <span class="s1">&#39;docsrc/&#39;</span><span class="p">,</span>   <span class="c1"># docsrc/</span>
+        <span class="s1">&#39;doctype&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># html</span>
+        <span class="s1">&#39;indexsrc&#39;</span><span class="p">:</span> <span class="s1">&#39;index.rst&#39;</span><span class="p">,</span>  <span class="c1"># &#39;index.rst&#39;</span>
+        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>             <span class="c1"># attribute of derived class, see self.name</span>
+        <span class="s1">&#39;release&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># &lt;year&gt;.&lt;month&gt;.&lt;day&gt;</span>
+        <span class="s1">&#39;srcdir&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>           <span class="c1"># list/tuple(&lt;name&gt;/,)</span>
+        <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># </span>
+    <span class="p">}</span>  <span class="c1">#: default values for command line parameters</span>
+
+
+<div class="viewcode-block" id="InstallDocX.initialize_options"><a class="viewcode-back" href="../../setupdocx.install_docx.html#setupdocx.install_docx.InstallDocX.initialize_options">[docs]</a>    <span class="k">def</span> <span class="nf">initialize_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">docname</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">force</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">no_exec</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="kc">None</span></div>
+    
+<div class="viewcode-block" id="InstallDocX.finalize_options"><a class="viewcode-back" href="../../setupdocx.install_docx.html#setupdocx.install_docx.InstallDocX.finalize_options">[docs]</a>    <span class="k">def</span> <span class="nf">finalize_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># quick-and-dirty hack to resolve the inconsistency of</span>
+        <span class="c1"># global and local verbose values of distutils</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_v_opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n">get_option_dict</span><span class="p">(</span><span class="s1">&#39;dist_docx&#39;</span><span class="p">)[</span><span class="s1">&#39;verbose&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">_v_opts</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="c1"># fallback to the slightly erroneous behavior when the interface </span>
+            <span class="c1"># of distutils changes</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">force</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">force</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">force</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_exec</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">no_exec</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">distribution</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">docname</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">docname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">docx_defaults</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;docname&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">docname</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">docname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<span class="c1">#         if self.docname == None:</span>
+<span class="c1">#             self.docname = self.name</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="o">=</span> <span class="s2">&quot;html&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctypes_supported</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SetupDocXInstallError</span><span class="p">(</span>
+                    <span class="s2">&quot;doctype = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doctype</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; - supported: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">doctypes_supported</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="s2">&quot;build/doc/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">docname</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;man&#39;</span><span class="p">,</span> <span class="s1">&#39;mangz&#39;</span><span class="p">,):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="s2">&quot;man/&quot;</span>
+            
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="s2">&quot;doc/en/&quot;</span>
+
+            <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;win32&#39;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="s2">&quot;%APPDATA%/Python/&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~/.local/&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">)</span> </div>
+
+
+<div class="viewcode-block" id="InstallDocX.run"><a class="viewcode-back" href="../../setupdocx.install_docx.html#setupdocx.install_docx.InstallDocX.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Installs created document from *build* directory to target directory.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_exec</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shutil.rmtree(</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">)))</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="s2">&quot;shutil.copytree(</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">)))</span>
+            
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1">#</span>
+            <span class="c1"># common single-file documents: pdf, epub</span>
+            <span class="c1">#</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;epub&#39;</span><span class="p">,):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span><span class="p">:</span>
+                    <span class="n">_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_t</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_t</span><span class="p">)</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">,</span> <span class="n">_t</span><span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">):</span>
+                        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">)</span>
+                    
+                    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">)</span>
+
+            <span class="c1">#</span>
+            <span class="c1"># man pages: man, man.gz</span>
+            <span class="c1">#</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;man&#39;</span><span class="p">,</span> <span class="s1">&#39;mangz&#39;</span><span class="p">,):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forcedir</span><span class="p">:</span>
+                    <span class="n">_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_t</span><span class="p">):</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_t</span><span class="p">)</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">,</span> <span class="n">_t</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">):</span>
+                        <span class="n">_src</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">f</span>
+                        <span class="c1"># transform flat files into man structure</span>
+                        
+                        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;man&#39;</span><span class="p">:</span>
+                            <span class="n">_sec</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.*[.]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">doctype</span> <span class="o">==</span> <span class="s1">&#39;mangz&#39;</span><span class="p">:</span>
+                            <span class="n">_sec</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(.*[.])([^.]+)(.gz)$&#39;</span><span class="p">,</span> <span class="n">f</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+
+                        <span class="n">_secpath</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;man&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_sec</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_secpath</span><span class="p">):</span>
+                            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">_secpath</span><span class="p">)</span>
+                        <span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">_src</span><span class="p">,</span> <span class="n">_secpath</span><span class="p">)</span>
+
+            <span class="c1">#</span>
+            <span class="c1"># directory based documents: html, singlehtml, helpdev, helpqt, ... </span>
+            <span class="c1">#</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clean</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">_t</span><span class="p">):</span>
+                    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">_t</span><span class="p">)</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">,</span> <span class="n">_t</span><span class="p">)</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   from        : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   to          : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">_t</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   display with: firefox -P preview.simple &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_t</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/index.html&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+            
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;# &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   from        : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">build_dir</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#   to          : &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_dir</span><span class="p">))</span></div></div>
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Use Configuration Templates &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Create Configuration Templates" href="conf_templates_create.html" />
+    <link rel="prev" title="Integrated API Reference" href="howto_integrate_apiref.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Howto</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#basic">Basic</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#configuration-templates">Configuration Templates</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Use Configuration Templates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sphinx">Sphinx</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#epydoc-standalone">Epydoc - Standalone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#epydoc-embedded-into-sphinx">Epydoc Embedded into Sphinx</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="conf_templates_create.html">Create Configuration Templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_rtd.html">Create ReadTheDocs Style Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_rtd.html#html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_rtd.html#singlehtml">singlehtml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_rtd.html#epub">epub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_rtd.html#pdf">pdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc2.html">Create Python2 Style Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc2.html#html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc2.html#singlehtml">singlehtml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc2.html#epub">epub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc2.html#pdf">pdf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc3.html">Create Python2 Style Documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc3.html#html">html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc3.html#singlehtml">singlehtml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc3.html#epub">epub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howto_pydoc3.html#pdf">pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#format-types">Format Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#special-themes">Special Themes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Howto</a> &raquo;</li>
+        
+      <li>Use Configuration Templates</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/howto/conf_templates_use.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="use-configuration-templates">
+<span id="howto-useconftemplates"></span><h1>Use Configuration Templates<a class="headerlink" href="#use-configuration-templates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sphinx">
+<h2>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p><strong>Select a Configuration Template</strong></p>
+<p>Create your own from ground up, or select a provided theme
+and the appropriate configuration template.
+The following templates for <em>Sphinx</em> are contained in <em>setupdocx</em>.</p>
+<ul>
+<li><p>Standard Themes:</p>
+<p>These are contained in the standard <em>Sphinx</em> installation.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../configurations/sphinx/agogo/index.html#config-template-sphinx-agogo"><span class="std std-ref">agogo</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/bizstyle/index.html#config-template-sphinx-bizstyle"><span class="std std-ref">bizstyle</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/pydoc2/index.html#config-template-sphinx-default2"><span class="std std-ref">default</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/pydoc3/index.html#config-template-sphinx-default3"><span class="std std-ref">default</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/nature/index.html#config-template-sphinx-nature"><span class="std std-ref">nature</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/sphinxdoc/index.html#config-template-sphinx-sphinxdoc"><span class="std std-ref">sphinxdoc</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/traditional/index.html#config-template-sphinx-traditional"><span class="std std-ref">traditional</span></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Special Themes:</p>
+<p>These are opensource and has to be installed, e.g. via <em>PyPI</em>, or
+<em>github</em>.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../configurations/sphinx/alabaster/index.html#config-template-sphinx-alabaster"><span class="std std-ref">Alabaster - alabaster</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/guzzle_sphinx_theme/index.html#config-template-sphinx-guzzle"><span class="std std-ref">Guzzle - guzzle_sphinx_theme</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/sphinx_rtd_theme/index.html#config-template-sphinx-rtd"><span class="std std-ref">Read The Docs - sphinx_rtd_theme</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/sphinx_bootstrap_theme/index.html#config-template-sphinx-bootstrap"><span class="std std-ref">Bootstrap - sphinx_bootstrap_theme</span></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Custom Themes:
+These are modified by local changes. The current demos are based
+on standard themes.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../configurations/sphinx/extended_default/index.html#config-template-sphinx-default-extended"><span class="std std-ref">extended_default</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/epub/index.html#config-template-sphinx-epub"><span class="std std-ref">epub</span></a></p></li>
+<li><p><a class="reference internal" href="../configurations/sphinx/pdf/index.html#config-template-sphinx-pdf"><span class="std std-ref">pdf</span></a></p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Define the Document Structure</strong></p>
+<p>Define the appropriate document structure based on <em>toctree</em>,
+see <a class="reference internal" href="../references.html#sphinxdoc" id="id1"><span>[sphinxdoc]</span></a> and <a class="reference internal" href="../references.html#restdir" id="id2"><span>[restdir]</span></a>.
+Be aware, that document formats based on a single file behave differently than multi-file
+formats, though they obviously concatenate instead of linking by references.
+Thus the the different output formats require frequently configurations
+which contain the appropriate <em>index.rst</em> and more when required.
+See the contained subdirectory <em>docsrc</em> of the configuration,
+for the document creation including the <em>setup.py</em> refer to <a class="reference internal" href="create_doc.html#howto-createdoc"><span class="std std-ref">Create the Document</span></a>.</p>
+</li>
+<li><p><strong>Copy the Configuration Template</strong></p>
+<p>Copy the template directory in order to adapt your files, the structure,
+and the style.
+The directory is the later parameter <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-config-path"><span class="std std-ref">–confdir</span></a>
+of the call:</p>
+<blockquote>
+<div><pre class="literal-block">python setup.py build_docx <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-config-path"><span class="std std-ref">–confdir=</span></a> &lt;config-path&gt;</pre>
+</div></blockquote>
+</li>
+<li><p><strong>Adapt the Configuration Template</strong></p>
+<p>The configuration template contains the required configuration data for the selected
+tools as well as for the independent autonomous representaion of the document, e.g.
+static data such as images and style sheets.
+The default is the <em>Sphinx</em> toolset <a class="reference internal" href="../references.html#sphinxdoc" id="id3"><span>[sphinxdoc]</span></a>.</p>
+<p>The configuration of sphinx provided by <em>conf.py</em> permits for multiple sections of
+different so called builders.
+This is e.g. <em>html</em> <em>epub</em>, <em>latex</em> for <em>PDF</em>, or <em>man</em> for manpages.
+Anyhow, due to additional restrictions, e.g. such as no image capabilities of man pages,
+or the different behaviour of single and multi page documents related in particular to the
+directives <em>include</em>, and <em>toc</em>, or references, it is advisable to distinguish each
+created document type by a separate set of configuration in it’s own directory.
+The directory contains the view parts as well as frequently required content patches.
+The most commonly required patch is here the main file <em>index.rst</em>, as well as
+the appropriate <em>custom.css</em>.
+Subdirectories such as customized <em>_themes</em> and <em>_templates</em> are supported too.</p>
+<p>The <em>setupdocx</em> in addition supports some sphinx extensions, in particular for the simplified
+size-adaptation of images including figures <span class="xref std std-ref">setupdocxSphinxExtImagewrap</span> to the
+various output formats.</p>
+<p>The architecture of the <em>setupdocx</em> is based on multiple layers.
+The integration modules for <em>setup.py</em> support additional commands <a class="reference internal" href="../references.html#distutils" id="id4"><span>[distutils]</span></a>,
+while the actual used toolset is wrapped within a slim adaptation layer of scripts
+based on a command line interface.
+The provided default wrapper scripts are generic and may fit to all standard requirements.
+These are located within the installation directory of <em>setupdocx</em>.
+The search order for the actual executed script is</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>confdir - <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-config-path"><span class="std std-ref">–confdir</span></a></p></li>
+<li><p>docsrc -  <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-docsource"><span class="std std-ref">–docsource</span></a></p></li>
+<li><p>setupdocx - the installation directory</p></li>
+</ol>
+</div></blockquote>
+<p>Anyhow, when required the scripts could be easily modified or completely replaced.
+Either by persistent  configuration, or call-by-call with teh parameters
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-apidoc"><span class="std std-ref">–build-apidoc</span></a>,
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-apiref"><span class="std std-ref">–build-apiref</span></a>,
+or
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-doc"><span class="std std-ref">–build-doc</span></a>.
+alternatively by a specific naming scheme for the build tools, e.g.
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-doc"><span class="std std-ref">–build-doc</span></a>.</p>
+<p>The provided interface is based on envirnment variables, see <a class="reference internal" href="../setuplib_cli.html#setupdocx-env-call-environment"><span class="std std-ref">ENVIRONMENT</span></a>.
+The actual resulting environment parameters are displayed by the
+option global option ‘–verbose’, see also <a class="reference internal" href="../setuplib_cli.html#setupdocx-env-docx-verbose"><span class="std std-ref">DOCX_VERBOSE</span></a>.
+The current release contains <em>bash</em> scripts only, while additional based on <em>PowerShell</em>,
+and <em>Python</em> will follow soon.</p>
+<p>The required directory structure of the configuration template directory is
+for example in case of <em>ReadTheDocs</em>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;conf-template-name&gt;
+└── docsrc
+    ├── conf.py             # this file must be edited
+    ├── index.rst           # this file must be edited
+    └── _static
+        ├── custom.css
+        ├── favicon.ico     # this file must be edited
+        └── logo.png        # this file must be edited
+</pre></div>
+</div>
+</div></blockquote>
+<p>In case of included API reference, here based on <em>epydoc</em>:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;conf-template-name&gt;
+└── docsrc
+    ├── conf.py             # this file must be edited
+    ├── index.rst           # this file must be edited
+    └── _static
+        ├── custom.css
+        ├── epydoc.conf     # this file must be edited
+        ├── epydoc.css      # this file must be edited
+        ├── favicon.ico     # this file must be edited
+        └── logo.png        # this file must be edited
+</pre></div>
+</div>
+</div></blockquote>
+<p>The same with optional custom call-scripts. Due to the pure
+environment based interface you can use whantever implementation
+language you want, as long as it is capable to read environment
+variables.</p>
+<blockquote>
+<div><pre class="literal-block">&lt;conf-template-name&gt;
+├── <strong>call_apidoc.ps1</strong>         # this is optional - implemented by 'PowerShell'
+├── <strong>call_apiref.lua</strong>         # this is optional - implemented by 'Lua'
+├── <strong>call_doc.py</strong>             # this is optional - implemented by 'Python'
+└── docsrc
+    ├── conf.py             # this file must be edited
+    ├── index.rst           # this file must be edited
+    └── _static
+        ├── custom.css
+        ├── epydoc.conf     # this file must be edited
+        ├── epydoc.css      # this file must be edited
+        ├── favicon.ico     # this file must be edited
+        └── logo.png        # this file must be edited</pre>
+</div></blockquote>
+<p>The complete content of the directory <em>docsrc</em> is copied into the directory.</p>
+<blockquote>
+<div><pre class="literal-block"><a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-dir"><span class="std std-ref">&lt;build-dir&gt;</span></a>/apidoc/sphinx</pre>
+</div></blockquote>
+<p>The files superpose the generated output by <em>sphinx-apidoc</em> called
+by first step of <em>call_apidoc.sh</em>.
+So check initially the created <em>index.rst</em> of <em>sphinx-apidoc</em>.
+The first step of the call of <em>call_apidoc.sh</em> could be suppressed
+by using an empty option <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-apidoc"><span class="std std-ref">–build-apidoc</span></a>.</p>
+<blockquote>
+<div><pre class="literal-block">python setup.py build_docx <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-apidoc"><span class="std std-ref">–build-apidoc=’’</span></a></pre>
+</div></blockquote>
+<p>The other build steps could be deactivated the same way by
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-doc"><span class="std std-ref">–build-doc</span></a>,
+while the build step of
+<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-apiref"><span class="std std-ref">–apiref</span></a>
+is optional and deactivated by default anyway.</p>
+<p>The required minimum modifications mainly comprise the name of the project,
+list of source directories, and eventually required extensions e.g.
+for <em>Sphinx</em>.
+The files are inline documented, though the modification should be easily done.</p>
+<p>See also <a class="reference internal" href="conf_templates_create.html#howto-createconftemplates"><span class="std std-ref">Create Configuration Templates</span></a>.</p>
+</li>
+<li><p><strong>Call ‘setup.py’</strong></p>
+<p>Once the preparations are completed, the document should be created by the call:</p>
+<blockquote>
+<div><pre class="literal-block">python setup.py build_docx <a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-config-path"><span class="std std-ref">–confdir=/your/configuration/path/</span></a></pre>
+</div></blockquote>
+<p>The document is created by default in the directory:</p>
+<blockquote>
+<div><pre class="literal-block"><a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-dir"><span class="std std-ref">&lt;build-dir&gt;</span></a>/doc/<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-docname"><span class="std std-ref">&lt;docname&gt;</span></a></pre>
+</div></blockquote>
+<p>See also <a class="reference internal" href="create_doc.html#howto-createdoc"><span class="std std-ref">Create the Document</span></a>, and <a class="reference internal" href="../setuplib_cli.html#setupdocxexamples"><span class="std std-ref">EXAMPLES</span></a>.</p>
+</li>
+<li><p><strong>Read the Document</strong></p>
+<p>In case of the document type <em>html</em> this contains by default the main page:</p>
+<blockquote>
+<div><pre class="literal-block"><a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-build-dir"><span class="std std-ref">&lt;build-dir&gt;</span></a>/doc/<a class="reference internal" href="../setuplib_cli.html#setupdocxbuild-options-docname"><span class="std std-ref">&lt;docname&gt;</span></a>/index.html</pre>
+</div></blockquote>
+</li>
+</ol>
+<p>For further steps refer to <a class="reference internal" href="install_doc.html#howto-instaldoc"><span class="std std-ref">Install the Document</span></a>, and <a class="reference internal" href="package_doc.html#howto-packagedoc"><span class="std std-ref">Package the Document</span></a>.</p>
+</div>
+<div class="section" id="epydoc-standalone">
+<h2>Epydoc - Standalone<a class="headerlink" href="#epydoc-standalone" title="Permalink to this headline">¶</a></h2>
+<p>available soon</p>
+</div>
+<div class="section" id="epydoc-embedded-into-sphinx">
+<h2>Epydoc Embedded into Sphinx<a class="headerlink" href="#epydoc-embedded-into-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>available soon</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conf_templates_create.html" class="btn btn-neutral float-right" title="Create Configuration Templates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="howto_integrate_apiref.html" class="btn btn-neutral float-left" title="Integrated API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

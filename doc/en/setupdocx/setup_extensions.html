@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.3. Setup Extensions &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6.4. Software Design" href="sw_design.html" />
+    <link rel="prev" title="6.2. Setup Document Commands" href="setuptools_commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_part_documents.html">6. Documents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup_platforms_build_target.html">6.1. Build and Target Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setuptools_commands.html">6.2. Setup Document Commands</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. Setup Extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#entry-points">6.3.1. Entry Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#local-custom-commands">6.3.2. Local Custom Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sw_design.html">6.4. Software Design</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_part_documents.html">6. Documents</a> &raquo;</li>
+        
+      <li>6.3. Setup Extensions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setup_extensions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="setup-extensions">
+<span id="setuplibextensions"></span><h1>6.3. Setup Extensions<a class="headerlink" href="#setup-extensions" title="Permalink to this headline">¶</a></h1>
+<p>The <em>setuptools</em> or <em>distutils</em> support the possibility of the extension
+by entry points and locally by additional commands.
+The <em>setupdocx</em> is designed to be applied in both variants.</p>
+<ul>
+<li><p>entry points:</p>
+<p>Standard applications and users should use only this globally installed
+extenstions.</p>
+</li>
+<li><p>local custom commands:</p>
+<p>Local custom extensions of the classes could be used for special
+document formatters and complex parameter design.</p>
+</li>
+</ul>
+<div class="section" id="entry-points">
+<h2>6.3.1. Entry Points<a class="headerlink" href="#entry-points" title="Permalink to this headline">¶</a></h2>
+<p>The so called entry points support a global installation of the commands as public
+components for shared use.
+These are thereafter availabe as a usual <em>setup.py</em> command and coud be listed
+by the option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">commands</span>
+</pre></div>
+</div>
+<p>Alternatively by the advanced command <em>list_entry_points</em> provided by the library
+<em>setuplib</em> <a class="reference internal" href="references.html#setuplib" id="id1"><span>[setuplib]</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">list_entry_points</span>
+</pre></div>
+</div>
+<p>See also help for options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">list_entry_points</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>No modification of the <em>setup.py</em> is required.</p>
+</div>
+<div class="section" id="local-custom-commands">
+<h2>6.3.2. Local Custom Commands<a class="headerlink" href="#local-custom-commands" title="Permalink to this headline">¶</a></h2>
+<p>Extension commands, or command classes are based on</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">distutils</span><span class="o">.</span><span class="n">cmd</span><span class="o">.</span><span class="n">Command</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These work with <em>distutils</em> as well as with the newer <em>setuptools</em>,
+both libraries are at the time of the writing of this document internally deeply coupled.</p>
+</div>
+<p>The derived command classes define custom commands and add these to the internal dispatcher by inserting
+the list of new commands into the setup call:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">setup</span><span class="p">(</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&quot;Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</span><span class="p">,</span>
+    <span class="n">license</span><span class="o">=</span><span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span><span class="p">,</span>
+    <span class="n">cmdclass</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;build_docx&#39;</span><span class="p">:</span> <span class="n">build_docx</span><span class="p">,</span>
+        <span class="s1">&#39;dist_docx&#39;</span><span class="p">:</span> <span class="n">dist_docx</span><span class="p">,</span>
+        <span class="s1">&#39;install_docx&#39;</span><span class="p">:</span> <span class="n">install_docx</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Refer to the <a class="reference internal" href="setupdocx.setup.html#setup-py"><span class="std std-ref">setup.py</span></a> including <a class="reference internal" href="setup_conf.html#setup-conf"><span class="std std-ref">setup.conf</span></a>
+as an example, which uses <em>setupdocx</em> itself before the installation,
+thus preferebly uses the explict extension classes instead of the extension points.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sw_design.html" class="btn btn-neutral float-right" title="6.4. Software Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setuptools_commands.html" class="btn btn-neutral float-left" title="6.2. Setup Document Commands" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

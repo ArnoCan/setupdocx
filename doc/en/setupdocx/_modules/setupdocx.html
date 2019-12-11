@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>setupdocx &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>setupdocx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for setupdocx</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Library for the creation of documentation.</span>
+<span class="sd">Supports he management of multiple builders, output formats, and</span>
+<span class="sd">templates.</span>
+
+<span class="sd">Contains components for the creation of API documentation, API references in Javadoc style,</span>
+<span class="sd">variable composition of document variants, packaging, and installation. </span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">fnmatch</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="n">__author_email__</span> <span class="o">=</span> <span class="s1">&#39;acue_sf2@sourceforge.net&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2015-2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
+<span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;45167c30-3261-4a38-9de4-d7151348ba48&quot;</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;01.01.002&quot;</span>
+
+
+<span class="c1"># subsystem test and trace flags</span>
+<span class="n">_debug</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">_verbose</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># helper</span>
+<span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="k">class</span> <span class="nc">SetupDocXError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;setupdocx error.&quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+
+<span class="n">separators</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="p">]</span>
+<div class="viewcode-block" id="conf_list"><a class="viewcode-back" href="../setupdocx.html#setupdocx.conf_list">[docs]</a><span class="k">def</span> <span class="nf">conf_list</span><span class="p">(</span><span class="n">baselist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Lists current available configuration templates.</span>
+<span class="sd">     </span>
+<span class="sd">    Args:</span>
+<span class="sd">        baselist:</span>
+<span class="sd">            List of base directories to scan::</span>
+
+<span class="sd">                baselist := &lt;base-directory&gt; [, &lt;baselist&gt;]</span>
+<span class="sd">             </span>
+<span class="sd">             </span>
+<span class="sd">            Supports groups and nested subgroups of templates.</span>
+<span class="sd">            Expects the following subdirectory structure::</span>
+<span class="sd"> </span>
+<span class="sd">                &lt;base-directory&gt;</span>
+<span class="sd">                └── &lt;builder&gt;</span>
+<span class="sd">                    ├── &lt;conf-template-name&gt;</span>
+<span class="sd">                    │   ├── &lt;doctype&gt;</span>
+<span class="sd">                    │   </span>
+<span class="sd">                    ├── &lt;conf-template-name&gt;</span>
+<span class="sd">                    │   ├── &lt;doctype&gt;</span>
+<span class="sd">                    │   </span>
+<span class="sd">                    ├── &lt;conf-template-group-name&gt;</span>
+<span class="sd">                    │   ├── &lt;conf-template-name&gt;</span>
+<span class="sd">                    │   │   ├── &lt;doctype&gt;</span>
+<span class="sd">                    │   </span>
+<span class="sd">                    ├── &lt;conf-template-group-name&gt;</span>
+<span class="sd">                    │   ├── &lt;conf-template-group-name&gt;</span>
+<span class="sd">                    │   │   ├── &lt;conf-template-name&gt;</span>
+<span class="sd">                    │   │   │   ├── &lt;doctype&gt;</span>
+<span class="sd">                    │   </span>
+<span class="sd">                    ├── ...</span>
+<span class="sd"> </span>
+<span class="sd"> </span>
+<span class="sd">            The default themes as provided by *setupdocx* are::</span>
+<span class="sd"> </span>
+<span class="sd">                setupdocx/config/</span>
+<span class="sd">                ├── epydoc</span>
+<span class="sd">                │   ├── embedded</span>
+<span class="sd">                │   │   └── sphinx</span>
+<span class="sd">                │   │       ├── rtd</span>
+<span class="sd">                │   │       │   └── html</span>
+<span class="sd">                │   │       │       └── iframe</span>
+<span class="sd">                │   │       └── white-green</span>
+<span class="sd">                │   │           └── html</span>
+<span class="sd">                │   │               └── iframe</span>
+<span class="sd">                │   └── standalone</span>
+<span class="sd">                │       └── html</span>
+<span class="sd">                ├── mkdocs</span>
+<span class="sd">                │   ├── default</span>
+<span class="sd">                │   │   └── html</span>
+<span class="sd">                │   └── rtd</span>
+<span class="sd">                │       └── html</span>
+<span class="sd">                ├── pandoc</span>
+<span class="sd">                └── sphinx</span>
+<span class="sd">                    ├── agogo</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── alabaster</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── bizstyle</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── bootstrap</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── default</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── guzzle</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── nature</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── rtd</span>
+<span class="sd">                    │   ├── devhelp</span>
+<span class="sd">                    │   ├── epub</span>
+<span class="sd">                    │   ├── html</span>
+<span class="sd">                    │   ├── htmlhelp</span>
+<span class="sd">                    │   ├── man</span>
+<span class="sd">                    │   ├── pdf</span>
+<span class="sd">                    │   └── singlehtml</span>
+<span class="sd">                    ├── rtd-github</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── rtd-readthedocs</span>
+<span class="sd">                    │   └── html</span>
+<span class="sd">                    ├── sphinxdoc</span>
+<span class="sd">                    └── traditional</span>
+<span class="sd">                        └── html</span>
+
+
+<span class="sd">        kargs:</span>
+<span class="sd">            depth:</span>
+<span class="sd">                The depth of subdirectories within the configuration directories::</span>
+
+<span class="sd">                    depth := int &gt;=0</span>
+
+<span class="sd">                    default := 1</span>
+
+<span class="sd">            display:</span>
+<span class="sd">                Type of display for configuration names::</span>
+<span class="sd"> </span>
+<span class="sd">                    display := (</span>
+<span class="sd">                          None      # name only</span>
+<span class="sd">                        | std       #   alias for None</span>
+<span class="sd">                        | standard  #   alias for None</span>
+<span class="sd">                        | full      # as provided by baselist, either absolute or relative path</span>
+<span class="sd">                        | abs       # absolute path</span>
+<span class="sd">                        | rel       # relative path</span>
+<span class="sd">                    )</span>
+
+<span class="sd">                    default := None</span>
+
+<span class="sd">            filter:</span>
+<span class="sd">                Python-Regular expression as filter. The provided filter is used literally as</span>
+<span class="sd">                a regular expression which is compiled and used for &#39;re.search()&#39; operations.</span>
+<span class="sd">                For example::</span>
+
+<span class="sd">                    filter=agogo,alabaster</span>
+<span class="sd">                    filter=a.*</span>
+<span class="sd">                    filter=(rtd)</span>
+<span class="sd">                    filter=pdf</span>
+<span class="sd">                    filter=html,epub</span>
+
+<span class="sd">                    default := None  # non-filtered</span>
+
+<span class="sd">            separator:</span>
+<span class="sd">                The type of the separator::</span>
+
+<span class="sd">                    separator := (</span>
+<span class="sd">                        &lt;table-index&gt;</span>
+<span class="sd">                        | &lt;char-string&gt;</span>
+<span class="sd">                    )</span>
+<span class="sd">                    table-index := [0-8]  # index into predefined &#39;separators&#39;</span>
+<span class="sd">                                          #  0: slash &#39;/&#39;</span>
+<span class="sd">                                          #  1: back-slash &#39;\\\\&#39; </span>
+<span class="sd">                                          #  2: dot &#39;.&#39; </span>
+<span class="sd">                                          #  3: comma &#39;,&#39; </span>
+<span class="sd">                                          #  4: semicolon &#39;;&#39; </span>
+<span class="sd">                                          #  5: colon &#39;:&#39; </span>
+<span class="sd">                                          #  6: pipe &#39;|&#39; </span>
+<span class="sd">                                          #  7: hyphen &#39;-&#39; </span>
+<span class="sd">                                          #  8: underscore &#39;_&#39; </span>
+<span class="sd">                    </span>
+<span class="sd">                    char-string := .*     # any string of 1 or more characters</span>
+<span class="sd">                                          # the control character semicolon as </span>
+<span class="sd">                                          # load character needs to be masked</span>
+<span class="sd">                                          # as a character class:</span>
+<span class="sd">                                          #   [;] </span>
+
+<span class="sd">                    default := 0</span>
+
+<span class="sd">            _dev_debug:</span>
+<span class="sd">                Developer feature.</span>
+<span class="sd">                </span>
+<span class="sd">                Debug the list call only. This enables the isolated display of the</span>
+<span class="sd">                tree resolution.</span>
+<span class="sd">            </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        None</span>
+<span class="sd">         </span>
+<span class="sd">    Raises:</span>
+<span class="sd">        SetupDocXError</span>
+<span class="sd">        </span>
+<span class="sd">        pass-through</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_head_printed</span>
+
+    <span class="n">_display</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">_filter</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">_sep</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;separator&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">_all</span> <span class="o">=</span> <span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">_depth</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">_depth</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">_depth</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">__debug</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;_dev_debug&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">_s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">_s</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">((</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;display&#39;</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">,</span> <span class="s1">&#39;depth&#39;</span><span class="p">,</span> <span class="s1">&#39;separator&#39;</span><span class="p">,</span> <span class="s1">&#39;_dev_debug&#39;</span><span class="p">))</span> <span class="o">!=</span> <span class="n">_s</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SetupDocXError</span><span class="p">(</span>
+            <span class="s2">&quot;Unknown option(s): </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span> <span class="nb">str</span><span class="p">(</span><span class="n">_s</span><span class="p">))</span>
+            <span class="p">)</span>
+
+    <span class="c1"># mask suboption separator semicolon &#39;;&#39;</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">_sep</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">_sep</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(.*?)[\[];[\]]&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1;&#39;</span><span class="p">,</span> <span class="n">_sep</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="s1">&#39;help&#39;</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_display</span><span class="p">,</span> <span class="n">_depth</span><span class="p">,</span> <span class="n">_filter</span><span class="p">,</span> <span class="n">_sep</span><span class="p">,):</span>
+        <span class="n">help</span><span class="p">(</span><span class="n">conf_list</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">baselist</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">baselist</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s1">&#39;config&#39;</span><span class="p">,)</span>
+
+    <span class="k">if</span> <span class="n">_filter</span><span class="p">:</span>
+        <span class="n">_filter_re</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">_filter</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">_filter_re</span> <span class="o">=</span>  <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_get_common_top</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the first shared common top node of both paths.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            a:</span>
+<span class="sd">                Path a.</span>
+
+<span class="sd">            b:</span>
+<span class="sd">                Path a.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            If exists the common shared node::</span>
+
+<span class="sd">                return := (&lt;top-node&gt;, #droppeda, #droppedb)</span>
+
+<span class="sd">                top-node:  common hsared top-node</span>
+<span class="sd">                #droppeda: the dropped number of sub-depth for a</span>
+<span class="sd">                #droppedb: the dropped number of sub-depth for b</span>
+
+<span class="sd">            else &#39;None&#39;.</span>
+<span class="sd">            </span>
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">_a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+        <span class="n">_b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)</span>
+
+        <span class="n">_la</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_a</span><span class="p">)</span>
+        <span class="n">_lb</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_b</span><span class="p">)</span>
+
+        <span class="n">_i</span> <span class="o">=</span> <span class="kc">None</span>
+                
+        <span class="k">if</span> <span class="n">_la</span> <span class="o">&gt;</span> <span class="n">_lb</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_bi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">_lb</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">_a</span><span class="p">[</span><span class="n">_bi</span><span class="p">]</span> <span class="o">==</span> <span class="n">_b</span><span class="p">[</span><span class="n">_bi</span><span class="p">]:</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="n">_bi</span> <span class="o">==</span> <span class="n">_lb</span><span class="p">:</span>
+                    <span class="c1"># no match</span>
+                    <span class="k">return</span> <span class="kc">None</span>
+                
+                <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_a</span><span class="p">[:</span><span class="n">_bi</span><span class="p">]),</span> <span class="n">_la</span> <span class="o">-</span> <span class="n">_bi</span><span class="p">,</span> <span class="n">_lb</span> <span class="o">-</span><span class="n">_bi</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># _la &lt;= _lb</span>
+            <span class="k">for</span> <span class="n">_ai</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">_la</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">_a</span><span class="p">[</span><span class="n">_ai</span><span class="p">]</span> <span class="o">==</span> <span class="n">_b</span><span class="p">[</span><span class="n">_ai</span><span class="p">]:</span>
+                    <span class="k">continue</span>
+                
+                <span class="k">if</span> <span class="n">_ai</span> <span class="o">==</span> <span class="n">_la</span><span class="p">:</span>
+                    <span class="c1"># no match</span>
+                    <span class="k">return</span> <span class="kc">None</span>
+
+                <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_a</span><span class="p">[:</span><span class="n">_ai</span><span class="p">]),</span> <span class="n">_la</span> <span class="o">-</span> <span class="n">_ai</span><span class="p">,</span> <span class="n">_lb</span> <span class="o">-</span> <span class="n">_ai</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_sublist</span><span class="p">(</span><span class="n">theme</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            theme:</span>
+<span class="sd">                The path to the theme.</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Printout.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            SetupDocXError</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">global</span> <span class="n">_head_printed</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_s</span> <span class="o">=</span> <span class="n">separators</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">_sep</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SetupDocXError</span><span class="p">(</span>
+                <span class="s2">&quot;Unknown separator - index out of range: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_sep</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">_s</span> <span class="o">=</span> <span class="n">_sep</span>
+
+        <span class="n">_offset</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_base</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>  <span class="c1"># just for safety - no performance issue here...</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">theme</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+
+        <span class="n">_depth_cur</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">_depth_stack</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">_lastdepth_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">,]</span> 
+        <span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">_cache</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>  <span class="c1"># @UnusedVariable</span>
+            <span class="n">_dirpath</span> <span class="o">=</span> <span class="n">dirpath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+
+            <span class="k">if</span> <span class="n">_debug</span> <span class="o">&gt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">__debug</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="c1">#</span>
+                <span class="c1"># some extensive structure traces</span>
+                <span class="c1">#</span>
+                <span class="k">if</span> <span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">_dirpath</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">_dirpath</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DBG:&quot;</span>
+                              <span class="o">+</span> <span class="s2">&quot;DOWN:&quot;</span> 
+                              <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span> 
+                              <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">)</span> 
+                              <span class="o">+</span> <span class="s2">&quot; dirpath = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">):</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DBG:&quot;</span>
+                                  <span class="o">+</span> <span class="s2">&quot;UPWA:&quot;</span> 
+                                  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; dirpath = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">))</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DBG:&quot;</span>
+                                  <span class="o">+</span> <span class="s2">&quot;CHNG:&quot;</span> 
+                                  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; lastpath = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DBG:&quot;</span>
+                                  <span class="o">+</span> <span class="s2">&quot;CHNG:&quot;</span> 
+                                  <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">)</span> 
+                                  <span class="o">+</span> <span class="s2">&quot; dirpath =  &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">))</span>
+     
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DBG:&quot;</span>
+                          <span class="o">+</span> <span class="s2">&quot;KEEP:&quot;</span> 
+                          <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span> 
+                          <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">)</span> 
+                          <span class="o">+</span> <span class="s2">&quot; dirpath = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">))</span>
+
+
+            <span class="c1"># shortcut for simple builder listing</span>
+            <span class="k">if</span> <span class="n">_depth</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">_print_head</span><span class="p">(</span><span class="n">_base</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">dirnames</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="p">))</span>
+                <span class="k">return</span>
+
+
+            <span class="c1">#</span>
+            <span class="c1"># do the counters first for nested jumps and scattered structures</span>
+            <span class="c1">#</span>
+            <span class="k">if</span> <span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">_dirpath</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="n">_dirpath</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+                    <span class="c1"># walks down the tree - one step</span>
+                    <span class="n">_depth_cur</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># does it stepwise</span>
+                    <span class="n">_depth_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_depth_cur</span><span class="p">)</span>
+                    <span class="n">_lastdepth_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">)</span>
+
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">_dirpath</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+                        <span class="c1"># walks up the tree - {1..n}-steps</span>
+                        <span class="n">_shared</span><span class="p">,</span> <span class="n">_last</span><span class="p">,</span> <span class="n">_cur</span> <span class="o">=</span> <span class="n">_get_common_top</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">_dirpath</span><span class="p">)</span>
+                        <span class="k">del</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">[</span><span class="n">_last</span> <span class="o">-</span> <span class="n">_cur</span><span class="p">:])</span>
+                        <span class="k">del</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="n">_last</span> <span class="o">-</span> <span class="n">_cur</span><span class="p">:])</span>
+                        <span class="n">_depth_cur</span> <span class="o">=</span> <span class="n">_depth_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1">#</span>
+                        <span class="c1"># no direct parent - could be sidewalk between 1..n levels</span>
+                        <span class="c1">#</span>
+                        
+                        <span class="c1"># find nearest shared top</span>
+                        <span class="n">_res</span> <span class="o">=</span> <span class="n">_get_common_top</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">_dirpath</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">_res</span><span class="p">:</span>
+                            <span class="n">_shared</span><span class="p">,</span> <span class="n">_last</span><span class="p">,</span> <span class="n">_cur</span> <span class="o">=</span> <span class="n">_res</span> 
+
+                            <span class="k">if</span> <span class="n">_last</span> <span class="o">&gt;</span> <span class="n">_cur</span><span class="p">:</span>
+                                <span class="c1"># sidewalk with jump-up</span>
+                                <span class="k">del</span><span class="p">(</span><span class="n">_depth_stack</span><span class="p">[</span><span class="n">_cur</span> <span class="o">-</span> <span class="n">_last</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:])</span>
+                                <span class="k">del</span><span class="p">(</span><span class="n">_lastdepth_path</span><span class="p">[</span><span class="n">_cur</span> <span class="o">-</span> <span class="n">_last</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:])</span>
+                                
+                                <span class="n">_x</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_shared</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">_dirpath</span><span class="p">)</span>
+                                <span class="n">_x</span> <span class="o">=</span> <span class="n">_x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                                <span class="n">_p</span> <span class="o">=</span> <span class="n">_shared</span>
+                                <span class="n">_d</span> <span class="o">=</span> <span class="n">_depth_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                                <span class="k">for</span> <span class="n">_px</span> <span class="ow">in</span> <span class="n">_x</span><span class="p">:</span>
+                                    <span class="n">_p</span> <span class="o">+=</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">_px</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+                                    <span class="n">_lastdepth_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_p</span><span class="p">)</span>
+                                    
+                                    <span class="n">_d</span> <span class="o">+=</span> <span class="mi">1</span>
+                                    <span class="n">_depth_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_d</span><span class="p">)</span>
+
+                                <span class="n">_depth_cur</span> <span class="o">=</span> <span class="n">_depth_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+                            <span class="k">elif</span> <span class="n">_last</span> <span class="o">&lt;</span> <span class="n">_cur</span><span class="p">:</span>
+                                <span class="c1"># sidewalk with jump-down</span>
+                                <span class="n">_x</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_shared</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">_dirpath</span><span class="p">)</span>
+                                <span class="n">_x</span> <span class="o">=</span> <span class="n">_x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                                <span class="n">_p</span> <span class="o">=</span> <span class="n">_shared</span>
+                                <span class="n">_d</span> <span class="o">=</span> <span class="n">_depth_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                                <span class="k">for</span> <span class="n">_px</span> <span class="ow">in</span> <span class="n">_x</span><span class="p">:</span>
+                                    <span class="n">_p</span> <span class="o">+=</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">_px</span>
+                                    <span class="n">_lastdepth_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_p</span><span class="p">)</span>
+                                    
+                                    <span class="n">_d</span> <span class="o">+=</span> <span class="mi">1</span>
+                                    <span class="n">_depth_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_d</span><span class="p">)</span>
+
+                                <span class="n">_depth_cur</span> <span class="o">=</span> <span class="n">_depth_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+                            <span class="k">elif</span> <span class="n">_last</span> <span class="o">==</span> <span class="n">_cur</span><span class="p">:</span>
+                                <span class="c1"># sidewalk at same depth again, happens for non-docsrc</span>
+                                <span class="n">_lastdepth_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">_dirpath</span>
+    
+                            <span class="k">if</span> <span class="n">_depth_cur</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                                <span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+            <span class="k">if</span> <span class="s1">&#39;docsrc&#39;</span> <span class="ow">in</span> <span class="n">dirnames</span><span class="p">:</span>
+
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">_head_printed</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_cache</span><span class="p">):</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">),)</span> <span class="p">)</span>
+                    <span class="n">_cache</span> <span class="o">=</span> <span class="p">[]</span>
+
+                    <span class="n">_print_head</span><span class="p">(</span><span class="n">dirpath</span><span class="p">)</span>
+                    <span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">True</span>
+
+                <span class="n">dirnames</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">dirnames</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;docsrc&#39;</span><span class="p">))</span>
+
+                <span class="k">if</span> <span class="n">_filter_re</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_filter_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">_dirpath</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="n">_depth_cur</span> <span class="o">&gt;</span> <span class="n">_depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="k">if</span> <span class="n">_display</span> <span class="o">==</span> <span class="s1">&#39;abs&#39;</span><span class="p">:</span>
+                    <span class="c1"># absolute path</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">dirpath</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">_display</span> <span class="o">==</span> <span class="s1">&#39;rel&#39;</span><span class="p">:</span>
+                    <span class="c1"># relative path</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_offset</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;[^&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span> <span class="s1">&#39;]*&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dirpath</span><span class="p">)</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">_display</span> <span class="o">==</span> <span class="s1">&#39;full&#39;</span><span class="p">:</span>
+                    <span class="c1"># as provided by baselist, either absolute or relative path</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">dirpath</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># None:     name only</span>
+                    <span class="c1"># std:      alias for None</span>
+                    <span class="c1"># standard: alias for None</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_offset</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;[^&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span> <span class="s1">&#39;]*&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dirpath</span><span class="p">)</span>
+                    <span class="n">ty</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_offset</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;.*&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">dirpath</span><span class="p">)</span>
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">ty</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+                    <span class="n">d</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="n">_s</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+                    <span class="n">_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;     </span><span class="si">%-40s</span><span class="s2"> - </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">ty</span><span class="p">)))</span>
+                    <span class="k">continue</span>
+
+                <span class="n">_cache</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;     </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">),))</span>
+                
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">_all</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">_head_printed</span><span class="p">:</span>
+                    <span class="n">_print_head</span><span class="p">(</span><span class="n">dirpath</span><span class="p">)</span>
+                    <span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="k">if</span> <span class="n">_cache</span><span class="p">:</span>
+            <span class="c1"># print the remainings from last loop</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">_cache</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;     </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">),)</span> <span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_print_head</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print header for each builder.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">global</span> <span class="n">_head_printed</span>
+        <span class="k">if</span> <span class="n">_head_printed</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">_head_printed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="n">_builder</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">_base</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">_builder</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[/</span><span class="se">\\\\</span><span class="s1">]*([^/</span><span class="se">\\\\</span><span class="s1">]*)[/</span><span class="se">\\\\</span><span class="s1">].*$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1&#39;</span><span class="p">,</span> <span class="n">_builder</span><span class="p">)</span>
+
+        <span class="c1"># for standard templates print the python module path too</span>
+        <span class="n">_stdconf</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*[/</span><span class="se">\\\\</span><span class="s1">](setupdocx[/</span><span class="se">\\\\</span><span class="s1">].*)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1&#39;</span><span class="p">,</span> <span class="n">_base</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">_stdconf</span><span class="p">:</span>
+            <span class="n">_stdconf</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[/</span><span class="se">\\\\</span><span class="s1">]&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">_stdconf</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">available builder templates for: </span><span class="si">%s</span><span class="s2"> - </span><span class="si">%s</span><span class="s2">.</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span>
+                <span class="n">_builder</span><span class="p">,</span> <span class="n">_stdconf</span><span class="p">,</span> <span class="n">_builder</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">available builder templates for: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_builder</span><span class="p">))</span>
+        
+        <span class="k">if</span> <span class="n">_display</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">,</span> <span class="s1">&#39;standard&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="n">_display</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;abs&#39;</span><span class="p">,):</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="n">_display</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;rel&#39;</span><span class="p">,):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - base-path: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_base</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">_builder</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">)))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; - base-path: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">_base</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="n">_builder</span><span class="p">))))</span>
+
+    <span class="k">for</span> <span class="n">_base</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">baselist</span><span class="p">):</span>
+        <span class="n">_sublist</span><span class="p">(</span><span class="n">_base</span><span class="p">)</span></div>
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

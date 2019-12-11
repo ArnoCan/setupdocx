@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.13. setupdocx.install_docx &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.14. setup.py" href="setupdocx.setup.html" />
+    <link rel="prev" title="7.12. setupdocx.dist_docx" href="setupdocx.dist_docx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libbash.html">7.6. libbash.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.13. setupdocx.install_docx</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-setupdocx.install_docx">7.13.1. Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installdocx">7.13.2. InstallDocX</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#finalize-options">7.13.2.1. finalize_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initialize-options">7.13.2.2. initialize_options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run">7.13.2.3. run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">7.13.3. Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.13. setupdocx.install_docx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/setupdocx.install_docx.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="shortcuttab"><div class="section" id="setupdocx-install-docx">
+<h1>7.13. setupdocx.install_docx<a class="headerlink" href="#setupdocx-install-docx" title="Permalink to this headline">¶</a></h1>
+<p>For current help refer tot the online help:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dist_docx</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Alternative implementations are:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ipython</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dist_docx</span> <span class="o">--</span><span class="n">help</span>
+<span class="n">jython</span>  <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dist_docx</span> <span class="o">--</span><span class="n">help</span>  <span class="c1"># requires special install of setuptools, refer to the manuals</span>
+<span class="n">pypy</span>    <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dist_docx</span> <span class="o">--</span><span class="n">help</span>
+
+<span class="n">ipw</span><span class="o">.</span><span class="n">exe</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">dist_docx</span> <span class="o">--</span><span class="n">help</span>  <span class="c1"># IronPython on Windows</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>With current output:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Common</span> <span class="n">commands</span><span class="p">:</span> <span class="p">(</span><span class="n">see</span> <span class="s1">&#39;--help-commands&#39;</span> <span class="k">for</span> <span class="n">more</span><span class="p">)</span>
+
+  <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>      <span class="n">will</span> <span class="n">build</span> <span class="n">the</span> <span class="n">package</span> <span class="n">underneath</span> <span class="s1">&#39;build/&#39;</span>
+  <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>    <span class="n">will</span> <span class="n">install</span> <span class="n">the</span> <span class="n">package</span>
+
+<span class="n">Global</span> <span class="n">options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">verbose</span> <span class="p">(</span><span class="o">-</span><span class="n">v</span><span class="p">)</span>  <span class="n">run</span> <span class="n">verbosely</span> <span class="p">(</span><span class="n">default</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">quiet</span> <span class="p">(</span><span class="o">-</span><span class="n">q</span><span class="p">)</span>    <span class="n">run</span> <span class="n">quietly</span> <span class="p">(</span><span class="n">turns</span> <span class="n">verbosity</span> <span class="n">off</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>  <span class="n">don</span><span class="s1">&#39;t actually do anything</span>
+  <span class="o">--</span><span class="n">help</span> <span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="p">)</span>     <span class="n">show</span> <span class="n">detailed</span> <span class="n">help</span> <span class="n">message</span>
+  <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">cfg</span>   <span class="n">ignore</span> <span class="n">pydistutils</span><span class="o">.</span><span class="n">cfg</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">home</span> <span class="n">directory</span>
+
+<span class="n">Options</span> <span class="k">for</span> <span class="s1">&#39;install_docx&#39;</span> <span class="n">command</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">name</span>          <span class="n">package</span> <span class="n">name</span><span class="p">,</span> <span class="n">changes</span> <span class="s1">&#39;self.name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="s1">&#39;self.name&#39;</span>
+  <span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="nb">dir</span>     <span class="n">installation</span> <span class="n">source</span><span class="p">,</span> <span class="n">default</span> <span class="s1">&#39;build&#39;</span><span class="p">,</span> <span class="n">resulting</span> <span class="ow">in</span> <span class="n">the</span>
+                  <span class="n">created</span> <span class="n">document</span> <span class="s1">&#39;build/apidoc/&lt;docname&gt;&#39;</span>
+  <span class="o">--</span><span class="n">docname</span>       <span class="n">document</span> <span class="n">name</span><span class="p">,</span> <span class="n">could</span> <span class="n">be</span> <span class="n">different</span> <span class="kn">from</span> <span class="s1">&#39;--name&#39;</span> <span class="n">used</span> <span class="k">as</span> <span class="n">the</span>
+                  <span class="nb">input</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">output</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">document</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span>
+                  <span class="s1">&#39;self.name&#39;</span>
+  <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">exec</span> <span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>  <span class="nb">print</span> <span class="n">only</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">execute</span>
+  <span class="o">--</span><span class="n">target</span><span class="o">-</span><span class="nb">dir</span>    <span class="n">installation</span> <span class="n">target</span> <span class="n">directory</span><span class="p">,</span> <span class="n">PEP</span><span class="o">-</span><span class="mi">370</span><span class="p">,</span> <span class="n">user</span> <span class="n">data</span> <span class="n">directory</span><span class="p">,</span>
+                  <span class="n">default</span> <span class="s1">&#39;/user/data/&#39;</span> <span class="o">+</span> <span class="s1">&#39;doc/en/html/man3&#39;</span>
+  <span class="o">--</span><span class="n">doctype</span>       <span class="n">document</span> <span class="nb">type</span> <span class="n">to</span> <span class="n">install</span><span class="p">,</span> <span class="n">default</span> <span class="s1">&#39;html&#39;</span> <span class="n">only</span>
+  <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">exec</span> <span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>  <span class="nb">print</span> <span class="n">only</span><span class="p">,</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">execute</span>
+  <span class="o">--</span><span class="n">debug</span>         <span class="n">debug</span> <span class="n">flag</span>
+  <span class="o">--</span><span class="n">verbose</span>       <span class="n">verbose</span> <span class="n">flag</span>
+
+<span class="n">usage</span><span class="p">:</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="n">global_opts</span><span class="p">]</span> <span class="n">cmd1</span> <span class="p">[</span><span class="n">cmd1_opts</span><span class="p">]</span> <span class="p">[</span><span class="n">cmd2</span> <span class="p">[</span><span class="n">cmd2_opts</span><span class="p">]</span> <span class="o">...</span><span class="p">]</span>
+   <span class="ow">or</span><span class="p">:</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span> <span class="p">[</span><span class="n">cmd1</span> <span class="n">cmd2</span> <span class="o">...</span><span class="p">]</span>
+   <span class="ow">or</span><span class="p">:</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">commands</span>
+   <span class="ow">or</span><span class="p">:</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">cmd</span> <span class="o">--</span><span class="n">help</span>
+
+
+<span class="n">Help</span> <span class="n">on</span> <span class="n">usage</span> <span class="n">extensions</span> <span class="n">by</span> <span class="n">setupdocx</span>
+   <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">setupdocx</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="section" id="module-setupdocx.install_docx">
+<span id="module"></span><h2>7.13.1. Module<a class="headerlink" href="#module-setupdocx.install_docx" title="Permalink to this headline">¶</a></h2>
+<p>installs created documetation</p>
+</div>
+<div class="section" id="installdocx">
+<h2>7.13.2. InstallDocX<a class="headerlink" href="#installdocx" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="setupdocx.install_docx.InstallDocX">
+<em class="property">class </em><code class="sig-prename descclassname">setupdocx.install_docx.</code><code class="sig-name descname">InstallDocX</code><span class="sig-paren">(</span><em class="sig-param">dist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/install_docx.html#InstallDocX"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.install_docx.InstallDocX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compile and install documentation.</p>
+</dd></dl>
+
+<div class="section" id="finalize-options">
+<span id="spec-installdocx-finalize-options"></span><h3>7.13.2.1. finalize_options<a class="headerlink" href="#finalize-options" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.install_docx.InstallDocX.finalize_options">
+<code class="sig-prename descclassname">InstallDocX.</code><code class="sig-name descname">finalize_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/install_docx.html#InstallDocX.finalize_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.install_docx.InstallDocX.finalize_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set final values for all the options that this command supports.
+This is always called as late as possible, ie.  after any option
+assignments from the command-line or from other commands have been
+done.  Thus, this is the place to code option dependencies: if
+‘foo’ depends on ‘bar’, then it is safe to set ‘foo’ from ‘bar’ as
+long as ‘foo’ still has the same value it was assigned in
+‘initialize_options()’.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="initialize-options">
+<span id="spec-installdocx-initialize-options"></span><h3>7.13.2.2. initialize_options<a class="headerlink" href="#initialize-options" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.install_docx.InstallDocX.initialize_options">
+<code class="sig-prename descclassname">InstallDocX.</code><code class="sig-name descname">initialize_options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/install_docx.html#InstallDocX.initialize_options"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.install_docx.InstallDocX.initialize_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default values for all the options that this command
+supports.  Note that these defaults may be overridden by other
+commands, by the setup script, by config files, or by the
+command-line.  Thus, this is not the place to code dependencies
+between options; generally, ‘initialize_options()’ implementations
+are just a bunch of “self.foo = None” assignments.</p>
+<p>This method must be implemented by all command classes.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="run">
+<span id="spec-installdocx-run"></span><h3>7.13.2.3. run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="setupdocx.install_docx.InstallDocX.run">
+<code class="sig-prename descclassname">InstallDocX.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/setupdocx/install_docx.html#InstallDocX.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.install_docx.InstallDocX.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Installs created document from <em>build</em> directory to target directory.</p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>7.13.3. Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<dl class="exception">
+<dt id="setupdocx.install_docx.SetupDocXInstallError">
+<em class="property">exception </em><code class="sig-prename descclassname">setupdocx.install_docx.</code><code class="sig-name descname">SetupDocXInstallError</code><a class="reference internal" href="_modules/setupdocx/install_docx.html#SetupDocXInstallError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#setupdocx.install_docx.SetupDocXInstallError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="setupdocx.setup.html" class="btn btn-neutral float-right" title="7.14. setup.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setupdocx.dist_docx.html" class="btn btn-neutral float-left" title="7.12. setupdocx.dist_docx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

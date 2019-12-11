@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.6. libbash.sh &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7.7. make_docx.bat" href="make_bat.html" />
+    <link rel="prev" title="7.5. call_sphinx.sh" href="call_sphinx_build.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index_modules.html">7. Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="call_apidoc.html">7.1. call_apidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_apiref.html">7.2. call_apiref.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_doc.html">7.3. call_doc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_apidoc.html">7.4. call_sphinxapidoc.sh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_sphinx_build.html">7.5. call_sphinx.sh</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.6. libbash.sh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#source">7.6.6. Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#download">7.6.7. Download</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="make_bat.html">7.7. make_docx.bat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="makefile.html">7.8. Makefile_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.html">7.9. setupdocx.__init__</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_apiref.html">7.10. setupdocx.build_apiref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.build_docx.html">7.11. setupdocx.build_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.dist_docx.html">7.12. setupdocx.dist_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.install_docx.html">7.13. setupdocx.install_docx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.setup.html">7.14. setup.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup_conf.html">7.15. setup.conf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.imagewrap.html">7.16. sphinx.ext.imagewrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setupdocx.sphinx.ext.literalincludewrap.html">7.17. sphinx.ext.literalincludewrap</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index_modules.html">7. Modules</a> &raquo;</li>
+        
+      <li>7.6. libbash.sh</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/libbash.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="libbash-sh">
+<span id="libbash"></span><h1>7.6. libbash.sh<a class="headerlink" href="#libbash-sh" title="Permalink to this headline">¶</a></h1>
+<p>The <em>libbash.sh</em> provides basic interfaces for wrapper scripts implemented by <em>bash</em>.
+Uses environment variables for base configuration and trace output.</p>
+<div class="section" id="source">
+<span id="call-doc-source"></span><h2>7.6.6. Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># PROJECT   = setupdocx</span>
+<span class="c1"># AUTHOR    = Arno-Can Uestuensoez</span>
+<span class="c1"># COPYRIGHT = Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez</span>
+<span class="c1"># LICENSE   = Artistic-License-2.0 + Forced-Fairplay-Constraints</span>
+<span class="c1">#</span>
+
+<span class="nv">DOCX_DEBUG</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_DEBUG</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
+<span class="nv">DOCX_VERBOSE</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_VERBOSE</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
+<span class="nv">DOCX_QUIET</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCX_QUIET</span><span class="k">:-</span><span class="nv">0</span><span class="si">}</span>
+
+
+<span class="c1"># writes exec traces into the root of the document-build directory</span>
+<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+	<span class="nv">DOCX_EXECTRACE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">DOCX_BUILDRELDIR</span><span class="si">}</span><span class="s2">/exec-calls-</span><span class="si">${</span><span class="nv">DOCX_DOCTEMPLATE</span><span class="k">:-</span><span class="nv">default</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">DOCX_DOCTYPE</span><span class="k">:-</span><span class="nv">default</span><span class="si">}</span><span class="s2">.txt&quot;</span>
+
+	<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; <span class="m">1</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG:&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG: WRAPPER      = </span><span class="si">${</span><span class="nv">0</span><span class="si">}</span><span class="s2">&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG: LIB          = </span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="si">}</span><span class="s2">&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG:PWD          = </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG:\$@           = &#39;</span><span class="nv">$@</span><span class="s2">&#39;&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG:DATETIME     = </span><span class="k">$(</span>date <span class="s1">&#39;+%Y%m%d%H%M%S&#39;</span><span class="k">)</span><span class="s2">&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# DBG:&quot;</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+	<span class="k">fi</span>
+	
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# EXEC-WRAPPER&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# ============&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# build and assembly calls for document creation&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# created by &#39;exec_call&#39; from &#39;libbash.sh&#39;&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# WRAPPER      = </span><span class="si">${</span><span class="nv">0</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# LIB          = </span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# PWD          = </span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# \$@           = &#39;</span><span class="nv">$@</span><span class="s2">&#39;&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# DATETIME     = </span><span class="k">$(</span>date <span class="s1">&#39;+%Y%m%d%H%M%S&#39;</span><span class="k">)</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# PROJECT      = </span><span class="si">${</span><span class="nv">PROJECT</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# DOCNAME      = </span><span class="si">${</span><span class="nv">DOCX_DOCNAME</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# CONFIG       = </span><span class="si">${</span><span class="nv">DOCX_CONFIGPATH</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# TEMPLATE     = </span><span class="si">${</span><span class="nv">DOCX_DOCTEMPLATE</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# INDEXSRC     = </span><span class="si">${</span><span class="nv">DOCX_INDEXSRC</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# DOCTYPE      = </span><span class="si">${</span><span class="nv">DOCX_DOCTYPE</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# SOURCE       = </span><span class="si">${</span><span class="nv">DOCX_DOCSRC</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# BUILDER      = </span><span class="si">${</span><span class="nv">DOCX_BUILDER</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# BUILDDIR     = </span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# BUILDRELDIR  = </span><span class="si">${</span><span class="nv">DOCX_BUILDRELDIR</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# ENVIRON      = </span><span class="si">${</span><span class="nv">DOCX_BUILDDIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">DOCX_BUILDRELDIR</span><span class="si">}</span><span class="s2">/setenv.sh&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# VERSION      = </span><span class="si">${</span><span class="nv">VERSION</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;# RELEASE      = </span><span class="si">${</span><span class="nv">RELEASE</span><span class="si">}</span><span class="s2">&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="nb">echo</span> <span class="s2">&quot;&quot;</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="k">function</span> display<span class="o">()</span> <span class="o">{</span>
+	<span class="c1"># displays text</span>
+	<span class="c1"># evaluates DOCX_QUIET</span>
+	<span class="c1">#</span>
+	<span class="c1"># Args:</span>
+	<span class="c1">#   $1:  debug level</span>
+	<span class="c1">#   $2:  verbose level</span>
+	<span class="c1">#   $3+  output text</span>
+	<span class="c1"># Returns:</span>
+	<span class="c1">#   Displayed text</span>
+	<span class="c1">#</span>
+	<span class="nb">local</span> <span class="nv">_dlvl</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span>
+	<span class="nb">local</span> <span class="nv">_vlvl</span><span class="o">=</span><span class="nv">$2</span><span class="p">;</span>
+	<span class="nb">local</span> <span class="nv">_off</span><span class="o">=</span><span class="m">0</span>
+	<span class="nb">local</span> <span class="nv">_err</span><span class="o">=</span><span class="m">0</span>
+	<span class="nb">local</span> <span class="nv">_wng</span><span class="o">=</span><span class="m">0</span>
+	<span class="nb">local</span> <span class="nv">_empty</span><span class="o">=</span><span class="m">0</span>
+	
+    <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;ERROR&quot;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+		<span class="nv">_err</span><span class="o">=</span><span class="nv">$2</span>
+		<span class="nb">shift</span> <span class="m">2</span>
+		<span class="nv">_off</span><span class="o">=</span><span class="m">1</span>
+    <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;WARNING&quot;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+    	<span class="nv">_wng</span><span class="o">=</span><span class="m">1</span>
+		<span class="nb">shift</span> <span class="m">1</span>
+		<span class="nv">_off</span><span class="o">=</span><span class="m">1</span>
+    <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;EMPTYLINE&quot;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+		<span class="nv">_empty</span><span class="o">=</span><span class="m">1</span>
+    <span class="k">elif</span> <span class="o">[[</span> <span class="s2">&quot;X</span><span class="si">${</span><span class="nv">_dlvl</span><span class="p">//[0-9]/</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="o">||</span> <span class="s2">&quot;X</span><span class="si">${</span><span class="nv">_vlvl</span><span class="p">//[0-9]/</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;X&quot;</span> <span class="o">]]</span><span class="p">;</span><span class="k">then</span>
+		<span class="nv">_off</span><span class="o">=</span><span class="m">1</span>
+	<span class="k">fi</span>
+	
+	<span class="nb">local</span> <span class="nv">_callidx</span><span class="o">=</span><span class="si">${#</span><span class="nv">BASH_LINENO</span><span class="p">[@]</span><span class="si">}</span>
+	<span class="nv">_callidxline</span><span class="o">=</span><span class="k">$((</span>_callidx-2<span class="k">))</span>
+	<span class="nv">_callidxfile</span><span class="o">=</span><span class="k">$((</span>_callidx-3<span class="k">))</span>
+	<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$BASH_SOURCE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[</span><span class="nv">$_callidxfile</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+		<span class="nv">_callidxfile</span><span class="o">=</span><span class="k">$((</span>_callidx-4<span class="k">))</span>
+	<span class="k">fi</span>
+
+	<span class="k">if</span><span class="o">((</span><span class="nv">_empty</span><span class="o">==</span><span class="m">1</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; _dlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+		<span class="k">elif</span><span class="o">((</span>DOCX_VERBOSE &gt; _vlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span>
+		<span class="k">elif</span><span class="o">((</span><span class="nv">DOCX_DEBUG</span> <span class="o">==</span><span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_VERBOSE</span> <span class="o">==</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_QUIET</span> <span class="o">==</span> <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			<span class="nb">echo</span> <span class="s2">&quot;#&quot;</span>
+		<span class="k">elif</span><span class="o">((</span><span class="nv">DOCX_QUIET</span> <span class="o">==</span> <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			<span class="nb">echo</span> 
+		<span class="k">fi</span>
+	<span class="k">elif</span><span class="o">((</span><span class="nv">_off</span><span class="o">==</span><span class="m">0</span> <span class="o">&amp;&amp;</span> DOCX_DEBUG &gt; _dlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">shift</span> <span class="m">2</span>
+		<span class="nb">printf</span> <span class="s2">&quot;# DBG:%s:%04d: %s\n&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[</span><span class="nv">$_callidxfile</span><span class="p">]##*/</span><span class="si">}</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">BASH_LINENO</span><span class="p">[</span><span class="nv">$_callidxline</span><span class="p">]</span><span class="si">}</span> <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+	<span class="k">elif</span><span class="o">((</span><span class="nv">_off</span><span class="o">==</span><span class="m">0</span> <span class="o">&amp;&amp;</span> DOCX_VERBOSE &gt; _vlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">shift</span> <span class="m">2</span>
+		<span class="nb">printf</span> <span class="s2">&quot;# VERB:%s:%04d: %s\n&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[</span><span class="nv">$_callidxfile</span><span class="p">]##*/</span><span class="si">}</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">BASH_LINENO</span><span class="p">[</span><span class="nv">$_callidxline</span><span class="p">]</span><span class="si">}</span> <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span>
+	<span class="k">elif</span><span class="o">((</span>_err&gt;0<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">printf</span> <span class="s2">&quot;\n#***\n# ERROR:%s:%04d:%d: %s\n#***\n\n&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[</span><span class="nv">$_callidxfile</span><span class="p">]##*/</span><span class="si">}</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">BASH_LINENO</span><span class="p">[</span><span class="nv">$_callidxline</span><span class="p">]</span><span class="si">}</span> <span class="nv">$_err</span> <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+	<span class="k">elif</span><span class="o">((</span>_wng&gt;0<span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">printf</span> <span class="s2">&quot;#\n# WARNING:%s:%04d:%d: %s\n#\n&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASH_SOURCE</span><span class="p">[</span><span class="nv">$_callidxfile</span><span class="p">]##*/</span><span class="si">}</span><span class="s2">&quot;</span> <span class="si">${</span><span class="nv">BASH_LINENO</span><span class="p">[</span><span class="nv">$_callidxline</span><span class="p">]</span><span class="si">}</span> <span class="nv">$_wng</span> <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+	<span class="k">elif</span><span class="o">((</span><span class="nv">DOCX_DEBUG</span> <span class="o">==</span><span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_VERBOSE</span> <span class="o">==</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_QUIET</span> <span class="o">==</span> <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">shift</span> <span class="m">2</span>
+		<span class="nb">echo</span> <span class="s2">&quot;# </span><span class="nv">$@</span><span class="s2">&quot;</span>
+	<span class="k">elif</span><span class="o">((</span><span class="nv">DOCX_QUIET</span> <span class="o">==</span> <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+	<span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function</span> display_state<span class="o">()</span> <span class="o">{</span>
+	<span class="c1"># gets resulting display status as return code</span>
+	<span class="c1">#</span>
+	<span class="c1"># Args:</span>
+	<span class="c1">#   $1:  debug level</span>
+	<span class="c1">#   $2:  verbose level</span>
+	<span class="c1"># Returns:</span>
+	<span class="c1">#   0:   no output</span>
+	<span class="c1">#   1:   standard</span>
+	<span class="c1">#   2:   verbose</span>
+	<span class="c1">#   4:   debug</span>
+	<span class="c1">#</span>
+	<span class="nb">local</span> <span class="nv">_dlvl</span><span class="o">=</span><span class="nv">$1</span><span class="p">;</span> 
+	<span class="nb">local</span> <span class="nv">_vlvl</span><span class="o">=</span><span class="nv">$2</span><span class="p">;</span>
+	<span class="nb">local</span> <span class="nv">ret</span><span class="o">=</span><span class="m">0</span>
+	
+	<span class="k">if</span><span class="o">((</span>DOCX_VERBOSE &gt; _vlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span> <span class="nv">ret</span><span class="o">=</span><span class="k">$((</span>ret+2<span class="k">))</span><span class="p">;</span> <span class="k">fi</span>
+	<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; _dlvl<span class="o">))</span><span class="p">;</span><span class="k">then</span> <span class="nv">ret</span><span class="o">=</span><span class="k">$((</span>ret+4<span class="k">))</span><span class="p">;</span> <span class="k">fi</span>
+	<span class="k">if</span><span class="o">((</span><span class="nv">DOCX_DEBUG</span> <span class="o">==</span><span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_VERBOSE</span> <span class="o">==</span> <span class="m">0</span> <span class="o">&amp;&amp;</span> <span class="nv">DOCX_QUIET</span> <span class="o">==</span> <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span> <span class="nv">ret</span><span class="o">=</span><span class="k">$((</span>ret+1<span class="k">))</span><span class="p">;</span> <span class="k">fi</span>
+
+	<span class="k">return</span> <span class="nv">$ret</span>
+<span class="o">}</span>
+
+
+<span class="k">function</span> exec_call<span class="o">()</span> <span class="o">{</span>
+	<span class="c1"># executes the call, or prints it only</span>
+	<span class="c1"># evaluates DOCX_NOEXEC</span>
+
+	<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;X</span><span class="si">${</span><span class="nv">DOCX_NOEXEC</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;X1&quot;</span> <span class="o">]</span><span class="p">;</span><span class="k">then</span>
+		display <span class="nv">$@</span>
+	<span class="k">else</span>
+		display <span class="nv">$@</span>
+		<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			<span class="nb">echo</span> <span class="nv">$@</span> &gt;&gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span>
+		<span class="k">fi</span>
+		<span class="nb">eval</span> <span class="nv">$@</span>
+		<span class="nv">_err</span><span class="o">=</span><span class="nv">$?</span>
+		<span class="k">if</span><span class="o">((</span>_err!<span class="o">=</span><span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			display ERROR <span class="nv">$_err</span> <span class="s2">&quot;EXEC-FAILED: </span><span class="nv">$*</span><span class="s2">&quot;</span>
+			<span class="k">if</span><span class="o">((</span>DOCX_DEBUG &gt; <span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+			    display ERROR <span class="nv">$_err</span> <span class="s2">&quot;EXEC-FAILED: </span><span class="nv">$*</span><span class="s2">&quot;</span> <span class="m">2</span>&gt;&gt;<span class="s2">&quot;</span><span class="si">${</span><span class="nv">DOCX_EXECTRACE</span><span class="si">}</span><span class="s2">&quot;</span> 
+			<span class="k">fi</span>
+		<span class="k">fi</span>
+	<span class="k">fi</span>
+	<span class="k">if</span><span class="o">((</span>DOCX_BREAKONERR&gt;0 <span class="o">&amp;&amp;</span> _err!<span class="o">=</span><span class="m">0</span><span class="o">))</span><span class="p">;</span><span class="k">then</span>
+		display <span class="s2">&quot;BREAKONERR:exit wrapper after first error =&gt; exit=</span><span class="nv">$_err</span><span class="s2">&quot;</span>
+		display <span class="s2">&quot; &quot;</span>
+		<span class="nb">exit</span> <span class="nv">$_err</span>
+	<span class="k">fi</span>
+	<span class="k">return</span> <span class="nv">$_err</span>
+<span class="o">}</span>
+
+display <span class="m">1</span> <span class="m">1</span> <span class="s2">&quot;libbash.sh loaded...&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="download">
+<h2>7.6.7. Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="_static/libbash.sh">call_doc.sh</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="make_bat.html" class="btn btn-neutral float-right" title="7.7. make_docx.bat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="call_sphinx_build.html" class="btn btn-neutral float-left" title="7.5. call_sphinx.sh" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

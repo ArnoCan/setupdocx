@@ -1,0 +1,761 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>setupdocx.sphinx.ext.imagewrap &mdash; setupdocx  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html">
+          
+
+          
+            
+            <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.36
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Shortcuts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">SetupDocX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_cockpit.html">apidoc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_apiref_scaled.html">apiref</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_abstract.html">1. Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_platform_support.html">2. Platform Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_blueprint.html">3. Blueprint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../setuplib_cli.html">4. Command Line Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../configurations/index.html">5. Configuration Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_documents.html">6. Documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_modules.html">7. Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_indices.html">8. Indices and tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_resources.html">9. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../install.html">10. Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../references.html">11. External References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index_part_license.html">12. Licenses</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Application</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../howto/index.html">Howto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../faq/index.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">setupdocx</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../../setupdocx.html">setupdocx</a> &raquo;</li>
+        
+      <li>setupdocx.sphinx.ext.imagewrap</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for setupdocx.sphinx.ext.imagewrap</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;Wrapper extension for the directive *image* / *Image* and *figure/Figure*.</span>
+<span class="sd">In order to avoid copy-of-code or mix-in, the instance is processed by functions.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">from</span> <span class="nn">docutils.parsers.rst</span> <span class="k">import</span> <span class="n">directives</span>
+<span class="kn">from</span> <span class="nn">docutils.parsers.rst.directives</span> <span class="k">import</span> <span class="n">images</span>
+
+<span class="kn">import</span> <span class="nn">setupdocx</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Arno-Can Uestuensoez&#39;</span>
+<span class="n">__author_email__</span> <span class="o">=</span> <span class="s1">&#39;acue_sf2@sourceforge.net&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;Artistic-License-2.0 + Forced-Fairplay-Constraints&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez&quot;</span>
+<span class="n">__uuid__</span> <span class="o">=</span> <span class="s2">&quot;45167c30-3261-4a38-9de4-d7151348ba48&quot;</span>
+
+
+<span class="n">URI_PATTERN</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\w+://&#39;</span><span class="p">)</span>
+<span class="c1">#: helper for path normalization</span>
+
+
+<div class="viewcode-block" id="ImageWrapError"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageWrapError">[docs]</a><span class="k">class</span> <span class="nc">ImageWrapError</span><span class="p">(</span><span class="n">setupdocx</span><span class="o">.</span><span class="n">SetupDocXError</span><span class="p">):</span> <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="sd">&quot;&quot;&quot;Image wrapper failed.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="FigureWrapError"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureWrapError">[docs]</a><span class="k">class</span> <span class="nc">FigureWrapError</span><span class="p">(</span><span class="n">ImageWrapError</span><span class="p">):</span> <span class="c1"># pylint: disable=too-few-public-methods</span>
+    <span class="sd">&quot;&quot;&quot;Figure wrapper failed.&quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<span class="n">_UP</span> <span class="o">=</span> <span class="s1">&#39;..&#39;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+<div class="viewcode-block" id="align_paths_to_top"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.align_paths_to_top">[docs]</a><span class="k">def</span> <span class="nf">align_paths_to_top</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">rel</span><span class="p">,</span> <span class="n">depth</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Aligns the provided image/figure relative paths. Checks first</span>
+<span class="sd">    the existence of the path, if not exists adds the upward relative</span>
+<span class="sd">    path as offset and checks the existence again. In case of a match</span>
+<span class="sd">    the image path is replace by the existent, else kept unchanged.</span>
+<span class="sd">    Ignores absolute paths.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path:</span>
+<span class="sd">            Path to be aligned. Only non-absolute paths are processed.</span>
+
+<span class="sd">        base:</span>
+<span class="sd">            Base for relative input. Either absolute or relative to</span>
+<span class="sd">            current position.</span>
+
+<span class="sd">        rel:</span>
+<span class="sd">            Relative paths as side-branch of the search.</span>
+
+<span class="sd">        depth:</span>
+<span class="sd">            Maximum number of upward directory nodes to be searched.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Resolved path, either absolute or relative.</span>
+
+<span class="sd">    Raises:</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span>
+            <span class="ow">not</span> <span class="n">URI_PATTERN</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">path</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">rel</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">base</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>
+        <span class="p">):</span>
+        <span class="k">return</span> <span class="n">_UP</span> <span class="o">*</span> <span class="n">depth</span> <span class="o">+</span> <span class="n">path</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+<div class="viewcode-block" id="cb_align_values_image"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.cb_align_values_image">[docs]</a><span class="k">def</span> <span class="nf">cb_align_values_image</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Imported callback, see:</span>
+
+<span class="sd">    * docutils.parsers.rst.directives</span>
+<span class="sd">    * docutils.parsers.rst.directives.images.Image.align_values</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">directives</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">align_values</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ImageExt"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageExt">[docs]</a><span class="k">class</span> <span class="nc">ImageExt</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wraps the class *Image*. Passes builder specific values.</span>
+<span class="sd">    For the image parameters refer to [restdir]_.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        When multiple builder are called, requires to run with</span>
+<span class="sd">        the cache erase option. ::</span>
+
+<span class="sd">                sphinx-build -E ..,</span>
+
+<span class="sd">    The wrapper is designed to be implemented as a mixin only.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: provided additional options</span>
+    <span class="n">option_spec_image</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;scale-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+        <span class="s1">&#39;scale-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+        <span class="s1">&#39;scale-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+        <span class="s1">&#39;scale-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+        <span class="s1">&#39;scale-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+        <span class="s1">&#39;scale-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">percentage</span><span class="p">,</span>
+
+        <span class="s1">&#39;height-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;height-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;height-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;height-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;height-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;height-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+
+        <span class="s1">&#39;width-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;width-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;width-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;width-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;width-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;width-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+
+        <span class="s1">&#39;target-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+        <span class="s1">&#39;target-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+        <span class="s1">&#39;target-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+        <span class="s1">&#39;target-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+        <span class="s1">&#39;target-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+        <span class="s1">&#39;target-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span>
+
+        <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="n">cb_align_values_image</span><span class="p">,</span>
+
+    <span class="p">}</span>  <span class="c1">#: wrap all image parameters</span>
+
+    <span class="c1">#: complete options</span>
+    <span class="n">option_spec</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">option_spec_image</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">ImageExt</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="ImageExt.align_paths_to_top"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageExt.align_paths_to_top">[docs]</a>    <span class="k">def</span> <span class="nf">align_paths_to_top</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Aligns the provided image/figure relative paths. Checks first</span>
+<span class="sd">        the existence of the path, if not exists adds the upward relative</span>
+<span class="sd">        path as offset and checks the existence again. In case of a match</span>
+<span class="sd">        the image path is replace by the existent, else kept unchanged.</span>
+<span class="sd">        Ignores items with absolute paths.</span>
+
+<span class="sd">        Aligns::</span>
+<span class="sd">            source-path</span>
+
+<span class="sd">            target-html</span>
+<span class="sd">            target</span>
+
+<span class="sd">        REMARK: Had to reengineer a bit of redundant attributes - so eventually some</span>
+<span class="sd">        additional fixes may be required in future. </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            res:</span>
+<span class="sd">                result from call of &#39;images.Image.run()&#39;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None, updates &#39;res&#39;.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span> <span class="c1">#pylint: disable=E1101</span>
+
+        <span class="n">_base</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">srcdir</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+        <span class="n">_rel</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">docname</span><span class="p">)</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+        <span class="n">_depth</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_rel</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="n">_opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span>
+
+        <span class="c1"># normalize the source link - for target links</span>
+        <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">align_paths_to_top</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">_base</span><span class="p">,</span> <span class="n">_rel</span><span class="p">,</span> <span class="n">_depth</span><span class="p">)</span> <span class="c1">#pylint: disable=E1101</span>
+
+        <span class="c1">#</span>
+        <span class="c1">#TODO: final validation required for portability</span>
+        <span class="c1">#</span>
+        <span class="c1"># normalize additional attributes - suppress a bunch of fake-warnings</span>
+        <span class="c1">#</span>
+        <span class="c1"># satisfies the ImageCollector in the final step, which uses the uri of the image child. </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span> <span class="c1">#pylint: disable=E1101</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;targethtml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span> 
+            <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span> 
+        <span class="k">except</span><span class="p">:</span> 
+            <span class="k">pass</span>
+
+        <span class="c1"># seems to be analsed once before reaching this point: res[0].children[0]rawsource = ...</span>
+
+        <span class="c1"># normalize the reference target</span>
+        <span class="c1"># want the priority hierarchy, thus prefetch all known</span>
+        <span class="n">_f0</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_opts</span><span class="p">:</span>
+            <span class="c1"># should be one only for currenty builder</span>
+            <span class="k">if</span> <span class="n">k</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;target-&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">option_spec_image</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">_f0</span> <span class="o">=</span> <span class="n">_opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+        <span class="c1"># an optional generic - e.g. as default for under-construction</span>
+        <span class="n">_f1</span> <span class="o">=</span> <span class="n">_opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_f0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">_f0</span><span class="p">):</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;refuri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">align_paths_to_top</span><span class="p">(</span><span class="n">_f0</span><span class="p">,</span> <span class="n">_base</span><span class="p">,</span> <span class="n">_rel</span><span class="p">,</span> <span class="n">_depth</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">_f1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">_f1</span><span class="p">):</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;refuri&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">align_paths_to_top</span><span class="p">(</span><span class="n">_f1</span><span class="p">,</span> <span class="n">_base</span><span class="p">,</span> <span class="n">_rel</span><span class="p">,</span> <span class="n">_depth</span><span class="p">)</span></div>
+
+        <span class="c1"># do not need it, but keep it as reminder</span>
+        <span class="c1">#else:</span>
+        <span class="c1">#    res[0][&#39;refuri&#39;] = align_paths_to_top(self.arguments[0], _base, _rel, _depth)</span>
+
+<div class="viewcode-block" id="ImageExt.extract_own_options"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageExt.extract_own_options">[docs]</a>    <span class="k">def</span> <span class="nf">extract_own_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Process the parameters, and maps the values to the parent class *Image*.</span>
+<span class="sd">        The values are provided by the member *self.options*. ::</span>
+
+<span class="sd">                scale-{html, singlehtml, latex, epub, epub2, mobi,}</span>
+<span class="sd">                height-{html, singlehtml, latex, epub, epub2, mobi,}</span>
+<span class="sd">                width-{html, singlehtml, latex, epub, epub2, mobi,}</span>
+<span class="sd">                align-{html, singlehtml, latex, epub, epub2, mobi,}</span>
+<span class="sd">                target-{html, singlehtml, latex, epub, epub2, mobi,}</span>
+
+<span class="sd">        Defaults values are::</span>
+
+<span class="sd">                scale</span>
+<span class="sd">                height</span>
+<span class="sd">                width</span>
+<span class="sd">                align</span>
+<span class="sd">                target</span>
+
+<span class="sd">        Fetches the known-and-present special options only from &#39;self.options&#39;.</span>
+<span class="sd">        These are stored in &#39;self.own_opts&#39;, the original default values remain</span>
+<span class="sd">        untouched.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="c1">#pylint: disable=E1101</span>
+        <span class="n">_opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span>
+
+        <span class="k">if</span> <span class="n">opts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">opts</span>
+
+        <span class="c1"># set the specifics for the builder, or keep the generic</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_opts</span><span class="p">[</span><span class="s1">&#39;width-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">]</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;width-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_opts</span><span class="p">[</span><span class="s1">&#39;height-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">]</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;height-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_opts</span><span class="p">[</span><span class="s1">&#39;scale-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">]</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;scale-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_opts</span><span class="p">[</span><span class="s1">&#39;target-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">]</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;target-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># now remove unused special options</span>
+        <span class="n">_for_del</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">opts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">_k</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.*-([^-]+)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1&#39;</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">_k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">option_spec_image</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="n">_for_del</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">_for_del</span><span class="p">:</span>
+            <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">_opts</span></div>
+
+<div class="viewcode-block" id="ImageExt.set_own_options"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageExt.set_own_options">[docs]</a>    <span class="k">def</span> <span class="nf">set_own_options</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">res</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Updates the options of the result with the own extention-options.</span>
+
+<span class="sd">        ::</span>
+
+<span class="sd">                scale-{html, latex, epub, mobi,}   =&gt; scale</span>
+<span class="sd">                height-{html, latex, epub, mobi,}  =&gt; height</span>
+<span class="sd">                width-{html, latex, epub, mobi,}   =&gt; width</span>
+<span class="sd">                align-{html, latex, epub, mobi,}   =&gt; align</span>
+<span class="sd">                target-{html, latex, epub, mobi,}  =&gt; target</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            res:</span>
+<span class="sd">                result from call of &#39;images.Image.run()&#39;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            None, updates &#39;res&#39;.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            pass-through</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># nothing to do</span>
+            <span class="k">return</span>
+
+        <span class="c1"># align contained source paths such as uri and target</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align_paths_to_top</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+        <span class="c1"># non-path option mappings</span>
+        <span class="n">_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;width-&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span><span class="p">)</span>
+        <span class="n">_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;height-&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span><span class="p">)</span>
+        <span class="n">_scale</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scale-&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_width</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_width</span>
+
+        <span class="k">if</span> <span class="n">_height</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_height</span>
+
+        <span class="k">if</span> <span class="n">_scale</span><span class="p">:</span>
+            <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;scale&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_scale</span></div>
+
+<div class="viewcode-block" id="ImageExt.run"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.ImageExt.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Process the parameters by *self.setoptions*, and calls</span>
+<span class="sd">        the run method of the parent class *Image*. Inherits</span>
+<span class="sd">        the option_spec from *docutils.parsers.rst.directives.images.Image*.</span>
+<span class="sd">        Adds the following parameters. ::</span>
+
+<span class="sd">                scale-{html, latex, epub, mobi,}</span>
+<span class="sd">                height-{html, latex, epub, mobi,}</span>
+<span class="sd">                width-{html, latex, epub, mobi,}</span>
+<span class="sd">                align-{html, latex, epub, mobi,}</span>
+<span class="sd">                target-{html, latex, epub, mobi,}</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># fetch builder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span> <span class="c1">#pylint: disable=E1101</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_env</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="c1"># initialize the wrapper extensions</span>
+        <span class="c1"># pop-out additional options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extract_own_options</span><span class="p">()</span>
+
+        <span class="c1"># process original base class</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ImageExt</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1">#pylint: disable=E1101</span>
+
+        <span class="c1"># sets the extension options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_own_options</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="FigureExt"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureExt">[docs]</a><span class="k">class</span> <span class="nc">FigureExt</span><span class="p">(</span><span class="n">ImageExt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wraps the class *Figure*. Passes builder specific values.</span>
+<span class="sd">    For the figure parameters refer to [restdir]_.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        When multiple builder are called, requires to run with</span>
+<span class="sd">        the cache erase option. ::</span>
+
+<span class="sd">            sphinx-build -E ..,</span>
+
+<span class="sd">    The permitted values of some parameters are slightly different from</span>
+<span class="sd">    the parent image classes [restdir]_. This is taken into account.</span>
+
+<span class="sd">    For the complete parameter description refer to [restdir]_, here a copy</span>
+<span class="sd">    of the different semantics of &quot;*width*&quot; and &quot;*figwidth*&quot;.</span>
+<span class="sd">    This option [figwidth] does not scale the included image;</span>
+<span class="sd">    use the &quot;width&quot; image option for that. ::</span>
+
+<span class="sd">        +---------------------------+</span>
+<span class="sd">        |        figure             |</span>
+<span class="sd">        |                           |</span>
+<span class="sd">        |&lt;------ figwidth ---------&gt;|</span>
+<span class="sd">        |                           |</span>
+<span class="sd">        |  +---------------------+  |</span>
+<span class="sd">        |  |     image           |  |</span>
+<span class="sd">        |  |                     |  |</span>
+<span class="sd">        |  |&lt;--- width ---------&gt;|  |</span>
+<span class="sd">        |  +---------------------+  |</span>
+<span class="sd">        |                           |</span>
+<span class="sd">        |The figure&#39;s caption should|</span>
+<span class="sd">        |wrap at this width.        |</span>
+<span class="sd">        +---------------------------+</span>
+
+<span class="sd">    The wrapper is designed to be implemented as a mixin only.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">option_spec_figure</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;figwidth-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figwidth-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figwidth-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figwidth-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figwidth-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figwidth-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_percentage_or_unitless</span><span class="p">,</span>
+
+        <span class="s1">&#39;figclass-html&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figclass-singlehtml&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figclass-latex&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figclass-epub&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figclass-epub2&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+        <span class="s1">&#39;figclass-mobi&#39;</span><span class="p">:</span> <span class="n">directives</span><span class="o">.</span><span class="n">length_or_unitless</span><span class="p">,</span>
+
+    <span class="p">}</span>  <span class="c1">#: wrap all image parameters</span>
+
+    <span class="n">option_spec</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">option_spec_figure</span><span class="p">)</span>
+    <span class="n">option_spec</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">ImageExt</span><span class="o">.</span><span class="n">option_spec_image</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FigureExt</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="FigureExt.extract_own_options"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureExt.extract_own_options">[docs]</a>    <span class="k">def</span> <span class="nf">extract_own_options</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Process the parameters, and maps the values to the parent class *Figure*.</span>
+<span class="sd">        The values are provided by the member *self.options*. ::</span>
+
+<span class="sd">            figwidth-{html, latex, epub, mobi,}</span>
+<span class="sd">            figclass-{html, latex, epub, mobi,}</span>
+
+<span class="sd">        Fetches the known-and-present special options only from &#39;self.options&#39;.</span>
+<span class="sd">        These are stored in &#39;self.own_opts&#39;, the original default values remain</span>
+<span class="sd">        untouched.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span> <span class="c1">#pylint: disable=E1101</span>
+        <span class="n">builder</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">options</span> <span class="c1">#pylint: disable=E1101</span>
+        <span class="n">_opts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">own_opts</span>
+
+        <span class="k">if</span> <span class="n">opts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_opts</span>
+
+        <span class="c1"># set the specifics for the builder, or keep the generic</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">_opts</span><span class="p">[</span><span class="s1">&#39;figwidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;figwidth-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">_opts</span></div>
+
+<div class="viewcode-block" id="FigureExt.align_figure"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureExt.align_figure">[docs]</a>    <span class="k">def</span> <span class="nf">align_figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument</span><span class="p">):</span> <span class="c1">#pylint:  disable=R0201</span>
+        <span class="k">return</span> <span class="n">directives</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">argument</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">Figure</span><span class="o">.</span><span class="n">align_h_values</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FigureExt.setoptions_figure"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureExt.setoptions_figure">[docs]</a>    <span class="k">def</span> <span class="nf">setoptions_figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span> <span class="c1">#pylint:  disable=R0201</span>
+        <span class="sd">&quot;&quot;&quot;Process the parameters, and maps the values to the parent class *Figure*.</span>
+<span class="sd">        The values are provided by the member *self.options*. ::</span>
+
+<span class="sd">            figwidth-{html, latex, epub, mobi,}</span>
+<span class="sd">            figclass-{html, latex, epub, mobi,}</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">env</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">document</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">env</span>
+        <span class="n">builder</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">opts</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">options</span>
+
+        <span class="k">if</span> <span class="n">opts</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">opts</span>
+
+        <span class="n">_x</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;figwidth-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">_x</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;figwidth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_x</span>
+
+        <span class="n">_x</span> <span class="o">=</span> <span class="n">opts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;figclass-&#39;</span> <span class="o">+</span> <span class="n">builder</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">_x</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">opts</span><span class="p">[</span><span class="s1">&#39;figclass&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_x</span>
+
+        <span class="k">return</span> <span class="n">opts</span></div>
+
+<div class="viewcode-block" id="FigureExt.run"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.FigureExt.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Process the parameters by *self.setoptions*, and calls</span>
+<span class="sd">        the run method of the parent class *Figure*. Inherits</span>
+<span class="sd">        the option_spec from *docutils.parsers.rst.directives.images.Figure*.</span>
+<span class="sd">        Adds the following parameters. ::</span>
+
+<span class="sd">            figwidth-{html, latex, epub, mobi,}</span>
+<span class="sd">            figclass-{html, latex, epub, mobi,}</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># initialize the wrapper extensions</span>
+        <span class="c1"># pop-out additional options</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extract_own_options</span><span class="p">()</span>
+
+        <span class="c1"># process original base class</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">FigureExt</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+        <span class="c1"># align contained source paths</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">align_paths_to_top</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">res</span></div></div>
+
+
+<div class="viewcode-block" id="setup"><a class="viewcode-back" href="../../../../setupdocx.sphinx.ext.imagewrap.html#setupdocx.sphinx.ext.imagewrap.setup">[docs]</a><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize the extension.&quot;&quot;&quot;</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># extended image wrapper</span>
+    <span class="c1">#</span>
+    <span class="k">class</span> <span class="nc">ImageWrap</span><span class="p">(</span><span class="n">ImageExt</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">Image</span><span class="p">):</span> <span class="c1">#pylint:  disable=C0111</span>
+        <span class="k">pass</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">images</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">option_spec</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ImageWrap</span><span class="o">.</span><span class="n">option_spec</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">ImageExt</span><span class="o">.</span><span class="n">option_spec</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ImageWrap</span><span class="o">.</span><span class="n">option_spec</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;imagewrap&#39;</span><span class="p">,</span> <span class="n">ImageWrap</span><span class="p">)</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># extended figure wrapper</span>
+    <span class="c1">#</span>
+    <span class="k">class</span> <span class="nc">FigureWrap</span><span class="p">(</span><span class="n">FigureExt</span><span class="p">,</span> <span class="n">images</span><span class="o">.</span><span class="n">Figure</span><span class="p">):</span> <span class="c1">#pylint:  disable=C0111</span>
+        <span class="k">pass</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">images</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">option_spec</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">FigureWrap</span><span class="o">.</span><span class="n">option_spec</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">FigureExt</span><span class="o">.</span><span class="n">option_spec</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">FigureWrap</span><span class="o">.</span><span class="n">option_spec</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">add_directive</span><span class="p">(</span><span class="s1">&#39;figurewrap&#39;</span><span class="p">,</span> <span class="n">FigureWrap</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parallel_read_safe&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;parallel_write_safe&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">}</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Copyright (C) 2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+      <span class="lastupdated">
+        Last updated on Dec 11, 2019.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
