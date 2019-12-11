@@ -25,4 +25,6 @@ Basic
    :maxdepth: 1
    :includehidden:
 
+   faq_basic
+   faq_target_doc
 

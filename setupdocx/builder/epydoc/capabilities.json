@@ -1,0 +1,69 @@
+{
+	"builder": {
+		"name": "epydoc",
+		"version": "01.01.001"
+	},
+	"epydoc": {
+
+	},
+	"epydoc": {
+		"defaults": {
+			"build_apiref": null,
+			"build_dir": "build/",
+			"build_reldir": "epydoc/apiref/",
+			"builder_path": null,
+			"clean": false,
+			"clean_all": false,
+			"config_path": null,
+			"docname": null,
+			"docsource": "docsrc/",
+			"doctemplate": "default",
+			"doctype": "html",
+			"indexsrc": "index.rst",
+			"name": null,
+			"release": "01.01.001b0",
+			"srcdir": null,
+			"version": "01.01.001"
+		},
+		"apiref": {
+			"executable": "epydoc",
+			"executableopts": "",
+			"executableopts_reset": false,
+			"metatypes": [
+				"html",
+				"dvi"
+			],
+			"doctypes": [
+				"html",
+				"ps",
+				"pdf",
+				"latex"
+			],
+			"defaults": {
+				"build_apiref": null,
+				"build_dir": "build/",
+				"build_reldir": "epydoc/apiref/",
+				"builder_path": null,
+				"clean": null,
+				"clean_all": false,
+				"config_path": null,
+				"docname": null,
+				"docsource": "docsrc/",
+				"metatype": "rst",
+				"doctype": "html",
+				"executable": "epydoc",
+				"executableopts": "",
+				"executableopts_reset": false,
+				"indexsrc": "index.rst",
+				"name": null,
+				"release": null,
+				"srcdir": null,
+				"template": "",
+				"version": null,
+				"wrapper": "call_apiref.sh",
+				"wrapperopts": "",
+				"wrapperopts_reset": false
+			}
+		}
+	}
+}

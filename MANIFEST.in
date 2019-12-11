@@ -1,5 +1,5 @@
 #documentation
-recursive-include doc/en/html/man3/platformids *
+recursive-include doc/en/html/man3/setupdocx *
 
 #Misc
 include .gitignore
@@ -9,4 +9,4 @@ include callDocSphinx.sh
 include licenses-amendments.txt
 include setup.cfg
 include setup.py
-include dosrc/pyplatformids-64x64.png
+include dosrc/logo.png

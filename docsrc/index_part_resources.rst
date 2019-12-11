@@ -26,9 +26,3 @@ Resources
 * Sourceforge.net: https://sourceforge.net/projects/setupdocx/
 
 
-.. |smilecool| image:: _static/smiling-face-with-sunglasses-32x32.png
-   :width: 16
-   :alt: :-)
-
-
-

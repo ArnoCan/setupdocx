@@ -1,22 +1,43 @@
 setupdocx
-============
+=========
 
-This package serves as a placeholder for the package *setupdocx* under development.
+The ‘setupdocx‘ provides a control layer for continuous documentation by the simplified creation, packaging, and installation of documentation.
+The provided commands are distributed as entry points and optional base classes for further customization into *setup.py* - setuptools / distutils. 
 
-The main intention is to reserve the package name to assure the
-availability of currently introduced software labels and documentation references
-until the release of the completed package.
+The current release supports the following commands:
 
-The second intention is to provide a test template for the configuration of the various
-web resources.
+* **build_docx** - Enhanced documentation.
 
-The completed package is going to be released soon.
+  Supports the first integration of *Epydoc* into *Sphinx* for combined *Javadoc* style 
+  documentation of *Python* and *Java*.
+  Manages arbitrary document templates for the supported builder,
+  supports multiple builds with arbitrary document layouts, designs, and patched contents.
 
+* **install_docx** - Installs local documentation.
+
+  Installs documentation locally from build directory, see PEP-0370. 
+
+* **dist_docx** - Documentation packaging. 
+
+  Creates distribution packages for documentation.
+
+* **build_apidoc** - Standalone Generator for API Documentation 
+
+  Extracts the inline documentation only.
+  Manages arbitrary document templates for the supported builder,
+  supports multiple builds with arbitrary document layouts, designs, and patched contents.
+
+* **build_apiref** - Standalone Generator for API Reference  
+
+  Extracts the inline documentation as JavaDoc style API reference.
+  Manages arbitrary document templates for the supported builder,
+  supports multiple builds with arbitrary document layouts, designs, and patched contents.
+
+For more extensions refer to the online documentation.
 
 **Online documentation**:
 
 * https://setupdocx.sourceforge.io/
-
 
 **Runtime-Repository**:
 
@@ -41,11 +62,11 @@ Project Data
 
 * PROJECT: 'setupdocx'
 
-* MISSION: Name reservation for ongoing development names and documents.
+* MISSION: Command extension of *setup.py* for multi-platform and documentation deployments.
 
 * VERSION: 00.01
 
-* RELEASE: 00.01.001
+* RELEASE: 00.01.021
 
 * STATUS: beta
 
@@ -54,6 +75,14 @@ Project Data
 * COPYRIGHT: Copyright (C) 2019 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
 
 * LICENSE: Artistic-License-2.0 + Forced-Fairplay-Constraints
+
+Concepts and enumeration values are migrated from the 
+
+* *UnifiedSessionsManager* (C) 2008 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez.  
+
+Sphinx
+------
+Tested with Sphinx-1.7 on Python2.7.14, and Python3.6.5.
 
 Runtime Environment
 -------------------
@@ -91,7 +120,7 @@ For a comprehensive list refer to the documentation.
 
 * Network Devices: OpenWRT
 
-* Security: KaliLinux, pfSense, BlackArch, ParrotOS, Pentoo
+* Security: KaliLinux, pfSense
 
 **OS on Embedded Devices**
 
@@ -99,12 +128,32 @@ For a comprehensive list refer to the documentation.
 
 * ASUS-TinkerBoard: Armbian
 
-* By special modules e.g. for Adafruit Trinket M0: CircuitPython, MicroPython
-
 Current Release
 ---------------
+
+REMARK:
+   Currently tested by application to the other projects of the author.
+   So for now no package tests defined.
 
 Major Changes:
 
 * Initial version.
+
+Issues:
+
+* Current release supports *shell* only and is released for *bash*, so
+  safe to use on *POSIX* platforms.
+  So may should on *Windows-10* et.al. / *NT-10.0*, in any case in *WSL*.
+  General support for *Windows* platforms is coming soon - so the full scale
+  of platforms will be supported.
+
+ToDo:
+
+* make all templates completely generic for any package - some like 'man' contain hardcoded names for setupdocx
+* Add optional gzip to man pages.
+* Add rpm, deb, apk.
+
+Known Issues:
+
+* Not yet
 

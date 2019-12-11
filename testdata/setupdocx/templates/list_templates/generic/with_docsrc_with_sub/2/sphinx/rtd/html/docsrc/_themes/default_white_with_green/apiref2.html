@@ -1,0 +1,15 @@
+{#
+    default_white_with_green/apiref.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Sphinx sidebar template: reference to javadoc-style API specification.
+
+    :copyright: Copyright 2019 by Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez.
+    :license: Artistic-License-2.0 with peer-to-peer fairplay amendments.
+#}
+{%- if theme_apiref %}
+  <h4>{{ _('API reference') }}</h4>
+  <p class="topless"><a href="../{{ theme_apiref|e }}"
+                        title="{{ _('theme_apititle') }}">{{ theme_apititle }}</a></p>
+
+{%- endif %}

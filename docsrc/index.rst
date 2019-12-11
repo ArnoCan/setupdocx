@@ -1,12 +1,21 @@
-************
-setupdocx
-************
+
+*********
+SetupDocX
+*********
 
 .. todolist::
 
 .. include:: index_part_abstract.rst
    
 
+.. toctree::
+   :includehidden:
+   :caption: Start Here
+
+   self   
+   index_part_cockpit
+   quickstart
+   
 .. toctree::
    :includehidden:
    :caption: Documentation
@@ -16,9 +25,25 @@ setupdocx
    
    index_part_abstract
    index_part_platform_support
+   index_part_blueprint
+   Command Line Interface <setuplib_cli>
+   configurations/index
+   index_part_documents
+   index_modules
    index_part_indices
    index_part_resources
+   install
+   references
    index_part_license
+
+.. toctree::
+   :includehidden:
+   :caption: Application
+   :numbered:
+   :maxdepth: 1
+
+   howto/index
+   faq/index
 
 
 .. include:: index_part_resources.rst
@@ -90,6 +115,4 @@ So the software is OpenSource as long as you comply to basic rules - else not.
 * Artistic-License-2.0(base license): :ref:`ArtisticLicense20 <ARTISTIC_LICENSE_20>`
 
 * Forced-Fairplay-Constraints(amendments): :ref:`licenses-amendments <LICENSES_AMENDMENTS>` 
-
-
 

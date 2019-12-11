@@ -167,12 +167,12 @@ else
 	SDK_PATH_SETUPLUAX="${PWD}/setupluax"
 fi
 
-#if [[ ! -e "${PWD}/setuplib" ]];then
-#	if [[ ! -e "$SDK_PATH_SETUPLIB" ]];then echo "ERROR:SDK requires: SDK_PATH_SETUPLIB" >&2 ; fi
-#	PYTHONPATH=$SDK_PATH_SETUPLIB:$PYTHONPATH
-#else
-#	SDK_PATH_SETUPLIB="${PWD}/setuplib"
-#fi
+if [[ ! -e "${PWD}/setuplib" ]];then
+	if [[ ! -e "$SDK_PATH_SETUPLIB" ]];then echo "ERROR:SDK requires: SDK_PATH_SETUPLIB" >&2 ; fi
+	PYTHONPATH=$SDK_PATH_SETUPLIB:$PYTHONPATH
+else
+	SDK_PATH_SETUPLIB="${PWD}/setuplib"
+fi
 
 #if [[ ! -e "${PWD}/epydoc" ]];then
 #	if [[ ! -e "$SDK_PATH_EPYDOC3" ]];then echo "ERROR:SDK requires: SDK_PATH_EPYDOC3" >&2 ; fi

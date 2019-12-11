@@ -29,13 +29,13 @@ Resources
    +--------------+-------------+--------------------------------------------+
    | prerequisite | reference   | description                                |
    +==============+=============+============================================+
-   | Download     | PyPI        | https://pypi.python.org/pypi/yapydata      |
+   | Download     | PyPI        | https://pypi.python.org/pypi/setupdocx     |
    +--------------+-------------+--------------------------------------------+
-   |              | Sourceforge | https://sourceforge.net/projects/yapydata/ |
+   |              | Sourceforge | https://sourceforge.net/projects/setupdocx/|
    +--------------+-------------+--------------------------------------------+
-   |              | github.com  | https://github.com/ArnoCan/yapydata/       |
+   |              | github.com  | https://github.com/ArnoCan/setupdocx/      |
    +--------------+-------------+--------------------------------------------+
-   | Documents    | sourceforge | https://yapydata.sourceforge.io/           |
+   | Documents    | sourceforge | https://setupdocx.sourceforge.io/          |
    +--------------+-------------+--------------------------------------------+
 
    
@@ -574,4 +574,7 @@ special test results are available soon
       </div>
       </div>
       </div>
+
+
+
 

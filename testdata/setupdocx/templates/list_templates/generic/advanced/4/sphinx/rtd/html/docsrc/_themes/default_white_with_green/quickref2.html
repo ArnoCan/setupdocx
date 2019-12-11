@@ -1,0 +1,18 @@
+{#
+    default_white_with_green/quickref.html
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    Sphinx sidebar template: quick-reference to API specification.
+
+    :copyright: Copyright 2019 by Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez.
+    :license: Artistic-License-2.0 with peer-to-peer fairplay amendments.
+#}
+  <h4>{{ _('Quick Reference') }}</h4>
+{%- if theme_shortcuts %}
+  <p class="topless"><a href="../{{ theme_shortcuts|e }}"
+                        title="{{ _('theme_shortcuttitle') }}">{{ theme_shortcuttitle }}</a></p>
+{%- endif %}
+{%- if theme_apiref %}
+  <p class="topless"><a href="../{{ theme_apiref|e }}"
+                        title="{{ _('theme_apititle') }}">{{ theme_apititle }}</a></p>
+{%- endif %}

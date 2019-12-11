@@ -1,0 +1,119 @@
+{
+	"builder": {
+		"name": "sphinx",
+		"version": "01.01.001"
+	},
+	"sphinx": {
+		"defaults": {
+			"build_apiref": null,
+			"build_dir": "build/",
+			"build_reldir": "sphinx/apidoc/",
+			"builder_path": null,
+			"clean": false,
+			"clean_all": false,
+			"config_path": null,
+			"docname": null,
+			"docsource": "docsrc/",
+			"doctemplate": "default",
+			"doctype": "html",
+			"indexsrc": "index.rst",
+			"name": null,
+			"release": "01.01.001b0",
+			"srcdir": null,
+			"version": "01.01.001"
+		},
+		"doc": {
+			"call": "sphinx-build",
+			"wrapper": "call_doc.sh",
+			"wrapperopts": "",
+			"wrapperopts_reset": false,
+			"executable": "sphinx-build",
+			"executableopts": "",
+			"executableopts_reset": false,
+			"doctypes": [
+				"html",
+				"pdf",
+				"man",
+				"epub",
+				"singlehtml",
+				"latexpdf",
+				"latexpdfja",
+				"latex",
+				"devhelp",
+				"htmlhelp",
+				"qthelp",
+				"mangz",
+				"dirhtml",
+				"json",
+				"xml"
+			],
+			"defaults": {
+				"build_apiref": null,
+				"build_dir": "build/",
+				"build_reldir": "sphinx/apidoc/",
+				"builder_path": null,
+				"clean": null,
+				"config_path": null,
+				"docname": null,
+				"docsource": "docsrc/",
+				"doctype": "html",
+				"executable": "sphinx-apidoc",
+				"executableopts": "",
+				"executableopts_reset": false,
+				"indexsrc": "index.rst",
+				"name": null,
+				"release": null,
+				"srcdir": null,
+				"template": null,
+				"version": null,
+				"wrapper": "call_apidoc.sh",
+				"wrapperopts": "",
+				"wrapperopts_reset": false
+			}
+		},
+		"apidoc": {
+			"executable": "sphinx-apidoc",
+			"executableopts": "",
+			"executableopts_reset": false,
+			"metatypes": [
+				"rst"
+			],
+			"doctypes": [
+				"devhelp",
+				"epub",
+				"html",
+				"htmlhelp",
+				"man",
+				"pdf",
+				"pdflatex",
+				"pdflatexja",
+				"qthelp",
+				"singlehtml"
+			],
+			"defaults": {
+				"build_apiref": null,
+				"build_dir": "build/",
+				"build_reldir": "sphinx/apidoc/",
+				"builder_path": null,
+				"clean": null,
+				"config_path": null,
+				"docname": null,
+				"docsource": "docsrc/",
+				"metatype": "rst",
+				"doctype": "html",
+				"executable": "sphinx-apidoc",
+				"executableopts": "",
+				"executableopts_reset": false,
+				"indexsrc": "index.rst",
+				"name": null,
+				"release": null,
+				"srcdir": null,
+				"template": "",
+				"version": null,
+				"wrapper": "call_apidoc.sh",
+				"wrapperopts": "",
+				"wrapperopts_reset": false
+			}
+		}
+	}
+}

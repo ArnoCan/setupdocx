@@ -16,7 +16,7 @@ export SDK_PATH_SETUPJAVAX=/local/hd1/home1/data/acue/rd/p-open-deploy/setupjava
 export SDK_PATH_SETUPLUAX=/local/hd1/home1/data/acue/rd/p-open-deploy/setupluax/components/setupluax/
 export SDK_PATH_SETUPRUBYX=/local/hd1/home1/data/acue/rd/p-open-deploy/setuprubyx/components/setuprubyx/
 export SDK_PATH_SETUPTESTX=/local/hd1/home1/data/acue/rd/p-open-deploy/setuptestx/components/setuptestx/
-# export SDK_PATH_SETUPLIB=/local/hd1/home1/data/acue/rd/p-open-deploy/setuplib/components/setuplib/
+export SDK_PATH_SETUPLIB=/local/hd1/home1/data/acue/rd/p-open-deploy/setuplib/components/setuplib/
 
 # generic
 export SDK_PATH_NAMEDTUPLEX=/local/hd1/home1/data/acue/rd/p-open-deploy/namedtuplex/components/namedtuplex/
